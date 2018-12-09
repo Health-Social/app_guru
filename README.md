@@ -1,6 +1,6 @@
 # Health Social
 
-Just 3 students with 0 CS background
+Just 3 students with 0 Computer Science backgroud
 
 
 # health_social_app
