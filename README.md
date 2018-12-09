@@ -1,3 +1,8 @@
+# Health Social
+
+Just 3 students with 0 CS background
+
+
 # health_social_app
 
 A new Flutter project.
