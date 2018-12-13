@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 class TextPost {
   final String userId;
   final String userEmail;
+  final String userName;
+  final String userProfilePicture;
   final String userPassword;
   final String title;
   final String description;
@@ -19,6 +21,8 @@ class TextPost {
   TextPost({
     @required this.userId,
     @required this.userEmail,
+    @required this.userName,
+    @required this.userProfilePicture,
     @required this.userPassword,
     @required this.title,
     @required this.description,

@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 class DietPost {
   final String userId;
   final String userEmail;
+  final String userName;
+  final String userProfilePicture;
   final String userPassword;
   final String imageUrl;
   final String imagePath;
@@ -21,6 +23,8 @@ class DietPost {
   DietPost({
     @required this.userId,
     @required this.userEmail,
+    @required this.userName,
+    @required this.userProfilePicture,
     @required this.userPassword,
     @required this.imageUrl,
     @required this.imagePath,
