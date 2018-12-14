@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 
 import '../../post types/image_post.dart';
-import '../../widgets/post_elements/post_title.dart';
 import '../full post card/image.dart';
+import '../../widgets/post_elements/post_title.dart';
+import '../../widgets/post_elements/profile_pic_circle.dart';
+import '../../widgets/post_elements/post_description.dart';
 
 class ImagePostDisplay extends StatelessWidget {
   final ImagePost _imagePost;
@@ -28,16 +30,45 @@ class ImagePostDisplay extends StatelessWidget {
           children: <Widget>[
             Stack(
               children: <Widget>[
+                AspectRatio(
+                  // Image
+                  aspectRatio: 487 / 451,
+                  child: Container(
+                    height: 300,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                      fit: BoxFit.fitWidth,
+                      alignment: FractionalOffset.center,
+                      image: AssetImage(_imagePost.imageUrl),
+                    )),
+                  ),
+                ),
                 Container(
+                    // Profile Picture
+                    alignment: Alignment.topLeft,
+                    child: ProfilePicCircle(_imagePost.userProfilePicture)),
+                Container(
+                    // title
+                    margin: EdgeInsets.only(top: 15.0, right: 15.0),
                     alignment: Alignment.topRight,
                     child: PostTitle(_imagePost.title)),
-                Container(
-                  margin: EdgeInsets.only(top: 20.0),
-                  height: 300,
-                  child: Image.asset(_imagePost.imageUrl),
-                ),
+                //  Container(
+                //   // Like heart
+                //   margin: EdgeInsets.only(top: 451),
+                //   alignment: Alignment.bottomRight,
+                //   child: Stack(children: <Widget>[
+                //     Icon(Icons.favorite, size: 30),
+                //     Icon(Icons.favorite_border, size: 32, color: Colors.white)
+                //   ],
+                // )),
               ],
             ),
+            Container(
+                // text description
+                height: 1.0,
+                alignment: FractionalOffset.topCenter,
+                child: PostDescription(_imagePost.description)),
+            Divider(),
           ],
         )));
   }
