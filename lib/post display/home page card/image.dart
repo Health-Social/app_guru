@@ -20,7 +20,7 @@ class ImagePostDisplay extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => ImagePostFull(_imagePost)));
+                  builder: (BuildContext context) => ImagePostFull(_imagePost)));
         },
         onDoubleTap: () {
           // like post code
@@ -52,15 +52,6 @@ class ImagePostDisplay extends StatelessWidget {
                     margin: EdgeInsets.only(top: 15.0, right: 15.0),
                     alignment: Alignment.topRight,
                     child: PostTitle(_imagePost.title)),
-                //  Container(
-                //   // Like heart
-                //   margin: EdgeInsets.only(top: 451),
-                //   alignment: Alignment.bottomRight,
-                //   child: Stack(children: <Widget>[
-                //     Icon(Icons.favorite, size: 30),
-                //     Icon(Icons.favorite_border, size: 32, color: Colors.white)
-                //   ],
-                // )),
               ],
             ),
             Container(
@@ -68,7 +59,6 @@ class ImagePostDisplay extends StatelessWidget {
                 height: 1.0,
                 alignment: FractionalOffset.topCenter,
                 child: PostDescription(_imagePost.description)),
-            Divider(),
           ],
         )));
   }
