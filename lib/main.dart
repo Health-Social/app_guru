@@ -48,12 +48,8 @@ ImagePost _imagePost = ImagePost(
 
 // Dummy Post
 DietPost _dietPost = DietPost(
-    userId: 'dummy ID',
-    userEmail: 'dummy@dummy.com',
-    userName: 'Zach Wolpe',
-    userProfilePicture: 'assets/images/profile.png',
-    userPassword: 'dummy password',
-    title: 'Cherry Choc Cheese Cake',
+    userDetails: _dummyUser,
+    title: 'Choc Cherry Cake',
     tag: 'VIEWS',
     bodyTag: 'weightloss',
     description:
@@ -65,18 +61,14 @@ DietPost _dietPost = DietPost(
 
 // Dummy Post
 WorkoutPost _workoutPost = WorkoutPost(
-    userId: 'dummy ID',
-    userEmail: 'dummy@dummy.com',
-    userName: 'Zach Wolpe',
-    userProfilePicture: 'assets/images/profile.png',
-    userPassword: 'dummy password',
-    title: 'What a view!',
+    userDetails: _dummyUser,
+    title: 'Great Season',
     tag: 'VIEWS',
     bodyTag: 'Arms',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imagePath: 'dummy image path',
-    imageUrl: 'assets/images/background2.jpg',
+    imageUrl: 'assets/images/runner1.jpg',
     hasViewed: false,
     isFavourite: false);
 
@@ -111,7 +103,7 @@ FullBio _dummyUserFullBio = FullBio (title: 'full bio in hrerre');
 
 // Pass to Dummy Post Displays
 
-List _posts = [_imagePost, _dietPost, _workoutPost, _textPost];
+List _posts = [_imagePost, _dietPost, _workoutPost /*_textPost*/];
 // ..................................... DELETE WHEN ADDING REAL DATA : DUMMY POSTS ....................................................
 // .....................................................................................................................................
 // .....................................................................................................................................
@@ -144,13 +136,16 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'health social',
+      title: 'health social',  
       home: Scaffold(
+        backgroundColor: Color(0xFFECEFF1),
         appBar: AppBar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.blue[300],
             title: Text('Health Social',
                 style: TextStyle(fontFamily: 'Comfortaa', fontSize: 20.0))),
         body: _pageShown(),

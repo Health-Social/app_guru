@@ -61,23 +61,6 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-  Widget _buttonFilterRow() {
-    // row of buttons to filter for the types of posts
-    return Column(
-      children: <Widget>[
-        Row(children: <Widget>[
-          Expanded(child: Icon(Icons.all_inclusive, size: 30)),
-          Divider(),
-          Expanded(child: Icon(Icons.terrain, size: 30)),
-          Divider(),
-          Expanded(child: Icon(Icons.hdr_strong, size: 30)),
-          Divider(),
-          Expanded(child: Icon(Icons.import_contacts, size: 30)),
-        ]),
-        Divider()
-      ],
-    );
-  }
 
   Widget _userStats() {
     // the numbers & text of followers/following/posts
@@ -124,6 +107,41 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
+    Widget _buttonFilterRow() {
+    // row of buttons to filter for the types of posts
+    return Column(
+      children: <Widget>[
+        Row(children: <Widget>[
+          Expanded(child: 
+          GestureDetector(
+            onTap: () {},
+            child: Icon(Icons.all_inclusive, size: 30),
+          )),
+          Divider(),
+          Expanded(child: 
+          GestureDetector(
+            onTap: () {},
+            child: Icon(Icons.terrain, size: 30),
+          )),
+          Divider(),
+          Expanded(child: 
+          GestureDetector(
+            onTap: () {},
+            child: Icon(Icons.hdr_strong, size: 30),
+          )),
+          Divider(),
+          Expanded(child: 
+          GestureDetector(
+            onTap: () {},
+            child: Icon(Icons.import_contacts, size: 30),
+          )),
+        ]),
+        Divider(color: Colors.grey)
+      ],
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return ListView(children: <Widget>[
@@ -158,7 +176,7 @@ class _ProfilePageState extends State<ProfilePage> {
           Container(child: _fullBioButton())
         ],
       ), // storing some of the same info twice, better to pull info (like profile picture) to post than to store it in a post. That way it also dynamically updates
-      Divider(),
+      Divider(color: Colors.grey),
       _buttonFilterRow(),
     ]);
   }

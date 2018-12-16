@@ -12,7 +12,7 @@ class FullBioPageState extends State<FullBioPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.blue[300],
           title: Text('Dynamic username',
               style: TextStyle(fontFamily: 'Comfortaa', fontSize: 20.0))),
       body: Center(

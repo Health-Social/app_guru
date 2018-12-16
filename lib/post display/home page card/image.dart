@@ -1,65 +1,45 @@
-// import packages
 import 'package:flutter/material.dart';
-import 'package:photo_view/photo_view.dart';
 
 import '../../post types/image_post.dart';
-import '../full post card/image.dart';
+
+// widgets
 import '../../widgets/post_elements/post_title.dart';
-import '../../widgets/post_elements/profile_pic_circle.dart';
 import '../../widgets/post_elements/post_description.dart';
+import '../../widgets/post_elements/profile_pic_circle.dart';
 
-class ImagePostDisplay extends StatelessWidget {
-  final ImagePost _imagePost;
+class ImagePostHomePage extends StatelessWidget {
+  final ImagePost _post;
 
-  ImagePostDisplay(this._imagePost);
+  ImagePostHomePage(this._post);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (BuildContext context) => ImagePostFull(_imagePost)));
-        },
-        onDoubleTap: () {
-          // like post code
-        },
-        child: Container(
-            child: Column(
+    return Container(
+        child: Column(
+      children: <Widget>[
+        Stack(
           children: <Widget>[
-            Stack(
-              children: <Widget>[
-                AspectRatio(
-                  // Image
-                  aspectRatio: 487 / 451,
-                  child: Container(
-                    height: 300,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                      fit: BoxFit.fitWidth,
-                      alignment: FractionalOffset.center,
-                      image: AssetImage(_imagePost.imageUrl),
-                    )),
-                  ),
-                ),
-                Container(
-                    // Profile Picture
-                    alignment: Alignment.topLeft,
-                    child: ProfilePicCircle(_imagePost.userProfilePicture)),
-                Container(
-                    // title
-                    margin: EdgeInsets.only(top: 15.0, right: 15.0),
-                    alignment: Alignment.topRight,
-                    child: PostTitle(_imagePost.title)),
-              ],
+            Container(
+              // Image
+              child: Image.asset(_post.imageUrl),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white, width: 1.5)),
             ),
             Container(
-                // text description
-                height: 1.0,
-                alignment: FractionalOffset.topCenter,
-                child: PostDescription(_imagePost.description)),
+                // Profile Picture
+                alignment: Alignment.topLeft,
+                child: ProfilePicCircle(_post.userProfilePicture)),
+            Container(
+                // title
+                margin: EdgeInsets.only(top: 15.0, right: 15.0),
+                alignment: Alignment.topRight,
+                child: PostTitle(_post.title)),
           ],
-        )));
+        ),
+        Container(
+            // text description
+            child: PostDescription(_post.description)),
+      ],
+    ));
   }
 }

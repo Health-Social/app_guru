@@ -16,9 +16,9 @@ class PostDescriptionState extends State<PostDescription> {
   bool _fullPost = false;
 
   String _longDescription() {
-    if (widget.description.length > 120) {
+    if (widget.description.length > 70) {
       if (_fullPost == false) {
-        return widget.description.substring(0, 120) + ' ... (more)';
+        return widget.description.substring(0, 70) + ' ... (more)';
       } else {
         return widget.description;
       }

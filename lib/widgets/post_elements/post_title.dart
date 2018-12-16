@@ -10,7 +10,7 @@ class PostTitle extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
       decoration: BoxDecoration(
-        color: Colors.white12,
+        color: Colors.white54,
         border: Border.all(color: Colors.black, width: 0.8),
         borderRadius: BorderRadius.circular(7.0)
       ),

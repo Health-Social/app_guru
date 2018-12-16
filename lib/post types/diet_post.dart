@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../users/user_details.dart';
+
 // Commented out sections to be added later 
 
 class DietPost {
-  final String userId;
-  final String userEmail;
-  final String userName;
-  final String userProfilePicture;
-  final String userPassword;
+  final UserDetails userDetails;
   final String imageUrl;
   final String imagePath;
   final String title;
@@ -21,11 +19,7 @@ class DietPost {
   final bool hasViewed;
 
   DietPost({
-    @required this.userId,
-    @required this.userEmail,
-    @required this.userName,
-    @required this.userProfilePicture,
-    @required this.userPassword,
+    @required this.userDetails,
     @required this.imageUrl,
     @required this.imagePath,
     @required this.title,
