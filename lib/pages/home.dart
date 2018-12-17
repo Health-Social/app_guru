@@ -72,6 +72,7 @@ class HomePage extends StatefulWidget {
   }
 
 
+
   Widget _postContainer(BuildContext context, int index) {
     // return differnt types of posts
     if (widget._posts[index] is ImagePost) {
@@ -89,7 +90,7 @@ class HomePage extends StatefulWidget {
   }
 
   _postDisplay(BuildContext context, int index) {
-    // combine all posts types
+    // sets up Gesture Detector
     return GestureDetector(
       onTap: () {
         _navigateToFullPost(context, index);
@@ -100,6 +101,7 @@ class HomePage extends StatefulWidget {
       child: _postCard(context, index),
     );
   }
+
 
 
 

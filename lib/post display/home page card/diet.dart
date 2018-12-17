@@ -9,9 +9,11 @@ import '../../widgets/post_elements/profile_pic_circle.dart';
 import '../../widgets/post_elements/diet_post_badge.dart';
 
 class DietPostHomePage extends StatelessWidget {
+  //
   final DietPost _post;
 
   DietPostHomePage(this._post);
+
 
   @override
   Widget build(BuildContext context) {
@@ -40,22 +42,10 @@ class DietPostHomePage extends StatelessWidget {
                 child: RecipeBadge()),
           ],
         ),
-        SizedBox(height: 15),
-        Container(
-          height: 50,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-          RecipeBadgeCake(),
-          SizedBox(width: 30),
-          RecipeBadgeFastfood(),
-          SizedBox(width: 30),
-          RecipeBadgeLocalDining(),
-        ],
-        ),
-        ),
-        
+        RecipeSubBar(_post),
       ],
     );
   }
 }
+
+
