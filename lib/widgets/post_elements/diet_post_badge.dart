@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../post types/diet_post.dart';
 
-
-
 // Main Recipe 'R' Badge
 
 class RecipeBadge extends StatelessWidget {
@@ -50,24 +48,24 @@ class _RecipeSubBarState extends State<RecipeSubBar> {
           });
         },
         child: Container(
-              height: 55,
-              width: 100,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('Benefits',
-                      style: TextStyle(
-                          fontFamily: 'Comfortaa',
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700)),
-                  SizedBox(width: 2),
-                  Icon(Icons.cake, color: Colors.black),
-                ],
-              ),
-              decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Colors.grey[100]),
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.grey[100])),
+            height: 55,
+            width: 100,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Benefits',
+                    style: TextStyle(
+                        fontFamily: 'Comfortaa',
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700)),
+                SizedBox(width: 2),
+                Icon(Icons.cake, color: Colors.black),
+              ],
+            ),
+            decoration: BoxDecoration(
+                border: Border.all(width: 1, color: Colors.grey[100]),
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.grey[100])),
       );
     } else {
       return GestureDetector(
@@ -78,20 +76,24 @@ class _RecipeSubBarState extends State<RecipeSubBar> {
           });
         },
         child: Container(
-              height: 55,
-              width: 100,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('Benefits',
-                      style: TextStyle(
-                          fontFamily: 'Comfortaa',
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w700)),
-                  SizedBox(width: 2),
-                  Icon(Icons.cake, color: Colors.grey),
-                ],
-              )),
+            height: 55,
+            width: 100,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Benefits',
+                    style: TextStyle(
+                        fontFamily: 'Comfortaa',
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w700)),
+                SizedBox(width: 2),
+                Icon(Icons.cake, color: Colors.grey),
+              ],
+            ),
+            decoration: BoxDecoration(
+                border: Border.all(width: 1, color: Colors.white),
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.white)),
       );
     }
   }
@@ -107,24 +109,24 @@ class _RecipeSubBarState extends State<RecipeSubBar> {
           });
         },
         child: Container(
-              height: 55,
-              width: 120,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('Ingredients',
-                      style: TextStyle(
-                          fontFamily: 'Comfortaa',
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700)),
-                  SizedBox(width: 2),
-                  Icon(Icons.fastfood, color: Colors.black),
-                ],
-              ),
-              decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Colors.grey[100]),
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.grey[100])),
+            height: 55,
+            width: 120,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Ingredients',
+                    style: TextStyle(
+                        fontFamily: 'Comfortaa',
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700)),
+                SizedBox(width: 2),
+                Icon(Icons.fastfood, color: Colors.black),
+              ],
+            ),
+            decoration: BoxDecoration(
+                border: Border.all(width: 1, color: Colors.grey[100]),
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.grey[100])),
       );
     } else {
       return GestureDetector(
@@ -135,20 +137,24 @@ class _RecipeSubBarState extends State<RecipeSubBar> {
           });
         },
         child: Container(
-              height: 55,
-              width: 120,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('Ingredients',
-                      style: TextStyle(
-                          fontFamily: 'Comfortaa',
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w700)),
-                  SizedBox(width: 2),
-                  Icon(Icons.fastfood, color: Colors.grey),
-                ],
-              )),
+            height: 55,
+            width: 120,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Ingredients',
+                    style: TextStyle(
+                        fontFamily: 'Comfortaa',
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w700)),
+                SizedBox(width: 2),
+                Icon(Icons.fastfood, color: Colors.grey),
+              ],
+            ),
+            decoration: BoxDecoration(
+                border: Border.all(width: 1, color: Colors.white),
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.white)),
       );
     }
   }
@@ -164,24 +170,24 @@ class _RecipeSubBarState extends State<RecipeSubBar> {
           });
         },
         child: Container(
-              height: 55,
-              width: 100,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('Recipe',
-                      style: TextStyle(
-                          fontFamily: 'Comfortaa',
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700)),
-                  SizedBox(width: 2),
-                  Icon(Icons.local_dining, color: Colors.black),
-                ],
-              ),
-              decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Colors.grey[100]),
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.grey[100])),
+            height: 55,
+            width: 100,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Recipe',
+                    style: TextStyle(
+                        fontFamily: 'Comfortaa',
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700)),
+                SizedBox(width: 2),
+                Icon(Icons.local_dining, color: Colors.black),
+              ],
+            ),
+            decoration: BoxDecoration(
+                border: Border.all(width: 1, color: Colors.grey[100]),
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.grey[100])),
       );
     } else {
       return GestureDetector(
@@ -192,27 +198,30 @@ class _RecipeSubBarState extends State<RecipeSubBar> {
           });
         },
         child: Container(
-              height: 55,
-              width: 100,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('Recipe',
-                      style: TextStyle(
-                          fontFamily: 'Comfortaa',
-                          color: Colors.grey,
-                          fontWeight: FontWeight.w700)),
-                  SizedBox(width: 2),
-                  Icon(Icons.local_dining, color: Colors.grey),
-                ],
-              )),
+            height: 55,
+            width: 100,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Recipe',
+                    style: TextStyle(
+                        fontFamily: 'Comfortaa',
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w700)),
+                SizedBox(width: 2),
+                Icon(Icons.local_dining, color: Colors.grey),
+              ],
+            ),
+            decoration: BoxDecoration(
+                border: Border.all(width: 1, color: Colors.white),
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.white)),
       );
     }
   }
 
 // show brief: Benefits - Ingredients - Recipe
   Widget _showMore() {
-
     Widget _cancleState(showMore) {
       return GestureDetector(
         onTap: () {
@@ -260,9 +269,7 @@ class _RecipeSubBarState extends State<RecipeSubBar> {
             ],
           ),
         ),
-        // SizedBox(height: 5),
         _showMore(),
-        // SizedBox(height: 5),
       ],
     );
   }
