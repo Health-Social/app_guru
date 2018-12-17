@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../users/user_details.dart';
 // Commented out sections to be added later 
 
 class TextPost {
-  final String userId;
-  final String userEmail;
-  final String userName;
-  final String userProfilePicture;
-  final String userPassword;
+  final UserDetails userDetails;
   final String title;
   final String description;
   final String subTitle;
@@ -19,11 +16,7 @@ class TextPost {
   final bool hasViewed;
 
   TextPost({
-    @required this.userId,
-    @required this.userEmail,
-    @required this.userName,
-    @required this.userProfilePicture,
-    @required this.userPassword,
+    @required this.userDetails,
     @required this.title,
     @required this.description,
     @required this.subTitle,

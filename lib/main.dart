@@ -50,6 +50,9 @@ ImagePost _imagePost = ImagePost(
 DietPost _dietPost = DietPost(
     userDetails: _dummyUser,
     title: 'Choc Cherry Cake',
+    benefits: ['loose weight','get stronger','live happily'],
+    ingredients: ['salt','pepper','eggs','flower','water','maybe quantities?'],
+    recipe: 'mix cake into a batch of dummy text that is used to test design',
     tag: 'VIEWS',
     bodyTag: 'weightloss',
     description:
@@ -74,16 +77,12 @@ WorkoutPost _workoutPost = WorkoutPost(
 
 // Dummy Post
 TextPost _textPost = TextPost(
-    userId: 'dummy ID',
-    userEmail: 'dummy@dummy.com',
-    userName: 'Zach Wolpe',
-    userProfilePicture: 'assets/images/profileDiCaprio.jpg',
-    userPassword: 'dummy password',
-    title: 'What a view!',
-    subTitle: 'absolutely gorgeous',
+    userDetails: _dummyUser,
+    title: 'Trip to Massachusetts',  // limit characters
+    subTitle: 'How I became a post doc fellow at MIT', // limit characters
     tag: 'VIEWS',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     hasViewed: false,
     isFavourite: false);
 
@@ -103,7 +102,7 @@ FullBio _dummyUserFullBio = FullBio (title: 'full bio in hrerre');
 
 // Pass to Dummy Post Displays
 
-List _posts = [_imagePost, _dietPost, _workoutPost /*_textPost*/];
+List _posts = [_imagePost, _dietPost, _workoutPost, _textPost];
 // ..................................... DELETE WHEN ADDING REAL DATA : DUMMY POSTS ....................................................
 // .....................................................................................................................................
 // .....................................................................................................................................
@@ -145,9 +144,9 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         backgroundColor: Color(0xFFECEFF1),
         appBar: AppBar(
-            backgroundColor: Colors.blue[300],
-            title: Text('Health Social',
-                style: TextStyle(fontFamily: 'Comfortaa', fontSize: 20.0))),
+            backgroundColor: Colors.white70,
+            title: Text('Health Social', 
+                style: TextStyle(color: Colors.black, fontFamily: 'Comfortaa', fontSize: 20.0))),
         body: _pageShown(),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,

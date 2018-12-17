@@ -38,6 +38,24 @@ class RecipeBadgeCake extends StatelessWidget {
 }
 
 
+class RecipeBadgeCakeSmall extends StatelessWidget {
+  // Cake Tag
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 30,
+      width: 30,
+      child: Center(child: Icon(Icons.cake, size: 20, color: Colors.teal[200])),
+      decoration: BoxDecoration(
+        border: Border.all(width: 1.5, color: Colors.teal[200]),
+        borderRadius: BorderRadius.circular(20.0),
+        color: Colors.teal[50]
+      )
+      );
+  }
+}
+
+
 class RecipeBadgeFastfood extends StatelessWidget {
   // Fastfood  Tag
   @override
@@ -45,7 +63,7 @@ class RecipeBadgeFastfood extends StatelessWidget {
     return Container(
       height: 37,
       width: 37,
-      child: Center(child: Icon(Icons.fastfood, color: Colors.teal[200])),
+      child: Center(child: Icon(Icons.fastfood, size: 20, color: Colors.teal[200])),
       decoration: BoxDecoration(
         border: Border.all(width: 3, color: Colors.teal[200]),
         borderRadius: BorderRadius.circular(20.0),
@@ -54,6 +72,26 @@ class RecipeBadgeFastfood extends StatelessWidget {
       );
   }
 }
+
+class RecipeBadgeFastfoodSmall extends StatelessWidget {
+  // Fastfood  Tag
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 30,
+      width: 30,
+      child: Center(child: Icon(Icons.fastfood, size: 20, color: Colors.teal[200])),
+      decoration: BoxDecoration(
+        border: Border.all(width: 1.5, color: Colors.teal[200]),
+        borderRadius: BorderRadius.circular(20.0),
+        color: Colors.teal[50]
+      )
+      );
+  }
+}
+
+
+
 
 class RecipeBadgeLocalDining extends StatelessWidget {
   // Local Dining Tag
@@ -65,6 +103,23 @@ class RecipeBadgeLocalDining extends StatelessWidget {
       child: Center(child: Icon(Icons.local_dining, color: Colors.teal[200])),
       decoration: BoxDecoration(
         border: Border.all(width: 3, color: Colors.teal[200]),
+        borderRadius: BorderRadius.circular(20.0),
+        color: Colors.teal[50]
+      )
+      );
+  }
+}
+
+class RecipeBadgeLocalDiningSmall extends StatelessWidget {
+  // Local Dining Tag
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 30,
+      width: 30,
+      child: Center(child: Icon(Icons.local_dining, color: Colors.teal[200])),
+      decoration: BoxDecoration(
+        border: Border.all(width: 1.5, color: Colors.teal[200]),
         borderRadius: BorderRadius.circular(20.0),
         color: Colors.teal[50]
       )

@@ -4,16 +4,13 @@ import 'package:flutter/cupertino.dart';
 import '../post types/image_post.dart';
 
 
-// import packages
-import 'package:photo_view/photo_view.dart';
-
-
-// Import Widgets
+// Import Full Page
 import '../post display/full post card/image.dart';
+import '../post display/full post card/diet.dart';
+import '../post display/full post card/text.dart';
 
 // Import Post Types
 import './../post types/image_post.dart';
-import './../post types/video_post.dart';
 import './../post types/workout_post.dart';
 import './../post types/diet_post.dart';
 import './../post types/text_post.dart';
@@ -22,6 +19,7 @@ import './../post types/text_post.dart';
 import '../post display/home page card/image.dart';
 import '../post display/home page card/diet.dart';
 import '../post display/home page card/workout.dart';
+import '../post display/home page card/text.dart';
 
 class HomePage extends StatefulWidget {
   // final ImagePost _imagePost;
@@ -47,12 +45,12 @@ class HomePage extends StatefulWidget {
 
     if (widget._posts[index] is TextPost) {
       Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>
-        null // text full page
+        TextPostFull(widget._posts[index])
       ));}
 
     if (widget._posts[index] is DietPost) {
       Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>
-        null // diet full page
+        DietPostFull(widget._posts[index])
       ));}
 
     if (widget._posts[index] is WorkoutPost) {
@@ -82,6 +80,8 @@ class HomePage extends StatefulWidget {
       return DietPostHomePage(widget._posts[index]);
     } else if (widget._posts[index] is WorkoutPost) {
       return WorkoutPostHomePage(widget._posts[index]);
+    } else if (widget._posts[index] is TextPost) {
+      return TextPostHomePage(widget._posts[index]);
     } else {
       return Text('other post');
       // other post types 
