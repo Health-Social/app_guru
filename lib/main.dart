@@ -50,8 +50,15 @@ ImagePost _imagePost = ImagePost(
 DietPost _dietPost = DietPost(
     userDetails: _dummyUser,
     title: 'Choc Cherry Cake',
-    benefits: ['loose weight','get stronger','live happily'],
-    ingredients: ['salt','pepper','eggs','flower','water','maybe quantities?'],
+    benefits: ['loose weight', 'get stronger', 'live happily'],
+    ingredients: [
+      'salt',
+      'pepper',
+      'eggs',
+      'flower',
+      'water',
+      'maybe quantities?'
+    ],
     recipe: 'mix cake into a batch of dummy text that is used to test design',
     tag: 'VIEWS',
     bodyTag: 'weightloss',
@@ -78,7 +85,7 @@ WorkoutPost _workoutPost = WorkoutPost(
 // Dummy Post
 TextPost _textPost = TextPost(
     userDetails: _dummyUser,
-    title: 'Trip to Massachusetts',  // limit characters
+    title: 'Trip to Massachusetts', // limit characters
     subTitle: 'How I became a post doc fellow at MIT', // limit characters
     tag: 'VIEWS',
     description:
@@ -98,7 +105,7 @@ UserDetails _dummyUser = UserDetails(
 );
 
 // Dummy User FUll Bio
-FullBio _dummyUserFullBio = FullBio (title: 'full bio in hrerre');
+FullBio _dummyUserFullBio = FullBio(title: 'full bio in hrerre');
 
 // Pass to Dummy Post Displays
 
@@ -135,51 +142,49 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'health social',  
+      title: 'health social',
       home: Scaffold(
         backgroundColor: Color(0xFFECEFF1),
         appBar: AppBar(
             backgroundColor: Colors.white70,
-            title: Text('Health Social', 
-                style: TextStyle(color: Colors.black, fontFamily: 'Comfortaa', fontSize: 20.0))),
+            title: Text('Health Social',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Comfortaa',
+                    fontSize: 20.0))),
         body: _pageShown(),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
                 title: Container(),
-                icon: Icon(
-                    _currentIndex == 0
-                        ? Icons.perm_media
-                        : Icons.fitness_center,
-                    color: Colors.pink)),
+                icon: Icon(Icons.perm_media,
+                    color:
+                        _currentIndex == 0 ? Colors.indigo[800] : Colors.grey)),
             BottomNavigationBarItem(
                 title: Container(),
                 icon: Icon(
-                    _currentIndex == 1 ? Icons.search : Icons.fitness_center,
-                    color: Colors.lightBlue)),
+                  Icons.search,
+                  color: _currentIndex == 1 ? Colors.indigo[800] : Colors.grey,
+                )),
             BottomNavigationBarItem(
                 title: Container(),
-                icon: Icon(
-                    _currentIndex == 2
-                        ? Icons.camera_alt
-                        : Icons.fitness_center,
-                    color: Colors.orange)),
+                icon: Icon(Icons.camera_alt,
+                    color:
+                        _currentIndex == 2 ? Colors.indigo[800] : Colors.grey)),
             BottomNavigationBarItem(
                 title: Container(),
-                icon: Icon(
-                    _currentIndex == 3 ? Icons.favorite : Icons.fitness_center,
-                    color: Colors.green)),
+                icon: Icon(Icons.favorite,
+                    color:
+                        _currentIndex == 3 ? Colors.indigo[800] : Colors.grey)),
             BottomNavigationBarItem(
                 title: Container(),
-                icon: Icon(
-                    _currentIndex == 4 ? Icons.person : Icons.fitness_center,
-                    color: Colors.blueGrey))
+                icon: Icon(Icons.person,
+                    color:
+                        _currentIndex == 4 ? Colors.indigo[800] : Colors.grey))
           ],
           onTap: _onTapNavigationBar,
         ),
