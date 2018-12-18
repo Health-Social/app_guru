@@ -148,13 +148,15 @@ class _MyAppState extends State<MyApp> {
       title: 'health social',
       home: Scaffold(
         backgroundColor: Color(0xFFECEFF1),
-        appBar: AppBar(
+        appBar: _currentIndex != 2
+          ? AppBar(
             backgroundColor: Colors.white70,
             title: Text('Health Social',
                 style: TextStyle(
                     color: Colors.black,
                     fontFamily: 'Comfortaa',
-                    fontSize: 20.0))),
+                    fontSize: 20.0)))
+          : null,
         body: _pageShown(),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,

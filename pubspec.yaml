@@ -48,7 +48,8 @@ flutter:
     - assets/images/cake.jpg
     - assets/images/profile.png
     - assets/images/profileDiCaprio.jpg
-
+    - assets/images/blueRedOmbre.jpg
+    - assets/images/pinkOmbre.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
@@ -64,11 +65,19 @@ flutter:
   fonts:
     - family: Comfortaa
       fonts:
+        - asset: assets/fonts/comfortaa/Comfortaa-Light.ttf
+
+    - family: myriad-pro-light
+      fonts: 
+        - asset: assets/fonts/myriad-pro/myriadpro-light.otf
+
+    - family: myriad-pro-bold
+      fonts:
+        - asset: assets/fonts/myriad-pro/MyriadPro-Bold.otf
         # - asset: assets/fonts/comfortaa/Comfortaa-Bold.ttf
         #   style: bold
         # - asset: assets/fonts/comfortaa/Comfortaa-Regular.ttf
         #   style: regular
-        - asset: assets/fonts/comfortaa/Comfortaa-Light.ttf
         #  style: light
   #       - asset: fonts/Schyler-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf

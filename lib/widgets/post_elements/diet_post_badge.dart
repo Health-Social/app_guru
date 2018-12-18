@@ -9,16 +9,18 @@ class RecipeBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 40,
-        width: 65,
+        height: 50,
+        width: 50,
         child: Center(
-            child: Text('recipe',
-                style: TextStyle(
-                    fontWeight: FontWeight.w700, color: Colors.teal[300]))),
+            child: Icon(
+          Icons.local_dining,
+          color: Colors.teal[300],
+          size: 30,
+        )),
         decoration: BoxDecoration(
             border: Border.all(width: 3.5, color: Colors.teal[300]),
-            borderRadius: BorderRadius.circular(20.0),
-            color: Colors.teal[50]));
+            borderRadius: BorderRadius.circular(25.0),
+            color: Colors.white70));
   }
 }
 
@@ -181,7 +183,7 @@ class _RecipeSubBarState extends State<RecipeSubBar> {
                         color: Colors.black,
                         fontWeight: FontWeight.w700)),
                 SizedBox(width: 2),
-                Icon(Icons.local_dining, color: Colors.black),
+                Icon(Icons.hourglass_empty, color: Colors.black),
               ],
             ),
             decoration: BoxDecoration(
@@ -209,7 +211,7 @@ class _RecipeSubBarState extends State<RecipeSubBar> {
                         color: Colors.grey,
                         fontWeight: FontWeight.w700)),
                 SizedBox(width: 2),
-                Icon(Icons.local_dining, color: Colors.grey),
+                Icon(Icons.hourglass_empty, color: Colors.grey),
               ],
             ),
             decoration: BoxDecoration(

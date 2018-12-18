@@ -43,21 +43,21 @@ class WorkoutPostHomePage extends StatelessWidget {
                 child: WorkoutBadge()),
           ],
         ),
-        SizedBox(height: 15),
-        Container(
-          height: 50,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-          WorkoutBadge1(),
-          SizedBox(width: 30),
-          WorkoutBadge2(),
-          SizedBox(width: 30),
-          WorkoutBadge3(),
-        ],
-        ),
-        ),
-        
+        WorkoutSubBar(_post) 
+        // SizedBox(height: 15),
+        // Container(
+        //   height: 50,
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.center,
+        //     children: <Widget>[
+        //       WorkoutBadge1(),
+        //       SizedBox(width: 30),
+        //       WorkoutBadge2(),
+        //       SizedBox(width: 30),
+        //       WorkoutBadge3(),
+        //     ],
+        //   ),
+        // ),
       ],
     );
   }
