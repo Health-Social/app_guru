@@ -20,7 +20,7 @@ class WorkoutBadge extends StatelessWidget {
         decoration: BoxDecoration(
             border: Border.all(width: 3.5, color: Colors.lightBlue[900]),
             borderRadius: BorderRadius.circular(25.0),
-            color: Colors.white70));
+            color: Colors.white10));
   }
 }
 
@@ -223,36 +223,36 @@ class _WorkoutSubBarState extends State<WorkoutSubBar> {
   }
 
 // show brief: Benefits - Ingredients - Recipe
-  Widget _showMore() {
-    Widget _cancleState(showMore) {
-      return GestureDetector(
-        onTap: () {
-          setState(() {
-            index = 0;
-          });
-        },
-        child: showMore,
-      );
-    }
+  // Widget _showMore() {
+  //   Widget _cancleState(showMore) {
+  //     return GestureDetector(
+  //       onTap: () {
+  //         setState(() {
+  //           index = 0;
+  //         });
+  //       },
+  //       child: showMore,
+  //     );
+  //   }
 
-    if (index == 1) {
-      List<Widget> widgetBuild =
-          widget._post.benefits.map((name) => Text(name)).toList();
-      Column showMore = Column(children: widgetBuild);
-      return _cancleState(showMore);
-    }
-    if (index == 2) {
-      List<Widget> widgetBuild =
-          widget._post.ingredients.map((name) => Text(name)).toList();
-      Column showMore = Column(children: widgetBuild);
-      return _cancleState(showMore);
-    }
-    if (index == 3) {
-      Text showMore = Text(widget._post.recipe);
-      return _cancleState(showMore);
-    }
-    return Container();
-  }
+  //   if (index == 1) {
+  //     List<Widget> widgetBuild =
+  //         widget._post.benefits.map((name) => Text(name)).toList();
+  //     Column showMore = Column(children: widgetBuild);
+  //     return _cancleState(showMore);
+  //   }
+  //   if (index == 2) {
+  //     List<Widget> widgetBuild =
+  //         widget._post.ingredients.map((name) => Text(name)).toList();
+  //     Column showMore = Column(children: widgetBuild);
+  //     return _cancleState(showMore);
+  //   }
+  //   if (index == 3) {
+  //     Text showMore = Text(widget._post.recipe);
+  //     return _cancleState(showMore);
+  //   }
+  //   return Container();
+  // }
 
   @override
   Widget build(BuildContext context) {
