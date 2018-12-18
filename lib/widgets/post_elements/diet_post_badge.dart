@@ -20,7 +20,7 @@ class RecipeBadge extends StatelessWidget {
         decoration: BoxDecoration(
             border: Border.all(width: 3.5, color: Colors.teal[300]),
             borderRadius: BorderRadius.circular(25.0),
-            color: Colors.white12));
+            color: Colors.white30));
   }
 }
 

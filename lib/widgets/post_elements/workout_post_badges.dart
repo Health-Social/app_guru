@@ -20,7 +20,7 @@ class WorkoutBadge extends StatelessWidget {
         decoration: BoxDecoration(
             border: Border.all(width: 3.5, color: Colors.lightBlue[900]),
             borderRadius: BorderRadius.circular(25.0),
-            color: Colors.white10));
+            color: Colors.white30));
   }
 }
 
