@@ -14,7 +14,7 @@ class _UploadPageState extends State<UploadPage> with TickerProviderStateMixin {
   @override
   void initState() {
     _controller =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 200));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
     super.initState();
   }
 

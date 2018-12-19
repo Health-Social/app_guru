@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class PostDescription extends StatefulWidget {
   final String description;
 
@@ -12,8 +11,9 @@ class PostDescription extends StatefulWidget {
   }
 }
 
-class PostDescriptionState extends State<PostDescription> {
+class PostDescriptionState extends State<PostDescription>  {
   bool _fullPost = false;
+
 
   String _longDescription() {
     if (widget.description.length > 70) {
