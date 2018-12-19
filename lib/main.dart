@@ -44,7 +44,7 @@ ImagePost _imagePost = ImagePost(
     imagePath: 'dummy image path',
     imageUrl: 'assets/images/background2.jpg',
     hasViewed: false,
-    isFavourite: false);
+    isFavourite: false); 
 
 // Dummy Post
 DietPost _dietPost = DietPost(
