@@ -14,7 +14,6 @@ class DietPostHomePage extends StatelessWidget {
 
   DietPostHomePage(this._post);
 
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -47,5 +46,3 @@ class DietPostHomePage extends StatelessWidget {
     );
   }
 }
-
-

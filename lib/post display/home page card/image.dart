@@ -23,7 +23,8 @@ class ImagePostHomePage extends StatelessWidget {
               // Image
               child: Image.asset(_post.imageUrl),
               decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white, width: 1.5)),
+                border: Border.all(color: Colors.white, width: 1.5),
+              ),
             ),
             Container(
                 // Profile Picture

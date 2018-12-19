@@ -1,48 +1,71 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/animation.dart';
 
-class UploadPage extends StatelessWidget {
+class UploadPage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _UploadPageState();
+  }
+}
+
+class _UploadPageState extends State<UploadPage> with TickerProviderStateMixin {
+  AnimationController _controller;
+
+  @override
+  void initState() {
+    _controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 200));
+    super.initState();
+  }
+
   Widget _card(String text, IconData icon,
       {Color colour,
       Image image /*if implement background image*/} /*add navigator path*/) {
     // Widget that builds the cards displayed
-    return GestureDetector(
-      onTap: () {
-        // navigate
-      },
-      onDoubleTap: () {
-        //
-      },
-      onLongPress: () {
-        // change colour
-      },
-      child: Card(
-        color: colour,
-        margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-        elevation: 20,
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
-        child: Container(
-          height: 190,
-          width: 130,
+    return ScaleTransition(
+      scale: CurvedAnimation(
+        parent: _controller,
+        curve: Interval(0.0, 1.0, curve: Curves.easeOut),
+      ),
+      child: GestureDetector(
+        onTap: () {
+          // navigate
+        },
+        onDoubleTap: () {
           //
-          // decoration: BoxDecoration(
-          //   border: Border.all(color: colour),
-          //   borderRadius: BorderRadius.circular(12.0),
-          // ),
-          //
-          child: Column(
-            children: <Widget>[
-              Expanded(child: Container()),
-              Center(child: Icon(icon, size: 100, color: Colors.white)),
-              SizedBox(height: 8),
-              Text(text,
-                  style: TextStyle(
-                      fontFamily: 'myriad-pro-light',
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                      fontSize: 20)),
-              SizedBox(height: 20),
-            ],
+        },
+        onLongPress: () {
+          // change colour
+        },
+        child: Card(
+          color: colour,
+          margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+          elevation: 20,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
+          child: Container(
+            height: 190,
+            width: 130,
+            //
+            // decoration: BoxDecoration(
+            //   border: Border.all(color: colour),
+            //   borderRadius: BorderRadius.circular(12.0),
+            // ),
+            //
+            child: Column(
+              children: <Widget>[
+                Expanded(child: Container()),
+                Center(child: Icon(icon, size: 100, color: Colors.white)),
+                SizedBox(height: 8),
+                Text(text,
+                    style: TextStyle(
+                        fontFamily: 'myriad-pro-light',
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white,
+                        fontSize: 20)),
+                SizedBox(height: 20),
+              ],
+            ),
           ),
         ),
       ),
@@ -51,6 +74,7 @@ class UploadPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    _controller.forward();
     return Scaffold(
         body: ListView(
       children: <Widget>[
