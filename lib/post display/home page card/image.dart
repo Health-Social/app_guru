@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 import '../../post types/image_post.dart';
 
@@ -24,6 +25,7 @@ class ImagePostHomePage extends StatelessWidget {
               child: Image.asset(_post.imageUrl),
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.white, width: 1.5),
+                borderRadius: BorderRadius.circular(15),
               ),
             ),
             Container(
