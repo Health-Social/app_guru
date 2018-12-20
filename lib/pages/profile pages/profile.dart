@@ -117,7 +117,6 @@ class _ProfilePageState extends State<ProfilePage>
             fontSize: 40));
   }
 
-
   Widget _buttonFilterRow() {
     // row of buttons to filter for the types of posts
     return Row(children: <Widget>[
@@ -141,7 +140,10 @@ class _ProfilePageState extends State<ProfilePage>
                   color: Colors.black26,
                   borderRadius: BorderRadius.circular(10),
                 )
-              : null,
+              : BoxDecoration(
+                  color: Color(0xFFECEFF1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
           child: Icon(
             Icons.terrain,
             size: 30,
@@ -169,7 +171,10 @@ class _ProfilePageState extends State<ProfilePage>
                   color: Colors.black26,
                   borderRadius: BorderRadius.circular(10),
                 )
-              : null,
+              : BoxDecoration(
+                  color: Color(0xFFECEFF1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
           child: Icon(
             Icons.text_format,
             size: 30,
@@ -197,7 +202,10 @@ class _ProfilePageState extends State<ProfilePage>
                   color: Colors.black26,
                   borderRadius: BorderRadius.circular(10),
                 )
-              : null,
+              : BoxDecoration(
+                  color: Color(0xFFECEFF1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
           child: Icon(
             Icons.local_dining,
             size: 30,
@@ -225,7 +233,10 @@ class _ProfilePageState extends State<ProfilePage>
                   color: Colors.black26,
                   borderRadius: BorderRadius.circular(10),
                 )
-              : null,
+              : BoxDecoration(
+                  color: Color(0xFFECEFF1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
           child: Icon(
             Icons.fitness_center,
             size: 30,
@@ -253,7 +264,10 @@ class _ProfilePageState extends State<ProfilePage>
                   color: Colors.black26,
                   borderRadius: BorderRadius.circular(10),
                 )
-              : null,
+              : BoxDecoration(
+                  color: Color(0xFFECEFF1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
           child: Icon(
             Icons.all_inclusive,
             size: 30,
@@ -267,50 +281,29 @@ class _ProfilePageState extends State<ProfilePage>
   @override
   Widget build(BuildContext context) {
     return ListView(children: <Widget>[
-     Row(
+      Row(
         children: <Widget>[
-          Column(children: <Widget>[
-            Row(
-              children: <Widget>[
-                Container(
-                    // profile picture
-                    child: _profilePicSquare(widget._user.userProfilePicture)),
-                Column(
-                  children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        _userName(widget._user.userName),
-                      ],
-                    ),
-                    SizedBox(height: 10),
-                    Row(
-                      children: <Widget>[
-                        Text('@ZachWolpe'),
-                        SizedBox(width: 10),
-                      ],
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            Row(
-              children: <Widget>[
-                SizedBox(width: 15),
-              ],
-            ),
-          ]),
-          // SizedBox(width: 45),
-          // _userStats(),
+          Container(
+              // profile picture
+              child: _profilePicSquare(widget._user.userProfilePicture)),
+          Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  SizedBox(width: 20),
+                  _userName(widget._user.userName),
+                ],
+              ),
+              SizedBox(height: 10),
+              Text('@ZachWolpe'),
+            ],
+          ),
         ],
       ),
       SizedBox(height: 10),
       Row(
-        children: <Widget>[
-          SizedBox(width: 40),
-          _userStats(),
-          Container(child: _fullBioButton())
-        ],
-      ), // storing some of the same info twice, better to pull info (like profile picture) to post than to store it in a post. That way it also dynamically updates
+        children: <Widget>[SizedBox(width: 40), _userStats(), _fullBioButton()],
+      ),
       Divider(color: Colors.grey),
       _buttonFilterRow(),
       Divider(color: Colors.grey),

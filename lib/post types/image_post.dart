@@ -17,7 +17,7 @@ class ImagePost {
   // location
   // usercomments
   // share each others posts???
-  final bool isFavourite;
+  final Map<String, int> rating;
   final bool hasViewed;
 
   ImagePost({
@@ -31,7 +31,7 @@ class ImagePost {
     @required this.title,
     @required this.description,
     @required this.tag,
-    this.isFavourite = false,
+    this.rating,
     this.hasViewed = false
   });
 }
