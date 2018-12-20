@@ -17,7 +17,10 @@ class ProfilePage extends StatefulWidget {
   _ProfilePageState createState() => _ProfilePageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfilePageState extends State<ProfilePage>
+    with TickerProviderStateMixin {
+  int _currentIndex; // consistantly index from 0
+
   Widget _fullBioButton() {
     // Full Bio Button
     return FlatButton(
@@ -29,14 +32,14 @@ class _ProfilePageState extends State<ProfilePage> {
       },
       child: Container(
         padding: EdgeInsets.all(10.0),
-        child: Text('FULL BIO',
+        child: Text('BIOGRAPHY',
             style: TextStyle(
                 fontFamily: 'Comfortaa',
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w900,
                 color: Colors.white)),
         decoration: BoxDecoration(
-            color: Colors.deepOrangeAccent,
-            border: Border.all(color: Colors.blue, width: 1.5),
+            color: Colors.cyan[600],
+            border: Border.all(color: Colors.cyanAccent[400], width: 2.5),
             borderRadius: BorderRadius.circular(7.0)),
       ),
     );
@@ -60,7 +63,6 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
     );
   }
-
 
   Widget _userStats() {
     // the numbers & text of followers/following/posts
@@ -107,77 +109,211 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 
-    Widget _buttonFilterRow() {
-    // row of buttons to filter for the types of posts
-    return Column(
-      children: <Widget>[
-        Row(children: <Widget>[
-          Expanded(child: 
-          GestureDetector(
-            onTap: () {},
-            child: Icon(Icons.all_inclusive, size: 30),
-          )),
-          Divider(),
-          Expanded(child: 
-          GestureDetector(
-            onTap: () {},
-            child: Icon(Icons.terrain, size: 30),
-          )),
-          Divider(),
-          Expanded(child: 
-          GestureDetector(
-            onTap: () {},
-            child: Icon(Icons.hdr_strong, size: 30),
-          )),
-          Divider(),
-          Expanded(child: 
-          GestureDetector(
-            onTap: () {},
-            child: Icon(Icons.import_contacts, size: 30),
-          )),
-        ]),
-        Divider(color: Colors.grey)
-      ],
-    );
+  Widget _userName(String name) {
+    return Text(name,
+        style: TextStyle(
+            fontFamily: 'myriad-pro-light',
+            fontWeight: FontWeight.w900,
+            fontSize: 40));
   }
 
+
+  Widget _buttonFilterRow() {
+    // row of buttons to filter for the types of posts
+    return Row(children: <Widget>[
+      Expanded(
+          // image filter
+          // index = 0
+          child: GestureDetector(
+        onTap: () {
+          setState(() {
+            if (_currentIndex == 0) {
+              _currentIndex = null;
+            } else {
+              _currentIndex = 0;
+              // filter for image posts
+            }
+          });
+        },
+        child: Container(
+          decoration: _currentIndex == 0
+              ? BoxDecoration(
+                  color: Colors.black26,
+                  borderRadius: BorderRadius.circular(10),
+                )
+              : null,
+          child: Icon(
+            Icons.terrain,
+            size: 30,
+            color: _currentIndex == 0 ? Colors.white : null,
+          ),
+        ),
+      )),
+      Expanded(
+          // text filter
+          // index = 1
+          child: GestureDetector(
+        onTap: () {
+          setState(() {
+            if (_currentIndex == 1) {
+              _currentIndex = null;
+            } else {
+              _currentIndex = 1;
+              // filter for image posts
+            }
+          });
+        },
+        child: Container(
+          decoration: _currentIndex == 1
+              ? BoxDecoration(
+                  color: Colors.black26,
+                  borderRadius: BorderRadius.circular(10),
+                )
+              : null,
+          child: Icon(
+            Icons.text_format,
+            size: 30,
+            color: _currentIndex == 1 ? Colors.white : null,
+          ),
+        ),
+      )),
+      Expanded(
+          // diet filter
+          // index = 2
+          child: GestureDetector(
+        onTap: () {
+          setState(() {
+            if (_currentIndex == 2) {
+              _currentIndex = null;
+            } else {
+              _currentIndex = 2;
+              // filter for image posts
+            }
+          });
+        },
+        child: Container(
+          decoration: _currentIndex == 2
+              ? BoxDecoration(
+                  color: Colors.black26,
+                  borderRadius: BorderRadius.circular(10),
+                )
+              : null,
+          child: Icon(
+            Icons.local_dining,
+            size: 30,
+            color: _currentIndex == 2 ? Colors.white : null,
+          ),
+        ),
+      )),
+      Expanded(
+          // workout filter
+          // index = 3
+          child: GestureDetector(
+        onTap: () {
+          setState(() {
+            if (_currentIndex == 3) {
+              _currentIndex = null;
+            } else {
+              _currentIndex = 3;
+              // filter for image posts
+            }
+          });
+        },
+        child: Container(
+          decoration: _currentIndex == 3
+              ? BoxDecoration(
+                  color: Colors.black26,
+                  borderRadius: BorderRadius.circular(10),
+                )
+              : null,
+          child: Icon(
+            Icons.fitness_center,
+            size: 30,
+            color: _currentIndex == 3 ? Colors.white : null,
+          ),
+        ),
+      )),
+      Expanded(
+          // 'run' filter
+          // index = 4
+          child: GestureDetector(
+        onTap: () {
+          setState(() {
+            if (_currentIndex == 4) {
+              _currentIndex = null;
+            } else {
+              _currentIndex = 4;
+              // filter for image posts
+            }
+          });
+        },
+        child: Container(
+          decoration: _currentIndex == 4
+              ? BoxDecoration(
+                  color: Colors.black26,
+                  borderRadius: BorderRadius.circular(10),
+                )
+              : null,
+          child: Icon(
+            Icons.all_inclusive,
+            size: 30,
+            color: _currentIndex == 4 ? Colors.white : null,
+          ),
+        ),
+      )),
+    ]);
+  }
 
   @override
   Widget build(BuildContext context) {
     return ListView(children: <Widget>[
-      Row(
+     Row(
         children: <Widget>[
           Column(children: <Widget>[
-            Container(
-                // profile picture
-                child: _profilePicSquare(widget._user.userProfilePicture)),
+            Row(
+              children: <Widget>[
+                Container(
+                    // profile picture
+                    child: _profilePicSquare(widget._user.userProfilePicture)),
+                Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        _userName(widget._user.userName),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: <Widget>[
+                        Text('@ZachWolpe'),
+                        SizedBox(width: 10),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
             Row(
               children: <Widget>[
                 SizedBox(width: 15),
-                Text(widget._user.userName,
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Comfortaa')),
-                 SizedBox(width: 8),
-                _verifiedBadge()
               ],
             ),
           ]),
-          SizedBox(width: 45),
-          _userStats(),
+          // SizedBox(width: 45),
+          // _userStats(),
         ],
       ),
       SizedBox(height: 10),
       Row(
         children: <Widget>[
-          SizedBox(width: 12),
-          Container(child: Expanded(child: Text(widget._user.userBio))),
+          SizedBox(width: 40),
+          _userStats(),
           Container(child: _fullBioButton())
         ],
       ), // storing some of the same info twice, better to pull info (like profile picture) to post than to store it in a post. That way it also dynamically updates
       Divider(color: Colors.grey),
       _buttonFilterRow(),
+      Divider(color: Colors.grey),
     ]);
   }
 }

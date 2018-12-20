@@ -44,7 +44,7 @@ ImagePost _imagePost = ImagePost(
     imagePath: 'dummy image path',
     imageUrl: 'assets/images/background2.jpg',
     hasViewed: false,
-    isFavourite: false); 
+    isFavourite: false);
 
 // Dummy Post
 DietPost _dietPost = DietPost(
@@ -142,21 +142,28 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
+  Widget _appBarOptional() {
+    // when to not show appBar
+    if (_currentIndex == 2 || _currentIndex == 4) {
+      return null;
+    } else {
+      return AppBar(
+          backgroundColor: Colors.white70,
+          title: Text('Health Social',
+              style: TextStyle(
+                  color: Colors.black,
+                  fontFamily: 'Comfortaa',
+                  fontSize: 20.0)));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'health social',
       home: Scaffold(
         backgroundColor: Color(0xFFECEFF1),
-        appBar: _currentIndex != 2
-          ? AppBar(
-            backgroundColor: Colors.white70,
-            title: Text('Health Social',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: 'Comfortaa',
-                    fontSize: 20.0)))
-          : null,
+        appBar: _appBarOptional(),
         body: _pageShown(),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
