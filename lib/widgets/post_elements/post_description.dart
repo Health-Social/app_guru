@@ -11,14 +11,14 @@ class PostDescription extends StatefulWidget {
   }
 }
 
-class PostDescriptionState extends State<PostDescription>  {
+class PostDescriptionState extends State<PostDescription> with TickerProviderStateMixin {
   bool _fullPost = false;
 
 
   String _longDescription() {
     if (widget.description.length > 70) {
       if (_fullPost == false) {
-        return widget.description.substring(0, 70) + ' ... (more)';
+        return  widget.description.substring(0, 70) + ' ... (more)';
       } else {
         return widget.description;
       }
@@ -38,7 +38,6 @@ class PostDescriptionState extends State<PostDescription>  {
       child: Container(
         padding: EdgeInsets.all(15.0),
         child: Text(_longDescription()),
-      ),
-    );
+     ), );
   }
 }

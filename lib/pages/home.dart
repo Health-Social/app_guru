@@ -39,8 +39,9 @@ class HomePage extends StatefulWidget {
     // navigate to full post page
     
     if (widget._posts[index] is ImagePost) {
-      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>
-        ImagePostFull(widget._posts[index])
+      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
+        return  ImagePostFull(widget._posts[index]);
+      }
       ));}
 
     if (widget._posts[index] is TextPost) {
