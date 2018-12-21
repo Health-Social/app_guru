@@ -280,6 +280,181 @@ class _WorkoutSubBarState extends State<WorkoutSubBar> {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// 3 Key Metrics BAR
+
+class KeyMetricsBar extends StatefulWidget {
+  final WorkoutPost _post;
+
+  KeyMetricsBar(this._post);
+
+  _KeyMetricsBarState createState() => _KeyMetricsBarState();
+}
+
+class _KeyMetricsBarState extends State<KeyMetricsBar> {
+
+
+  Widget typeCircle(IconData icon, String text) {
+    // type circle stat
+    return GestureDetector(
+      onTap: () {
+        // enlarge
+      },
+      onLongPress: () {
+        // enlarge
+      },
+      child: Column(
+        children: <Widget>[
+          Container(
+            height: 65,
+            width: 65,
+            decoration: BoxDecoration(
+                border: Border.all(width: 1.8, color: Colors.cyanAccent[400]),
+                borderRadius: BorderRadius.circular(32.5),
+                color: Colors.blue[100]),
+            child: Container(
+                height: 60,
+                width: 60,
+                child: Center(
+                  child: Icon(icon, size: 30, color: Colors.lightBlue[800]),
+                ),
+                decoration: BoxDecoration(
+                    border:
+                        Border.all(width: 2.5, color: Colors.lightBlue[600]),
+                    borderRadius: BorderRadius.circular(30.0),
+                    color: Colors.blue[50])),
+          ),
+          SizedBox(height: 2),
+          Text(
+            text,
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.lightBlue[800],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget levelCircle(String level, String text) {
+    // level circle stat
+    return GestureDetector(
+      onTap: () {
+        // enlarge
+      },
+      onLongPress: () {
+        // enlarge
+      },
+      child: Column(
+        children: <Widget>[
+          Container(
+            height: 65,
+            width: 65,
+            decoration: BoxDecoration(
+                border: Border.all(width: 1.8, color: Colors.cyanAccent[400]),
+                borderRadius: BorderRadius.circular(32.5),
+                color: Colors.blue[100]),
+            child: Container(
+                height: 60,
+                width: 60,
+                child: Center(
+                  child: Text(
+                    level,
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.lightBlue[800],
+                    ),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                    border:
+                        Border.all(width: 2.5, color: Colors.lightBlue[600]),
+                    borderRadius: BorderRadius.circular(30.0),
+                    color: Colors.blue[50])),
+          ),
+          SizedBox(height: 2),
+          Text(
+            text,
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.lightBlue[800],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget timeCircle(int time, String text) {
+    // time circle stat
+    return GestureDetector(
+      onTap: () {
+        // enlarge
+      },
+      onLongPress: () {
+        // enlarge
+      },
+      child: Column(
+        children: <Widget>[
+          Container(
+            height: 65,
+            width: 65,
+            decoration: BoxDecoration(
+                border: Border.all(width: 1.8, color: Colors.cyanAccent[400]),
+                borderRadius: BorderRadius.circular(32.5),
+                color: Colors.blue[100]),
+            child: Container(
+                height: 60,
+                width: 60,
+                child: Center(
+                  child: Text(
+                    time.toString(),
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.lightBlue[800],
+                    ),
+                  ),
+                ),
+                decoration: BoxDecoration(
+                    border:
+                        Border.all(width: 2.5, color: Colors.lightBlue[600]),
+                    borderRadius: BorderRadius.circular(30.0),
+                    color: Colors.blue[50])),
+          ),
+          SizedBox(height: 2),
+          Text(
+            text,
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.lightBlue[800],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          typeCircle(Icons.fitness_center, 'sport'),
+          SizedBox(width: 25),
+          levelCircle('PRO', 'level'),
+          SizedBox(width: 25),
+          timeCircle(25, 'minutes'),
+        ],
+      ),
+    );
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // Recipe Tags
 
 class WorkoutBadge1 extends StatelessWidget {

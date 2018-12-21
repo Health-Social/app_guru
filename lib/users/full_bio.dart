@@ -7,4 +7,4 @@ FullBio({
   @required this.title
 });
   
-}
+} 

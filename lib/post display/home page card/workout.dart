@@ -19,45 +19,43 @@ class WorkoutPostHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      //crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Stack(
-          children: <Widget>[
-            Container(
-                // Image
-                child: Image.asset(_post.imageUrl),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white, width: 1.5))),
-            Container(
-                // Profile Picture
-                alignment: Alignment.topLeft,
-                child: ProfilePicCircle(_post.userDetails.userProfilePicture)),
-            Container(
-                // title
-                margin: EdgeInsets.only(top: 15.0, right: 15.0),
-                alignment: Alignment.topRight,
-                child: PostTitle(_post.title)),
-            Positioned(
-                // Badge
-                bottom: 5,
-                right: 15,
-                child: WorkoutBadge()),
-          ],
-        ),
-        WorkoutSubBar(_post) 
-        // SizedBox(height: 15),
-        // Container(
-        //   height: 50,
-        //   child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     children: <Widget>[
-        //       WorkoutBadge1(),
-        //       SizedBox(width: 30),
-        //       WorkoutBadge2(),
-        //       SizedBox(width: 30),
-        //       WorkoutBadge3(),
-        //     ],
-        //   ),
+       Image.asset(_post.imageUrl, fit: BoxFit.cover),
+        
+        // Stack(
+        //   children: <Widget>[
+        //     Container(
+        //         // Image
+        //        // child: Image.asset(_post.imageUrl),
+        //         decoration: BoxDecoration(
+        //           border: Border.all(color: Colors.white, width: 1.5),
+        //           image: DecorationImage(
+        //             image: AssetImage(_post.imageUrl),
+        //           )
+        //         )),
+        //      Positioned(
+        //        top: 10,
+        //        right: 10,
+        //        child: Container(
+        //         // Profile Picture
+        //         child: ProfilePicCircle(_post.userDetails.userProfilePicture)),),
+        //     // Container(
+        //     //     // title
+        //     //     margin: EdgeInsets.only(top: 15.0, right: 15.0),
+        //     //     alignment: Alignment.topRight,
+        //     //     child: PostTitle(_post.title)),
+        //     // Positioned(
+        //     //     // Badge
+        //     //     bottom: 5,
+        //     //     right: 15,
+        //     //     child: WorkoutBadge()),
+        //   ],
         // ),
+         SizedBox(height: 5),
+        KeyMetricsBar(_post),
+        SizedBox(height: 5),
+       // WorkoutSubBar(_post),
       ],
     );
   }
