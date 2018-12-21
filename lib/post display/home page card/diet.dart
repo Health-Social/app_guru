@@ -21,10 +21,18 @@ class DietPostHomePage extends StatelessWidget {
         Stack(
           children: <Widget>[
             Container(
-                // Image
-                child: Image.asset(_post.imageUrl),
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white, width: 1.5))),
+              child: Image(
+                  image: AssetImage(
+                    _post.imageUrl,
+                  ),
+                  color: Colors.transparent),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage(_post.imageUrl),
+                  )),
+            ),
             Container(
                 // Profile Picture
                 alignment: Alignment.topLeft,

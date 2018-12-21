@@ -22,10 +22,12 @@ class ImagePostHomePage extends StatelessWidget {
           children: <Widget>[
             Container(
               // Image
-              child: Image.asset(_post.imageUrl),
+              child: Image(image: AssetImage(_post.imageUrl), color: Colors.transparent),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.white, width: 1.5),
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
+                image: DecorationImage(
+                  image: AssetImage(_post.imageUrl)
+                ),
               ),
             ),
             Container(

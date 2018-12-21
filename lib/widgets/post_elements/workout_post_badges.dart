@@ -305,8 +305,8 @@ class _KeyMetricsBarState extends State<KeyMetricsBar> {
       child: Column(
         children: <Widget>[
           Container(
-            height: 65,
-            width: 65,
+            height: 50,
+            width: 50,
             decoration: BoxDecoration(
                 border: Border.all(width: 1.8, color: Colors.cyanAccent[400]),
                 borderRadius: BorderRadius.circular(32.5),
@@ -348,8 +348,8 @@ class _KeyMetricsBarState extends State<KeyMetricsBar> {
       child: Column(
         children: <Widget>[
           Container(
-            height: 65,
-            width: 65,
+            height: 60,
+            width: 60,
             decoration: BoxDecoration(
                 border: Border.all(width: 1.8, color: Colors.cyanAccent[400]),
                 borderRadius: BorderRadius.circular(32.5),
@@ -397,8 +397,8 @@ class _KeyMetricsBarState extends State<KeyMetricsBar> {
       child: Column(
         children: <Widget>[
           Container(
-            height: 65,
-            width: 65,
+            height: 50,
+            width: 50,
             decoration: BoxDecoration(
                 border: Border.all(width: 1.8, color: Colors.cyanAccent[400]),
                 borderRadius: BorderRadius.circular(32.5),
@@ -445,7 +445,7 @@ class _KeyMetricsBarState extends State<KeyMetricsBar> {
           SizedBox(width: 25),
           levelCircle('PRO', 'level'),
           SizedBox(width: 25),
-          timeCircle(25, 'minutes'),
+          timeCircle(90, 'minutes'),
         ],
       ),
     );
@@ -454,6 +454,7 @@ class _KeyMetricsBarState extends State<KeyMetricsBar> {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 // Recipe Tags
 

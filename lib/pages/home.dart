@@ -8,6 +8,7 @@ import '../post types/image_post.dart';
 import '../post display/full post card/image.dart';
 import '../post display/full post card/diet.dart';
 import '../post display/full post card/text.dart';
+import '../post display/full post card/workout.dart';
 
 // Import Post Types
 import './../post types/image_post.dart';
@@ -56,7 +57,7 @@ class HomePage extends StatefulWidget {
 
     if (widget._posts[index] is WorkoutPost) {
       Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>
-        null // Workout full page
+         WorkoutPostFull(widget._posts[index])
       ));}
   }
 
@@ -81,7 +82,7 @@ class HomePage extends StatefulWidget {
     } else if (widget._posts[index]  is DietPost) {
       return DietPostHomePage(widget._posts[index]);
     } else if (widget._posts[index] is WorkoutPost) {
-      return WorkoutPostHomePage(widget._posts[index]);
+      return WorkoutPostHomePage(widget._posts[index], index);
     } else if (widget._posts[index] is TextPost) {
       return TextPostHomePage(widget._posts[index]);
     } else {

@@ -50,6 +50,7 @@ flutter:
     - assets/images/profileDiCaprio.jpg
     - assets/images/blueRedOmbre.jpg
     - assets/images/pinkOmbre.png
+    - assets/images/football.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
