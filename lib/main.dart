@@ -149,7 +149,7 @@ class _MyAppState extends State<MyApp> {
     } else {
       return AppBar(
           backgroundColor: Colors.white70,
-          title: Text('Health Social',
+          title: Text('Cheese Cake',
               style: TextStyle(
                   color: Colors.black,
                   fontFamily: 'Comfortaa',
@@ -160,7 +160,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'health social',
+      title: 'Cheese Cake',
       home: Scaffold(
         backgroundColor: Color(0xFFECEFF1),
         appBar: _appBarOptional(),
