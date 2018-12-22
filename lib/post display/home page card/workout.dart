@@ -5,9 +5,7 @@ import 'package:flutter_rating/flutter_rating.dart';
 import '../../post types/workout_post.dart';
 
 // Import Widgets
-import '../../widgets/post_elements/post_title.dart';
 import '../../widgets/post_elements/profile_pic_circle.dart';
-import '../../widgets/post_elements/workout_post_badges.dart';
 
 // DESCRIPTION:
 // Workout Post Card
@@ -15,6 +13,7 @@ import '../../widgets/post_elements/workout_post_badges.dart';
 class WorkoutPostHomePage extends StatefulWidget {
   final WorkoutPost _post;
   final int _index;
+  
 
   WorkoutPostHomePage(this._post, this._index);
 
@@ -25,9 +24,10 @@ class WorkoutPostHomePage extends StatefulWidget {
 }
 
 class _WorkoutProstHomePageState extends State<WorkoutPostHomePage> {
-  double _rating = 3.5;
+  double _rating = 0;
 
   Widget _userRating() {
+    // display the users vote
     return StarRating(
       starCount: 5,
       size: 40,
@@ -36,6 +36,7 @@ class _WorkoutProstHomePageState extends State<WorkoutPostHomePage> {
       color: Colors.grey[900],
       onRatingChanged: (rating) {
         setState(() {
+          // update post to include new vote ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! !
           this._rating = rating;
         });
       },
@@ -43,18 +44,34 @@ class _WorkoutProstHomePageState extends State<WorkoutPostHomePage> {
   }
 
   Widget _averageRating() {
+    // calculate and display the average rating
+    double _voteCount = widget._post.averageRating.length.toDouble();
+    double _cummVote = widget._post.averageRating.values.reduce((sum, element) => sum + element);
+    double _aveVote = _cummVote / _voteCount;
     return StarRating(
       starCount: 5,
       size: 40,
-      rating: 4,
+      rating: _aveVote,
       borderColor: Colors.transparent,
-      color: Colors.cyan[200],
+      color: Colors.lightBlue[600],
       onRatingChanged: (rating) {
         // setState(() {
         //   this._rating = rating;
         // });
       },
     );
+  }
+
+  String _voteCountString() {
+    // return a String indicating how many people have voted
+    int _vote = widget._post.averageRating.length;
+    if (_vote == 1) {
+      return _vote.toString() + ' vote';
+    } else if (_vote > 1) {
+      return _vote.toString() + ' votes';
+    } else {
+      return '';
+    }
   }
 
   @override
@@ -90,7 +107,7 @@ class _WorkoutProstHomePageState extends State<WorkoutPostHomePage> {
               bottom: 3,
               right: 12,
               child: Text(
-                '4754 votes',
+                _voteCountString(),
                 style: TextStyle(fontSize: 10, fontWeight: FontWeight.w700),
               ),
             )

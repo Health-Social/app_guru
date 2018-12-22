@@ -80,7 +80,7 @@ WorkoutPost _workoutPost = WorkoutPost(
     imagePath: 'dummy image path',
     imageUrl: 'assets/images/football.jpg',
     hasViewed: false,
-    isFavourite: false);
+    averageRating: {'zachID': 3.5});
 
 // Dummy Post
 TextPost _textPost = TextPost(

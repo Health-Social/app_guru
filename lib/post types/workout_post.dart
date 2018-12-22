@@ -15,7 +15,7 @@ class WorkoutPost {
   // location;
   // usercomments
   // share each others posts???
-  final bool isFavourite;
+  final Map<String, double> averageRating;
   final bool hasViewed;
 
   WorkoutPost({
@@ -26,7 +26,7 @@ class WorkoutPost {
     @required this.description,
     @required this.tag,
     @required this.bodyTag,
-    this.isFavourite = false,
+    this.averageRating,
     this.hasViewed = false
   });
 }
