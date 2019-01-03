@@ -21,7 +21,6 @@ dependencies:
   cupertino_icons: ^0.1.2
   scoped_model: ^1.0.1
   photo_view: ^0.1.0
-  zoomable_image: ^1.2.1+1
   flutter_rating: ^0.0.2
 
 dev_dependencies:

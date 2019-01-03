@@ -7,30 +7,20 @@ import '../../post types/diet_post.dart';
 import '../../widgets/post_elements/post_title.dart';
 import '../../widgets/post_elements/username_badge.dart';
 import '../../widgets/post_elements/diet_post_badge.dart';
-import '../../widgets/post_elements/image_fade.dart';
 
 class DietPostFull extends StatelessWidget {
   final DietPost _post;
 
   DietPostFull(this._post);
-  
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //     backgroundColor: Colors.white70,
-      //     title: Text(_post.title,
-      //         style: TextStyle(
-      //             color: Colors.black,
-      //             fontFamily: 'Comfortaa',
-      //             fontSize: 20.0))),
       body: ListView(
         children: <Widget>[
           Stack(
             children: <Widget>[
-              Container(child: Image.asset(_post.imageUrl)),
+             Container(child: Image.asset(_post.imageUrl)),
               Container(
                 child: UsernameBadge(_post.userDetails.userName),
               ),
@@ -40,7 +30,11 @@ class DietPostFull extends StatelessWidget {
           Row(
             children: <Widget>[
               Expanded(child: Container()),
-              CaloriesTimeBar(_post.calories, _post.minutes, true,),
+              CaloriesTimeBar(
+                _post.calories,
+                _post.minutes,
+                true,
+              ),
               Expanded(child: Container()),
               // _post.isFavourite == true ?
               //  ? Icon(Icons.favorite, color: Colors.black)
