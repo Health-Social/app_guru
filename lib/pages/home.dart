@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 
 import '../post types/image_post.dart';
 
-
 // Import Full Page
 import '../post display/full post card/image.dart';
 import '../post display/full post card/diet.dart';
@@ -29,57 +28,103 @@ class HomePage extends StatefulWidget {
 
   HomePage(this._posts);
 
-   createState() => _HomePageState();
+  createState() => _HomePageState();
 }
 
+// custom page naviation
+class ScaleRoute extends PageRouteBuilder {
+  final Widget widget;
+  ScaleRoute({this.widget})
+      : super(pageBuilder: (BuildContext context, Animation<double> animation,
+            Animation<double> secondAnimation) {
+          return widget;
+        }, transitionsBuilder: (BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondAnimation,
+            Widget child) {
+          return ScaleTransition(
+            scale: Tween<double>(begin: 0.0, end: 1.0).animate(
+              CurvedAnimation(
+                  parent: animation,
+                  curve: Interval(
+                    0.0,
+                    1.0,
+                    curve: Curves.fastOutSlowIn,
+                  )),
+            ),
+            child: ScaleTransition(
+              scale: Tween<double>(
+                begin: 0,
+                end: 1.0,
+              ).animate(
+                CurvedAnimation(
+                  parent: animation,
+                  curve: Interval(
+                    0.00,
+                    1.00,
+                    curve: Curves.linear,
+                  ),
+                ),
+              ),
+              child: child,
+            ),
+          );
+        });
+}
 
-
- class _HomePageState extends State<HomePage> {
-
+class _HomePageState extends State<HomePage> {
   _navigateToFullPost(BuildContext context, int index) {
     // navigate to full post page
-    
+
     if (widget._posts[index] is ImagePost) {
-      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
-        return  ImagePostFull(widget._posts[index]);
-      }
-      ));}
+      Navigator.push(context,
+          MaterialPageRoute(builder: (BuildContext context) {
+        return ImagePostFull(widget._posts[index]);
+      }));
+    }
 
     if (widget._posts[index] is TextPost) {
-      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>
-        TextPostFull(widget._posts[index])
-      ));}
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) =>
+                  TextPostFull(widget._posts[index])));
+    }
 
     if (widget._posts[index] is DietPost) {
-      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>
-        DietPostFull(widget._posts[index])
-      ));}
+      Navigator.push(
+          context,
+          ScaleRoute(widget: DietPostFull(widget._posts[index]))
+          // MaterialPageRoute(
+          //     builder: (BuildContext context) =>
+          //         DietPostFull(widget._posts[index]))
+                  );
+    }
 
     if (widget._posts[index] is WorkoutPost) {
-      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) =>
-         WorkoutPostFull(widget._posts[index])
-      ));}
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (BuildContext context) =>
+                  WorkoutPostFull(widget._posts[index])));
+    }
   }
 
   Widget _postCard(BuildContext context, int index) {
     // build the post card
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-      child:  _postContainer(context, index),
+      child: _postContainer(context, index),
       elevation: 6.0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12.0)
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
     );
   }
-
-
 
   Widget _postContainer(BuildContext context, int index) {
     // return differnt types of posts
     if (widget._posts[index] is ImagePost) {
-     return ImagePostHomePage(widget._posts[index]);
-    } else if (widget._posts[index]  is DietPost) {
+      return ImagePostHomePage(widget._posts[index]);
+    } else if (widget._posts[index] is DietPost) {
       return DietPostHomePage(widget._posts[index]);
     } else if (widget._posts[index] is WorkoutPost) {
       return WorkoutPostHomePage(widget._posts[index], index);
@@ -87,8 +132,8 @@ class HomePage extends StatefulWidget {
       return TextPostHomePage(widget._posts[index]);
     } else {
       return Text('other post');
-      // other post types 
-    } 
+      // other post types
+    }
   }
 
   _postDisplay(BuildContext context, int index) {
@@ -97,15 +142,15 @@ class HomePage extends StatefulWidget {
       onTap: () {
         _navigateToFullPost(context, index);
       },
+      onLongPress: () {
+        // focus in
+      },
       onDoubleTap: () {
         // implement like post
       },
       child: _postCard(context, index),
     );
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -118,4 +163,3 @@ class HomePage extends StatefulWidget {
     );
   }
 }
-
