@@ -25,7 +25,6 @@ class RecipeBadge extends StatelessWidget {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Benefits - Ingredients - Recipe Button
 
 class RecipeSubBar extends StatefulWidget {
@@ -278,51 +277,89 @@ class _RecipeSubBarState extends State<RecipeSubBar> {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Calories & Time
+
+class CaloriesTimeBar extends StatelessWidget {
+  final double calories;
+  final double minutes;
+  final bool large;
+
+  CaloriesTimeBar(this.calories, this.minutes, this.large);
+ 
+  double _numberSize() {
+    if (large == true) {
+      return 45;
+    } else {
+      return 35;
+    }
+  }
+
+  Widget _calories(String calories) {
+    return Container(
+      padding: EdgeInsets.only(right: 35, top: 4),
+      child: Column(
+        children: <Widget>[
+          Text(
+            calories,
+            style: TextStyle(
+                fontFamily: 'myriad-pro-light',
+                color: Colors.lightBlue[800],
+                fontSize: _numberSize(),
+                fontWeight: FontWeight.w500),
+          ),
+          // SizedBox(height: 2),
+          Text(
+            'calories',
+            style: TextStyle(
+                fontFamily: 'myriad-pro-light',
+                color: Colors.lightBlue[800],
+                fontSize: 16,
+                fontWeight: FontWeight.w500),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _minutes(String minutes) {
+    return Container(
+      padding: EdgeInsets.only(left: 35, top: 4),
+      child: Column(
+        children: <Widget>[
+          Text(
+            minutes,
+            style: TextStyle(
+                fontFamily: 'myriad-pro-light',
+                color: Colors.lightBlue[800],
+                fontSize: _numberSize(),
+                fontWeight: FontWeight.w500),
+          ),
+          Text(
+            'minutes',
+            style: TextStyle(
+                fontFamily: 'myriad-pro-light',
+                color: Colors.lightBlue[800],
+                fontSize: 16,
+                fontWeight: FontWeight.w500),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center, children: [
+      _calories(calories.round().toString()),
+      Container(
+        height: 35,
+        width: 1,
+        color: Colors.lightBlue[800],),
+      _minutes(minutes.round().toString()),
+    ]);
+  }
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class RecipeBadgeCakeSmall extends StatelessWidget {
-  // Cake Tag
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        height: 30,
-        width: 30,
-        child:
-            Center(child: Icon(Icons.cake, size: 20, color: Colors.teal[200])),
-        decoration: BoxDecoration(
-            border: Border.all(width: 1.5, color: Colors.teal[200]),
-            borderRadius: BorderRadius.circular(20.0),
-            color: Colors.teal[50]));
-  }
-}
-
-class RecipeBadgeFastfoodSmall extends StatelessWidget {
-  // Fastfood  Tag
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        height: 30,
-        width: 30,
-        child: Center(
-            child: Icon(Icons.fastfood, size: 20, color: Colors.teal[200])),
-        decoration: BoxDecoration(
-            border: Border.all(width: 1.5, color: Colors.teal[200]),
-            borderRadius: BorderRadius.circular(20.0),
-            color: Colors.teal[50]));
-  }
-}
-
-class RecipeBadgeLocalDiningSmall extends StatelessWidget {
-  // Local Dining Tag
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        height: 30,
-        width: 30,
-        child: Center(child: Icon(Icons.local_dining, color: Colors.teal[200])),
-        decoration: BoxDecoration(
-            border: Border.all(width: 1.5, color: Colors.teal[200]),
-            borderRadius: BorderRadius.circular(20.0),
-            color: Colors.teal[50]));
-  }
-}

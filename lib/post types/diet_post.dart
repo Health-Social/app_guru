@@ -8,6 +8,8 @@ class DietPost {
   final UserDetails userDetails;
   final List<String> benefits;
   final List<String> ingredients;
+  final double calories;
+  final double minutes;
   final String recipe;
   final String imageUrl;
   final String imagePath;
@@ -23,6 +25,8 @@ class DietPost {
 
   DietPost(
       {@required this.userDetails,
+      @required this.calories,
+      @required this.minutes,
       @required this.benefits,
       @required this.ingredients,
       @required this.recipe,

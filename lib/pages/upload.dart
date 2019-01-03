@@ -108,7 +108,7 @@ class _UploadPageState extends State<UploadPage> with TickerProviderStateMixin {
             Row(
               children: <Widget>[
                 Expanded(child: Container()),
-                _card('Image/ video', Icons.image, colour: Colors.blue[600]),
+                _card('Run', Icons.all_inclusive, colour: Colors.blue[600]),
                 //SizedBox(width: 4),
                 _card('Text', Icons.text_fields, colour: Colors.orange[600]),
                 Expanded(child: Container()),
