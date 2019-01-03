@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../../post types/diet_post.dart';
 
 // Import Widgets
-import '../../widgets/post_elements/post_title.dart';
 import '../../widgets/post_elements/username_badge.dart';
 import '../../widgets/post_elements/diet_post_badge.dart';
 import '../../widgets/post_elements/image_fade.dart';
@@ -36,10 +35,11 @@ class DietPostHomePage extends StatelessWidget {
                     image: AssetImage(_post.imageUrl),
                   )),
             ),
-            Container(
-                // UserName
-                alignment: Alignment.topLeft,
-                child: UsernameBadge(_post.userDetails.userName)),
+            Positioned(
+              top: 5,
+              right: 2,
+              child: Container(
+                child: UsernameBadge(_post.userDetails.userName)),),
             Positioned(
               right: 0,
               left: 0,

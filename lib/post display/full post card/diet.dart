@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../../post types/diet_post.dart';
 
 // Import Widgets
-import '../../widgets/post_elements/post_title.dart';
 import '../../widgets/post_elements/username_badge.dart';
 import '../../widgets/post_elements/diet_post_badge.dart';
 

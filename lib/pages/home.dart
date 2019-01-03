@@ -62,7 +62,7 @@ class ScaleRoute extends PageRouteBuilder {
                   curve: Interval(
                     0.00,
                     1.00,
-                    curve: Curves.linear,
+                    curve: Curves.fastOutSlowIn,
                   ),
                 ),
               ),
@@ -94,11 +94,11 @@ class _HomePageState extends State<HomePage> {
     if (widget._posts[index] is DietPost) {
       Navigator.push(
           context,
-          ScaleRoute(widget: DietPostFull(widget._posts[index]))
-          // MaterialPageRoute(
-          //     builder: (BuildContext context) =>
-          //         DietPostFull(widget._posts[index]))
-                  );
+          // custom page change on scale
+          // ScaleRoute(widget: DietPostFull(widget._posts[index]))
+          MaterialPageRoute(
+              builder: (BuildContext context) =>
+                  DietPostFull(widget._posts[index])));
     }
 
     if (widget._posts[index] is WorkoutPost) {
