@@ -81,11 +81,17 @@ class _ViewLikesCommentsState extends State<ViewLikesComments> {
     // the listTile displayed per like or comment
     if (viewLikes) {
       return ListTile(
+        onTap: () {
+          // go to user page
+        },
         title: Text(_post.isFavourite[index]),
       );
     }
     if (viewComments) {
       return ListTile(
+        onTap: () {
+          // go to user page
+        },
         title: Text(_post.comments[index]['comment']),
         subtitle: Text(_post.comments[index]['id']),
       );
@@ -101,7 +107,7 @@ class _ViewLikesCommentsState extends State<ViewLikesComments> {
         child: Card(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            elevation: 30,
+            elevation: 5,
             margin: EdgeInsets.all(12),
             child: ListView.builder(
               itemCount: _post.isFavourite.length,
@@ -109,7 +115,7 @@ class _ViewLikesCommentsState extends State<ViewLikesComments> {
                 return Column(
                   children: <Widget>[
                     _listTile(index),
-                    Divider(color: Colors.blueGrey[200]),
+                    Divider(height:0, indent: 10, color: Colors.blueGrey[100]),
                   ],
                 );
               },

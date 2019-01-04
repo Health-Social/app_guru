@@ -15,8 +15,6 @@ class DietPostHomePage extends StatelessWidget {
 
   DietPostHomePage(this._post);
 
- 
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -39,7 +37,8 @@ class DietPostHomePage extends StatelessWidget {
             Positioned(
               top: 5,
               left: 2,
-              child: UsernameBadge(_post.userDetails.userName),),
+              child: UsernameBadge(_post.userDetails.userName),
+            ),
             Positioned(
               right: 0,
               left: 0,
@@ -57,12 +56,22 @@ class DietPostHomePage extends StatelessWidget {
             // _post.isFavourite == true ?
             //  ? Icon(Icons.favorite, color: Colors.black)
             //  : Container(),
-
-            Icon(Icons.favorite_border, color: Colors.black87, size: 30.0),
-            SizedBox(width: 3.0),
-            Icon(Icons.insert_comment, color: Colors.black87, size: 25.0),
-            SizedBox(width: 10.0)
-           
+            Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Icon(Icons.favorite_border,
+                        color: Colors.black87, size: 30.0),
+                    SizedBox(width: 3.0),
+                    Icon(Icons.insert_comment,
+                        color: Colors.black87, size: 25.0),
+                    SizedBox(width: 10.0),
+                  ],
+                ),
+                    Text('${_post.isFavourite.length} likes'),
+                 //   Text('${_post.comments.length} '),
+              ],
+            )
           ],
         ),
         SizedBox(height: 5),
