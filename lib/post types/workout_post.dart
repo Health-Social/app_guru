@@ -17,6 +17,7 @@ class WorkoutPost {
   // share each others posts???
   final Map<String, double> averageRating;
   final bool hasViewed;
+  final List<String> isFavourite;
 
   WorkoutPost({
     @required this.userDetails,
@@ -27,6 +28,7 @@ class WorkoutPost {
     @required this.tag,
     @required this.bodyTag,
     this.averageRating,
-    this.hasViewed = false
+    this.hasViewed = false,
+    this.isFavourite,
   });
 }

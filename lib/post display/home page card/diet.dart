@@ -7,6 +7,7 @@ import '../../post types/diet_post.dart';
 import '../../widgets/post_elements/username_badge.dart';
 import '../../widgets/post_elements/diet_post_badge.dart';
 import '../../widgets/post_elements/image_fade.dart';
+import '../../widgets/post_elements/my_star_rating.dart';
 
 class DietPostHomePage extends StatelessWidget {
   //
@@ -37,9 +38,8 @@ class DietPostHomePage extends StatelessWidget {
             ),
             Positioned(
               top: 5,
-              right: 2,
-              child: Container(
-                child: UsernameBadge(_post.userDetails.userName)),),
+              left: 2,
+              child: UsernameBadge(_post.userDetails.userName),),
             Positioned(
               right: 0,
               left: 0,
@@ -57,10 +57,12 @@ class DietPostHomePage extends StatelessWidget {
             // _post.isFavourite == true ?
             //  ? Icon(Icons.favorite, color: Colors.black)
             //  : Container(),
+
             Icon(Icons.favorite_border, color: Colors.black87, size: 30.0),
             SizedBox(width: 3.0),
             Icon(Icons.insert_comment, color: Colors.black87, size: 25.0),
             SizedBox(width: 10.0)
+           
           ],
         ),
         SizedBox(height: 5),

@@ -68,8 +68,10 @@ DietPost _dietPost = DietPost(
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imagePath: 'dummy image path',
     imageUrl: 'assets/images/healthBowl.jpg',
-    hasViewed: false,
-    isFavourite: false);
+    // hasViewed: false,
+    isFavourite: ['zach', 'michelle', 'keagan'],
+    comments: [{'id':'zach', 'comment':'looks tasty!'},{'id':'Tom','comment':'Master Chef!'},{'id':'Nelius', 'comment':'Bravo chef'}],
+    );
 
 // Dummy Post
 WorkoutPost _workoutPost = WorkoutPost(

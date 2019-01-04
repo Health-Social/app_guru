@@ -10,6 +10,8 @@ class UserDetails {
   final String userProfilePicture;
   final String userBio;
   final FullBio userFullBio; // sub-type 
+  final List<String> following; // list of user ID's that follow an account
+  final List<String> followers;
 
   UserDetails({
     @required this.userId,
@@ -19,5 +21,7 @@ class UserDetails {
     @required this.userProfilePicture,
     @required this.userBio,
     @required this.userFullBio,
+    this.following,
+    this.followers,
   });
 }

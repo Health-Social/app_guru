@@ -237,17 +237,22 @@ class _RecipeSubBarState extends State<RecipeSubBar> {
     if (index == 1) {
       List<Widget> widgetBuild =
           widget._post.benefits.map((name) => Text(name)).toList();
-      Column showMore = Column(children: widgetBuild);
+      Container showMore = Container(
+          padding: EdgeInsets.all(12), child: Column(children: widgetBuild));
       return _cancleState(showMore);
     }
     if (index == 2) {
       List<Widget> widgetBuild =
           widget._post.ingredients.map((name) => Text(name)).toList();
-      Column showMore = Column(children: widgetBuild);
+      Container showMore = Container(
+          padding: EdgeInsets.all(12), child: Column(children: widgetBuild));
       return _cancleState(showMore);
     }
     if (index == 3) {
-      Text showMore = Text(widget._post.recipe);
+      Container showMore = Container(
+        padding: EdgeInsets.all(12),
+        child: Text(widget._post.recipe),
+      );
       return _cancleState(showMore);
     }
     return Container();
@@ -285,7 +290,7 @@ class CaloriesTimeBar extends StatelessWidget {
   final bool large;
 
   CaloriesTimeBar(this.calories, this.minutes, this.large);
- 
+
   double _numberSize() {
     if (large == true) {
       return 45;
@@ -349,17 +354,16 @@ class CaloriesTimeBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center, children: [
+    return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
       _calories(calories.round().toString()),
       Container(
         height: 35,
         width: 1,
-        color: Colors.lightBlue[800],),
+        color: Colors.lightBlue[800],
+      ),
       _minutes(minutes.round().toString()),
     ]);
   }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-

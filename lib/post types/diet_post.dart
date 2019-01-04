@@ -20,8 +20,9 @@ class DietPost {
   // location
   // usercomments
   // share each others posts???
-  final bool isFavourite;
-  final bool hasViewed;
+  final List<String> isFavourite;
+  final List<Map<String, String>> comments;
+  final List<String> hasViewed;
 
   DietPost(
       {@required this.userDetails,
@@ -36,6 +37,7 @@ class DietPost {
       @required this.description,
       @required this.tag,
       @required this.bodyTag,
-      this.isFavourite = false,
-      this.hasViewed = false});
+      this.isFavourite,
+      this.comments,
+      this.hasViewed});
 }
