@@ -23,6 +23,8 @@ class DietPost {
   final List<String> isFavourite;
   final List<Map<String, String>> comments;
   final List<String> hasViewed;
+  // Collection
+  final Map<String, dynamic> collection;
 
   DietPost(
       {@required this.userDetails,
@@ -39,5 +41,6 @@ class DietPost {
       @required this.bodyTag,
       this.isFavourite,
       this.comments,
-      this.hasViewed});
+      this.hasViewed,
+      this.collection});
 }

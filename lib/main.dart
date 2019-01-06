@@ -71,6 +71,7 @@ DietPost _dietPost = DietPost(
     // hasViewed: false,
     isFavourite: ['zach', 'michelle', 'keagan'],
     comments: [{'id':'zach', 'comment':'looks tasty!'},{'id':'Tom','comment':'Master Chef!'},{'id':'Nelius', 'comment':'Bravo chef'}],
+    collection: {'name': 'Kito Diet', 'colour': Colors.pink}
     );
 
 // Dummy Post
@@ -102,7 +103,7 @@ UserDetails _dummyUser = UserDetails(
   userId: 'dummy ID',
   userEmail: 'dummy@dummy.com',
   userName: 'Zach Wolpe',
-  userProfilePicture: 'assets/images/profileDiCaprio.jpg',
+  userProfilePicture: 'assets/images/profile_pic2.jpg',
   userPassword: 'dummy password',
   userBio: '22 year old South African, staying healthy',
   userFullBio: _dummyUserFullBio,
