@@ -19,6 +19,7 @@ class ProfilePicCircle extends StatelessWidget {
           border: Border.all(color: Colors.white, width: 2),
            borderRadius: BorderRadius.circular(100),
            image: DecorationImage(
+             fit: BoxFit.cover,
              image: AssetImage(profilePicture)
            )
         ),

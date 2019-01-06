@@ -1,24 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../post types/image_post.dart';
-
 // Import Full Page
-import '../post display/full post card/image.dart';
 import '../post display/full post card/diet.dart';
 import '../post display/full post card/text.dart';
-import '../post display/full post card/workout.dart';
 
 // Import Post Types
-import './../post types/image_post.dart';
-import './../post types/workout_post.dart';
 import './../post types/diet_post.dart';
 import './../post types/text_post.dart';
 
 // Import Post Display Cards
-import '../post display/home page card/image.dart';
 import '../post display/home page card/diet.dart';
-import '../post display/home page card/workout.dart';
 import '../post display/home page card/text.dart';
 
 class HomePage extends StatefulWidget {
@@ -76,14 +68,10 @@ class _HomePageState extends State<HomePage> {
   _navigateToFullPost(BuildContext context, int index) {
     // navigate to full post page
 
-    if (widget._posts[index] is ImagePost) {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (BuildContext context) {
-        return ImagePostFull(widget._posts[index]);
-      }));
-    }
+    
 
     if (widget._posts[index] is TextPost) {
+      // navigation if post is a Text Post
       Navigator.push(
           context,
           MaterialPageRoute(
@@ -92,6 +80,7 @@ class _HomePageState extends State<HomePage> {
     }
 
     if (widget._posts[index] is DietPost) {
+      // navigation if post is a Diet Post
       Navigator.push(
           context,
           // custom page change on scale
@@ -101,13 +90,7 @@ class _HomePageState extends State<HomePage> {
                   DietPostFull(widget._posts[index])));
     }
 
-    if (widget._posts[index] is WorkoutPost) {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (BuildContext context) =>
-                  WorkoutPostFull(widget._posts[index])));
-    }
+    
   }
 
   Widget _postCard(BuildContext context, int index) {
@@ -122,12 +105,8 @@ class _HomePageState extends State<HomePage> {
 
   Widget _postContainer(BuildContext context, int index) {
     // return differnt types of posts
-    if (widget._posts[index] is ImagePost) {
-      return ImagePostHomePage(widget._posts[index]);
-    } else if (widget._posts[index] is DietPost) {
+    if (widget._posts[index] is DietPost) {
       return DietPostHomePage(widget._posts[index]);
-    } else if (widget._posts[index] is WorkoutPost) {
-      return WorkoutPostHomePage(widget._posts[index], index);
     } else if (widget._posts[index] is TextPost) {
       return TextPostHomePage(widget._posts[index]);
     } else {

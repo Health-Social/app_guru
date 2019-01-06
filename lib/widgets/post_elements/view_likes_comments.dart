@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../post types/diet_post.dart';
-import '../../post types/workout_post.dart';
 
 class ViewLikesComments extends StatefulWidget {
   final DietPost dietPost;
-  final WorkoutPost workoutPost;
 
-  ViewLikesComments({this.dietPost, this.workoutPost});
+  ViewLikesComments(this.dietPost);
 
   _ViewLikesCommentsState createState() => _ViewLikesCommentsState();
 }
@@ -20,12 +18,7 @@ class _ViewLikesCommentsState extends State<ViewLikesComments> {
   void initState() {
     // define either type of post into one variable
     super.initState();
-    if (widget.dietPost != null) {
-      _post = widget.dietPost;
-    }
-    if (widget.workoutPost != null) {
-      _post = widget.dietPost;
-    }
+    _post = widget.dietPost;
   }
 
   Widget _display() {
@@ -44,12 +37,6 @@ class _ViewLikesCommentsState extends State<ViewLikesComments> {
                 fontWeight: FontWeight.w100,
                 fontSize: 25));
       }
-    }
-    if (widget.workoutPost != null) {
-      //
-      return Container();
-    } else {
-      return Container();
     }
   }
 
@@ -115,7 +102,7 @@ class _ViewLikesCommentsState extends State<ViewLikesComments> {
                 return Column(
                   children: <Widget>[
                     _listTile(index),
-                    Divider(height:0, indent: 10, color: Colors.blueGrey[100]),
+                    Divider(height: 0, indent: 10, color: Colors.blueGrey[100]),
                   ],
                 );
               },
@@ -141,18 +128,15 @@ class _ViewLikesCommentsState extends State<ViewLikesComments> {
             SizedBox(width: 3.0),
             GestureDetector(
               onTap: () {
-                if (viewComments) {
-                  setState(() {
+                setState(() {
+                  if (viewComments) {
                     viewComments = false;
                     viewLikes = false;
-                  });
-                }
-                if (viewComments == false) {
-                  setState(() {
+                  } else {
                     viewComments = true;
                     viewLikes = false;
-                  });
-                }
+                  }
+                });
               },
               child: Icon(Icons.comment, color: Colors.black, size: 25.0),
             ),

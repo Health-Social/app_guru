@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PostDescription extends StatefulWidget {
+  // Show more or less text (..more)
   final String description;
 
   PostDescription(this.description);

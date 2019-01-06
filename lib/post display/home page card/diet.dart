@@ -7,7 +7,6 @@ import '../../post types/diet_post.dart';
 import '../../widgets/post_elements/username_badge.dart';
 import '../../widgets/post_elements/diet_post_badge.dart';
 import '../../widgets/post_elements/image_fade.dart';
-import '../../widgets/post_elements/my_star_rating.dart';
 
 class DietPostHomePage extends StatelessWidget {
   //

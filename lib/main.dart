@@ -8,10 +8,8 @@ import './pages/notification.dart';
 import './pages/profile pages/profile.dart';
 
 // Import Post Types
-import './post types/image_post.dart';
 import './post types/text_post.dart';
 import './post types/diet_post.dart';
-import './post types/workout_post.dart';
 
 // Users
 import './users/user_details.dart';
@@ -30,21 +28,7 @@ class MyApp extends StatefulWidget {
 // .....................................................................................................................................
 // .....................................................................................................................................
 
-// Dummy Post
-ImagePost _imagePost = ImagePost(
-    userId: 'dummy ID',
-    userEmail: 'dummy@dummy.com',
-    userName: 'Zach Wolpe',
-    userProfilePicture: 'assets/images/profileDiCaprio.jpg',
-    userPassword: 'dummy password',
-    title: 'What a view!',
-    tag: 'VIEWS',
-    description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    imagePath: 'dummy image path',
-    imageUrl: 'assets/images/background2.jpg',
-    hasViewed: false,
-    );
+
 
 // Dummy Post
 DietPost _dietPost = DietPost(
@@ -74,18 +58,6 @@ DietPost _dietPost = DietPost(
     collection: {'name': 'Kito Diet', 'colour': Colors.pink}
     );
 
-// Dummy Post
-WorkoutPost _workoutPost = WorkoutPost(
-    userDetails: _dummyUser,
-    title: 'Great Season',
-    tag: 'VIEWS',
-    bodyTag: 'Arms',
-    description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    imagePath: 'dummy image path',
-    imageUrl: 'assets/images/football.jpg',
-    hasViewed: false,
-    averageRating: {'zachID': 3.5});
 
 // Dummy Post
 TextPost _textPost = TextPost(
@@ -114,7 +86,7 @@ FullBio _dummyUserFullBio = FullBio(title: 'full bio in hrerre');
 
 // Pass to Dummy Post Displays
 
-List _posts = [_imagePost, _dietPost, _workoutPost, _textPost];
+List _posts = [_dietPost, _textPost];
 // ..................................... DELETE WHEN ADDING REAL DATA : DUMMY POSTS ....................................................
 // .....................................................................................................................................
 // .....................................................................................................................................

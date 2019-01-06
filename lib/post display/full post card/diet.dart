@@ -54,7 +54,7 @@ class DietPostFull extends StatelessWidget {
           Divider(color: Colors.grey),
           RecipeSubBar(_post),
           Divider(color: Colors.grey),
-          ViewLikesComments(dietPost: _post),
+          ViewLikesComments(_post),
           
         ],
       ),
