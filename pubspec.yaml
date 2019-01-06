@@ -53,6 +53,14 @@ flutter:
     - assets/images/healthBowl.jpg
     - assets/images/profile_pic.jpg
     - assets/images/profile_pic2.jpg
+    - assets/images/bowl1.jpg
+    - assets/images/bowl2.jpg
+    - assets/images/protein1.jpg
+    - assets/images/protein2.jpg
+    - assets/images/protein3.jpg
+    - assets/images/burger1.jpg
+    - assets/images/burger2.jpg
+    - assets/images/sushi.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
