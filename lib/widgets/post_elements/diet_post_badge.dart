@@ -284,15 +284,25 @@ class _RecipeSubBarState extends State<RecipeSubBar> {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Calories & Time
 
-class CaloriesTimeBar extends StatelessWidget {
+class CaloriesTimeBar extends StatefulWidget {
   final double calories;
   final double minutes;
   final bool large;
-
+  
   CaloriesTimeBar(this.calories, this.minutes, this.large);
 
+  @override
+    State<StatefulWidget> createState() {
+    
+      return _CaloriesTimeBarState();
+    }
+
+}
+
+  class _CaloriesTimeBarState extends State<CaloriesTimeBar> {
+
   double _numberSize() {
-    if (large == true) {
+    if (widget.large == true) {
       return 45;
     } else {
       return 35;
@@ -300,7 +310,11 @@ class CaloriesTimeBar extends StatelessWidget {
   }
 
   Widget _calories(String calories) {
-    return Container(
+    return GestureDetector(
+      onTap: () {
+        // change to kj
+      },
+      child: Container(
       padding: EdgeInsets.only(right: 35, top: 4),
       child: Column(
         children: <Widget>[
@@ -323,10 +337,11 @@ class CaloriesTimeBar extends StatelessWidget {
           ),
         ],
       ),
-    );
+    ),);
   }
 
   Widget _minutes(String minutes) {
+    // builds minutes display
     return Container(
       padding: EdgeInsets.only(left: 35, top: 4),
       child: Column(
@@ -355,15 +370,17 @@ class CaloriesTimeBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      _calories(calories.round().toString()),
+      _calories(widget.calories.round().toString()),
       Container(
         height: 35,
         width: 1,
         color: Colors.lightBlue[800],
       ),
-      _minutes(minutes.round().toString()),
+      _minutes(widget.minutes.round().toString()),
     ]);
   }
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
