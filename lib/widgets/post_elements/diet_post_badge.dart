@@ -288,18 +288,17 @@ class CaloriesTimeBar extends StatefulWidget {
   final double calories;
   final double minutes;
   final bool large;
-  
+
   CaloriesTimeBar(this.calories, this.minutes, this.large);
 
   @override
-    State<StatefulWidget> createState() {
-    
-      return _CaloriesTimeBarState();
-    }
-
+  State<StatefulWidget> createState() {
+    return _CaloriesTimeBarState();
+  }
 }
 
-  class _CaloriesTimeBarState extends State<CaloriesTimeBar> {
+class _CaloriesTimeBarState extends State<CaloriesTimeBar> {
+  bool _showCals = true;
 
   double _numberSize() {
     if (widget.large == true) {
@@ -310,34 +309,72 @@ class CaloriesTimeBar extends StatefulWidget {
   }
 
   Widget _calories(String calories) {
+    double kilojs = widget.calories * 4.184;
+
+    Container _displayContainer = 
+      _showCals
+      ? Container(
+      child: Container(
+        padding: EdgeInsets.only(right: 35, top: 4),
+        child: Column(
+          children: <Widget>[
+            Text(
+              calories,
+              style: TextStyle(
+                  fontFamily: 'myriad-pro-light',
+                  color: Colors.lightBlue[800],
+                  fontSize: _numberSize(),
+                  fontWeight: FontWeight.w500),
+            ),
+            Text(
+              'calories',
+              style: TextStyle(
+                  fontFamily: 'myriad-pro-light',
+                  color: Colors.lightBlue[800],
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500),
+            ),
+          ],
+        ),
+      ))
+      : Container(
+      child: Container(
+        padding: EdgeInsets.only(right: 35, top: 4),
+        child: Column(
+          children: <Widget>[
+            Text(
+              kilojs.round().toString(),
+              style: TextStyle(
+                  fontFamily: 'myriad-pro-light',
+                  color: Colors.lightBlue[800],
+                  fontSize: _numberSize(),
+                  fontWeight: FontWeight.w500),
+            ),
+            Text(
+              'kilojoules',
+              style: TextStyle(
+                  fontFamily: 'myriad-pro-light',
+                  color: Colors.lightBlue[800],
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500),
+            ),
+          ],
+        ),
+      ))
+      ;
+
     return GestureDetector(
       onTap: () {
-        // change to kj
+        setState(() {
+          if (_showCals) {
+            _showCals = false;
+          } else {
+            _showCals = true;
+          }
+        });
       },
-      child: Container(
-      padding: EdgeInsets.only(right: 35, top: 4),
-      child: Column(
-        children: <Widget>[
-          Text(
-            calories,
-            style: TextStyle(
-                fontFamily: 'myriad-pro-light',
-                color: Colors.lightBlue[800],
-                fontSize: _numberSize(),
-                fontWeight: FontWeight.w500),
-          ),
-          // SizedBox(height: 2),
-          Text(
-            'calories',
-            style: TextStyle(
-                fontFamily: 'myriad-pro-light',
-                color: Colors.lightBlue[800],
-                fontSize: 16,
-                fontWeight: FontWeight.w500),
-          ),
-        ],
-      ),
-    ),);
+      child: _displayContainer
+    );
   }
 
   Widget _minutes(String minutes) {
@@ -382,5 +419,3 @@ class CaloriesTimeBar extends StatefulWidget {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-

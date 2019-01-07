@@ -44,7 +44,6 @@ class _ProfilePageState extends State<ProfilePage>
             gradient: RadialGradient(
                 radius: 0.9,
                 colors: <Color>[Colors.teal[800], Colors.tealAccent[400]]),
-            border: Border.all(color: Colors.teal[800], width: 1),
             borderRadius: BorderRadius.circular(15.0)),
       ),
     );
@@ -67,8 +66,6 @@ class _ProfilePageState extends State<ProfilePage>
         decoration: BoxDecoration(
             gradient:
                 LinearGradient(colors: <Color>[Colors.pink, Colors.lightBlue]),
-            //  color: Colors.red[900],
-            border: Border.all(color: Colors.red[900], width: 1),
             borderRadius: BorderRadius.circular(15.0)),
       );
     } else {
@@ -84,7 +81,6 @@ class _ProfilePageState extends State<ProfilePage>
         ),
         decoration: BoxDecoration(
             color: Colors.white,
-            border: Border.all(color: Colors.red[900], width: 1),
             borderRadius: BorderRadius.circular(15.0)),
       );
     }
