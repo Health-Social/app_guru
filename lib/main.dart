@@ -313,7 +313,7 @@ TextPost _textPost = TextPost(
 
 // Dummy User
 UserDetails _dummyUser = UserDetails(
-  userId: 'dummy ID',
+  userId: '@ZachWolpe87',
   userEmail: 'dummy@dummy.com',
   userName: 'Zach Wolpe',
   userProfilePicture: 'assets/images/profile_pic2.jpg',

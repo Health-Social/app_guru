@@ -4,6 +4,7 @@ import './full_bio.dart';
 
 // Users
 import '../../users/user_details.dart';
+import '../../widgets/post_elements/username_badge.dart';
 
 // NOTES
 // make it mandatory to have a SQUARE profile picture
@@ -112,17 +113,28 @@ class _ProfilePageState extends State<ProfilePage>
       onTap: () {
         // go to view/change profile picture
       },
-      child: Container(
+      child: Stack(children: <Widget>[
+       Center(child: Container(
         margin: EdgeInsets.all(10),
-        height: 250.0,
-        width: 100.0,
+        height: 320.0,
+        width: MediaQuery.of(context).size.width * 0.95,
         decoration: BoxDecoration(
             border: Border.all(color: Colors.white, width: 3),
             borderRadius: BorderRadius.circular(30),
             image: DecorationImage(
                 fit: BoxFit.cover, image: AssetImage(profilePicture))),
+      )),
+      Positioned(
+        bottom: 15,
+        right: 20,
+        child: UsernameBadge(widget._user.userName),
       ),
-    );
+      Positioned(
+        bottom: 15,
+        left: 20,
+        child: UsernameBadge(widget._user.userId),
+      )
+      ],));
   }
 
   Widget _userStats() {
