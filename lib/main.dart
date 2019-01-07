@@ -328,7 +328,7 @@ Collection _collection1 = Collection(
   title: 'Diet Bowl',
   tags: ['get lean','lose weight','healty option'],
   description: 'this diet is designed to let you lose weight and enjoy doing it!',
-  category: 'Meal'
+  category: 'Meals'
 );
 
 
@@ -338,7 +338,7 @@ Collection _collection2 = Collection(
   title: 'Lean Protein',
   tags: ['get lean','build muscle'],
   description: 'get your protein in, its delicious',
-  category: 'Meal'
+  category: 'Meals'
 );
 
 // Dummy Collection 3 
@@ -347,7 +347,7 @@ Collection _collection3 = Collection(
   title: 'Burgers',
   tags: ['cheat meal', 'enjoy life'],
   description: 'sometimes you have to let go & enjoy a balance',
-  category: 'Meal'
+  category: 'Meals'
 );
 
 
