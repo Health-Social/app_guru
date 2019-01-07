@@ -6,6 +6,9 @@ import './full_bio.dart';
 import '../../users/user_details.dart';
 import '../../widgets/post_elements/username_badge.dart';
 
+// Display
+import '../../post display/mini_card.dart';
+
 // NOTES
 // make it mandatory to have a SQUARE profile picture
 // that will make it easier to no have gaps in the picture circle or square
@@ -80,8 +83,7 @@ class _ProfilePageState extends State<ProfilePage>
                   color: Colors.red[900])),
         ),
         decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(15.0)),
+            color: Colors.white, borderRadius: BorderRadius.circular(15.0)),
       );
     }
 
@@ -106,31 +108,34 @@ class _ProfilePageState extends State<ProfilePage>
     // Profile Picture Square
 
     return GestureDetector(
-      onTap: () {
-        // go to view/change profile picture
-      },
-      child: Stack(children: <Widget>[
-       Center(child: Container(
-        margin: EdgeInsets.all(10),
-        height: 320.0,
-        width: MediaQuery.of(context).size.width * 0.95,
-        decoration: BoxDecoration(
-            border: Border.all(color: Colors.white, width: 3),
-            borderRadius: BorderRadius.circular(30),
-            image: DecorationImage(
-                fit: BoxFit.cover, image: AssetImage(profilePicture))),
-      )),
-      Positioned(
-        bottom: 15,
-        right: 20,
-        child: UsernameBadge(widget._user.userName),
-      ),
-      Positioned(
-        bottom: 15,
-        left: 20,
-        child: UsernameBadge(widget._user.userId),
-      )
-      ],));
+        onTap: () {
+          // go to view/change profile picture
+        },
+        child: Stack(
+          children: <Widget>[
+            Center(
+                child: Container(
+              margin: EdgeInsets.all(10),
+              height: 320.0,
+              width: MediaQuery.of(context).size.width * 0.95,
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white, width: 3),
+                  borderRadius: BorderRadius.circular(30),
+                  image: DecorationImage(
+                      fit: BoxFit.cover, image: AssetImage(profilePicture))),
+            )),
+            Positioned(
+              bottom: 15,
+              right: 20,
+              child: UsernameBadge(widget._user.userName),
+            ),
+            Positioned(
+              bottom: 15,
+              left: 20,
+              child: UsernameBadge(widget._user.userId),
+            )
+          ],
+        ));
   }
 
   Widget _userStats() {
@@ -368,26 +373,48 @@ class _ProfilePageState extends State<ProfilePage>
         // _navigator
       },
       child: Row(
-      children: <Widget>[
-        Expanded(child: Container()),
-        Text(_subtitle,
-            style: TextStyle(
-                fontFamily: 'myraid-pro-light',
-                fontWeight: FontWeight.w300,
-                fontSize: 30,
-                color: Colors.black87)),
-        SizedBox(width: 15),
-      ],
-    ),);
+        children: <Widget>[
+          Expanded(child: Container()),
+          Text(_subtitle,
+              style: TextStyle(
+                  fontFamily: 'myraid-pro-light',
+                  fontWeight: FontWeight.w300,
+                  fontSize: 30,
+                  color: Colors.black87)),
+          SizedBox(width: 15),
+        ],
+      ),
+    );
   }
 
   Widget _catelogContainer() {
     // the shell of the scrollable catelog
     return Container(
-      height: 150,
+      height: 170,
       color: Colors.white,
-      // implement list view builder (horizonal)
-    );
+      child: Column(
+        children: <Widget>[
+          Stack(children: <Widget>[
+            Container(height: 150, width: 110),
+            Positioned(
+              top: 0,
+              right: 0,
+              child: Minicard(Colors.blueGrey[600]),
+            ),
+            Positioned(
+              top: 9,
+              right: 9,
+              child: Minicard(Colors.pink[300]),
+            ),
+            Positioned(
+              top: 17,
+              right: 17,
+              child: Minicard(Colors.blue[400]),
+            )
+          ]),
+          Text('kito diet'),
+        ],
+      ));
   }
 
   @override
