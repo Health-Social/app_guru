@@ -352,9 +352,14 @@ class _ProfilePageState extends State<ProfilePage>
     ]);
   }
 
-  Row _subTitle(String _subtitle) {
+  Widget _subTitle(String _subtitle, int _navigator) {
     // subtitle of each category (meals, beverages, text)
-    return Row(
+    return GestureDetector(
+      onTap: () {
+        // navigate to that section onl
+        // _navigator
+      },
+      child: Row(
       children: <Widget>[
         Expanded(child: Container()),
         Text(_subtitle,
@@ -365,7 +370,7 @@ class _ProfilePageState extends State<ProfilePage>
                 color: Colors.black87)),
         SizedBox(width: 15),
       ],
-    );
+    ),);
   }
 
   Widget _catelogContainer() {
@@ -411,15 +416,18 @@ class _ProfilePageState extends State<ProfilePage>
         Expanded(child: Container()),
       ]),
       SizedBox(height: 15),
-      _subTitle('Meals'),
+      _subTitle('Meals', 1),
       SizedBox(height: 8),
       _catelogContainer(),
       SizedBox(height: 15),
-      _subTitle('Beverages'),
+      _subTitle('Beverages', 2),
       SizedBox(height: 8),
       _catelogContainer(),
       SizedBox(height: 15),
-      _subTitle('Text'),
+      _subTitle('Workouts', 3),
+      SizedBox(height: 8),
+      _catelogContainer(),
+      _subTitle('Text', 4),
       SizedBox(height: 8),
       _catelogContainer(),
       SizedBox(height: 55),

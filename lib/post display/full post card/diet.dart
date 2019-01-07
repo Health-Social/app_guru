@@ -45,7 +45,7 @@ class DietPostFull extends StatelessWidget {
               ),
               Expanded(child: Container()),
               _post.collection != null 
-                ? CollectionTag(_post.collection['name'], _post.collection['colour'])
+                ? CollectionTag(_post.collection.title, _post.collection.colour)
                 : Container(),
               SizedBox(width: 10),
             ],
