@@ -398,7 +398,7 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.white70,
           title: Text('Cheese Cake',
               style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.amber,
                   fontFamily: 'Comfortaa',
                   fontSize: 20.0)));
     }
