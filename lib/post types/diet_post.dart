@@ -14,10 +14,11 @@ class DietPost {
   final double minutes;
   final String imageUrl;
   final String imagePath;
-  final String title;
-  final String description;
-  final String tag;
+  // final String title;
+  // final String description;
+  // final String tag;
   final String bodyTag;
+  final double price;
   // location
   // usercomments
   // share each others posts???
@@ -29,17 +30,15 @@ class DietPost {
 
   DietPost(
       {@required this.userDetails,
-      @required this.calories,
-      @required this.minutes,
       @required this.benefits,
       @required this.ingredients,
       @required this.recipe,
       @required this.imageUrl,
       @required this.imagePath,
-      @required this.title,
-      @required this.description,
-      @required this.tag,
       @required this.bodyTag,
+      this.calories,
+      this.minutes,
+      this.price,
       this.isFavourite,
       this.comments,
       this.hasViewed,

@@ -36,7 +36,6 @@ DietPost _dietPost = DietPost(
     userDetails: _dummyUser,
     calories: 434,
     minutes: 27,
-    title: 'Summer Fruit Poke Bowl',
     benefits: ['loose weight', 'get stronger', 'live happily'],
     ingredients: [
       'salt',
@@ -47,10 +46,7 @@ DietPost _dietPost = DietPost(
       'maybe quantities?'
     ],
     recipe: 'mix cake into a batch of dummy text that is used to test design',
-    tag: 'VIEWS',
     bodyTag: 'weightloss',
-    description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imagePath: 'dummy image path',
     imageUrl: 'assets/images/healthBowl.jpg',
     // hasViewed: false,
@@ -65,7 +61,6 @@ DietPost _dietPost2 = DietPost(
     userDetails: _dummyUser,
     calories: 130,
     minutes: 12,
-    title: 'Summer Fruit Poke Bowl',
     benefits: ['loose weight', 'get stronger', 'live happily'],
     ingredients: [
       'salt',
@@ -76,10 +71,7 @@ DietPost _dietPost2 = DietPost(
       'maybe quantities?'
     ],
     recipe: 'mix cake into a batch of dummy text that is used to test design',
-    tag: 'VIEWS',
     bodyTag: 'weightloss',
-    description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imagePath: 'dummy image path',
     imageUrl: 'assets/images/bowl1.jpg',
     // hasViewed: false,
@@ -95,7 +87,6 @@ DietPost _dietPost3 = DietPost(
     userDetails: _dummyUser,
     calories: 189,
     minutes: 15,
-    title: 'Summer Fruit Poke Bowl',
     benefits: ['loose weight', 'get stronger', 'live happily'],
     ingredients: [
       'salt',
@@ -106,10 +97,7 @@ DietPost _dietPost3 = DietPost(
       'maybe quantities?'
     ],
     recipe: 'mix cake into a batch of dummy text that is used to test design',
-    tag: 'VIEWS',
     bodyTag: 'weightloss',
-    description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imagePath: 'dummy image path',
     imageUrl: 'assets/images/bowl2.jpg',
     // hasViewed: false,
@@ -125,7 +113,6 @@ DietPost _dietPost4 = DietPost(
     userDetails: _dummyUser,
     calories: 560,
     minutes: 24,
-    title: 'Summer Fruit Poke Bowl',
     benefits: ['loose weight', 'get stronger', 'live happily'],
     ingredients: [
       'salt',
@@ -136,10 +123,7 @@ DietPost _dietPost4 = DietPost(
       'maybe quantities?'
     ],
     recipe: 'mix cake into a batch of dummy text that is used to test design',
-    tag: 'VIEWS',
     bodyTag: 'weightloss',
-    description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imagePath: 'dummy image path',
     imageUrl: 'assets/images/protein1.jpg',
     // hasViewed: false,
@@ -155,7 +139,6 @@ DietPost _dietPost5 = DietPost(
     userDetails: _dummyUser,
     calories: 310,
     minutes: 40,
-    title: 'Summer Fruit Poke Bowl',
     benefits: ['loose weight', 'get stronger', 'live happily'],
     ingredients: [
       'salt',
@@ -166,10 +149,7 @@ DietPost _dietPost5 = DietPost(
       'maybe quantities?'
     ],
     recipe: 'mix cake into a batch of dummy text that is used to test design',
-    tag: 'VIEWS',
     bodyTag: 'weightloss',
-    description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imagePath: 'dummy image path',
     imageUrl: 'assets/images/protein2.jpg',
     // hasViewed: false,
@@ -185,7 +165,6 @@ DietPost _dietPost6 = DietPost(
     userDetails: _dummyUser,
     calories: 290,
     minutes: 25,
-    title: 'Summer Fruit Poke Bowl',
     benefits: ['loose weight', 'get stronger', 'live happily'],
     ingredients: [
       'salt',
@@ -196,10 +175,7 @@ DietPost _dietPost6 = DietPost(
       'maybe quantities?'
     ],
     recipe: 'mix cake into a batch of dummy text that is used to test design',
-    tag: 'VIEWS',
     bodyTag: 'weightloss',
-    description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imagePath: 'dummy image path',
     imageUrl: 'assets/images/protein3.jpg',
     // hasViewed: false,
@@ -215,7 +191,6 @@ DietPost _dietPost7 = DietPost(
     userDetails: _dummyUser,
     calories: 798,
     minutes: 34,
-    title: 'Summer Fruit Poke Bowl',
     benefits: ['loose weight', 'get stronger', 'live happily'],
     ingredients: [
       'salt',
@@ -226,10 +201,7 @@ DietPost _dietPost7 = DietPost(
       'maybe quantities?'
     ],
     recipe: 'mix cake into a batch of dummy text that is used to test design',
-    tag: 'VIEWS',
     bodyTag: 'weightloss',
-    description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imagePath: 'dummy image path',
     imageUrl: 'assets/images/burger1.jpg',
     // hasViewed: false,
@@ -245,7 +217,6 @@ DietPost _dietPost8 = DietPost(
     userDetails: _dummyUser,
     calories: 609,
     minutes: 15,
-    title: 'Summer Fruit Poke Bowl',
     benefits: ['loose weight', 'get stronger', 'live happily'],
     ingredients: [
       'salt',
@@ -256,10 +227,7 @@ DietPost _dietPost8 = DietPost(
       'maybe quantities?'
     ],
     recipe: 'mix cake into a batch of dummy text that is used to test design',
-    tag: 'VIEWS',
     bodyTag: 'weightloss',
-    description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imagePath: 'dummy image path',
     imageUrl: 'assets/images/burger2.jpg',
     // hasViewed: false,
@@ -275,7 +243,6 @@ DietPost _dietPost9 = DietPost(
     userDetails: _dummyUser,
     calories: 609,
     minutes: 15,
-    title: 'Summer Fruit Poke Bowl',
     benefits: ['loose weight', 'get stronger', 'live happily'],
     ingredients: [
       'salt',
@@ -286,10 +253,7 @@ DietPost _dietPost9 = DietPost(
       'maybe quantities?'
     ],
     recipe: 'mix cake into a batch of dummy text that is used to test design',
-    tag: 'VIEWS',
     bodyTag: 'weightloss',
-    description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     imagePath: 'dummy image path',
     imageUrl: 'assets/images/sushi.jpg',
     // hasViewed: false,
