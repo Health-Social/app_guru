@@ -326,8 +326,30 @@ List _posts = [_dietPost, _textPost, _dietPost2, _dietPost3, _dietPost4, _dietPo
 // .....................................................................................................................................
 // .....................................................................................................................................
 
+
+
 class _MyAppState extends State<MyApp> {
   int _currentIndex = 0;
+
+  // void _addPost(DietPost product) {
+  //   // add diet Post
+  //   setState(() {
+  //     _posts.add(product);
+  //     MaterialPageRoute(
+  //     builder: (BuildContext context) =>
+  //       HomePage(_posts)
+  //     );
+  //     print(_posts);
+  //   });
+    
+    
+  // }
+
+  // void _deletePost(int index) {
+  //   setState(() {
+  //     _posts.removeAt(index);
+  //   });
+  // }
 
   void _onTapNavigationBar(int index) {
     setState(() {
