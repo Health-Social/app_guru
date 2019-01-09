@@ -6,7 +6,11 @@ import './upload pages/meal.dart';
 import './upload pages/text.dart';
 
 class UploadPage extends StatefulWidget {
-  @override
+  final Function addPost;
+
+  UploadPage(this.addPost);
+
+  @override 
   State<StatefulWidget> createState() {
     return _UploadPageState();
   }
@@ -39,7 +43,7 @@ class _UploadPageState extends State<UploadPage> with TickerProviderStateMixin {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) => TextUploadPage(colour)));
+                    builder: (BuildContext context) => TextUploadPage(colour, widget.addPost)));
           } else if (navigationIndex == 3) {
             // navigate workout
           } else if (navigationIndex == 4) {

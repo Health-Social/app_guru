@@ -9,16 +9,8 @@ class MealUploadPage extends StatefulWidget {
 
   MealUploadPage(this._colour);
 
-
   _MealUploadPageState createState() => _MealUploadPageState();
 }
-
-
-
-
-
-
-
 
 //  ///
 //   ///
@@ -38,30 +30,17 @@ class MealUploadPage extends StatefulWidget {
 //   ///
 //   ///
 
-
-
-
-
-
-
-
-
-
-
-
-
 class _MealUploadPageState extends State<MealUploadPage> {
-
-   ///// Dummy User
- UserDetails _dummyUser = UserDetails(
-  userId: '@ZachWolpe87',
-  userEmail: 'dummy@dummy.com',
-  userName: 'Zach Wolpe',
-  userProfilePicture: 'assets/images/profile_pic2.jpg',
-  userPassword: 'dummy password',
-  userBio: '22 year old South African, staying healthy',
-  userFullBio: FullBio(title: 'full bio in hrerre'),
-);
+  ///// Dummy User
+  UserDetails _dummyUser = UserDetails(
+    userId: '@ZachWolpe87',
+    userEmail: 'dummy@dummy.com',
+    userName: 'Zach Wolpe',
+    userProfilePicture: 'assets/images/profile_pic2.jpg',
+    userPassword: 'dummy password',
+    userBio: '22 year old South African, staying healthy',
+    userFullBio: FullBio(title: 'full bio in hrerre'),
+  );
 
   // data to save for post
   String placeholderImage = 'assets/images/logo.png';
@@ -109,11 +88,11 @@ class _MealUploadPageState extends State<MealUploadPage> {
   Widget _caloriesAndTime() {
     // calories and time imput feilds
     return Row(children: <Widget>[
-      Container(width: MediaQuery.of(context).size.width * 0.025),
+      Container(width: MediaQuery.of(context).size.width * 0.05),
       Container(
         // calories input
         height: 40,
-        width: MediaQuery.of(context).size.width * 0.46,
+        width: MediaQuery.of(context).size.width * 0.4,
         child: TextField(
           onSubmitted: (_calories) {
             setState(() {
@@ -128,18 +107,18 @@ class _MealUploadPageState extends State<MealUploadPage> {
       Container(
         // Time input
         height: 40,
-        width: MediaQuery.of(context).size.width * 0.46,
+        width: MediaQuery.of(context).size.width * 0.4,
         child: TextField(
           onChanged: (text) {
-setState(() {
-  minutes = double.parse(text);
-});
+            setState(() {
+              minutes = double.parse(text);
+            });
           },
           keyboardType: TextInputType.datetime,
           decoration: _textFieldStyle('  minutes'),
         ),
       ),
-      Container(width: MediaQuery.of(context).size.width * 0.025),
+      Container(width: MediaQuery.of(context).size.width * 0.05),
     ]);
   }
 
@@ -168,10 +147,10 @@ setState(() {
             width: MediaQuery.of(context).size.width * 0.95,
             child: TextField(
               onChanged: (text) {
-setState(() {
-  benefits = text;
-});
-          },
+                setState(() {
+                  benefits = text;
+                });
+              },
               maxLines: 2,
               keyboardType: TextInputType.text,
               decoration: _textFieldStyle('  benefits'),
@@ -186,10 +165,10 @@ setState(() {
             width: MediaQuery.of(context).size.width * 0.95,
             child: TextField(
               onChanged: (text) {
-setState(() {
- // text --> list
-});
-          },
+                setState(() {
+                  // text --> list
+                });
+              },
               maxLines: 2,
               keyboardType: TextInputType.text,
               decoration: _textFieldStyle('  ingredients'),
@@ -204,10 +183,10 @@ setState(() {
             width: MediaQuery.of(context).size.width * 0.95,
             child: TextField(
               onChanged: (text) {
-setState(() {
-  recipe = text;
-});
-          },
+                setState(() {
+                  recipe = text;
+                });
+              },
               maxLines: 2,
               keyboardType: TextInputType.text,
               decoration: _textFieldStyle('  recipe'),
@@ -233,39 +212,49 @@ setState(() {
     );
   }
 
-
- 
-  
-
-  RaisedButton _postButton() {
+  Widget _postButton() {
     // create the new post
-    return RaisedButton(
-              onPressed: () {
-                // add post function
-                _newPost();
-              },
-              color: Colors.pink,
-              child: Text('post', style: TextStyle(color: Colors.white)),
-            );
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+      child: RaisedButton(
+      onPressed: () {
+        // add post function
+        _newPost();
+      },
+      color: widget._colour,
+      child: Text('post', style: TextStyle(color: Colors.white)),
+    ));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        // blackdrop colour
-        decoration: _pageDecoration(),
-        child: ListView(
-          children: <Widget>[
-            _uploadImage(),
-            _caloriesAndTime(),
-            SizedBox(height: 14),
-            _benefitsIngredientsRecipe(),
-            SizedBox(height: 14),
-            _postButton(),
-          ],
+        body: Container(
+      // styling
+      decoration: BoxDecoration(
+        color: widget._colour,
+      ),
+      child: Center(
+        child: Container(
+          height: MediaQuery.of(context).size.height * 0.92,
+          width: MediaQuery.of(context).size.width * 0.95,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: Colors.white),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: ListView(
+            children: <Widget>[
+              _uploadImage(),
+              _caloriesAndTime(),
+              SizedBox(height: 14),
+              _benefitsIngredientsRecipe(),
+              SizedBox(height: 14),
+              _postButton(),
+            ],
+          ),
         ),
       ),
-    );
+    ));
   }
 }

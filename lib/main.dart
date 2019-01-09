@@ -29,240 +29,258 @@ class MyApp extends StatefulWidget {
 // .....................................................................................................................................
 // .....................................................................................................................................
 
-
-
 // Dummy Post 01
 DietPost _dietPost = DietPost(
-    userDetails: _dummyUser,
-    calories: 434,
-    minutes: 27,
-    benefits: ['loose weight', 'get stronger', 'live happily'],
-    ingredients: [
-      'salt',
-      'pepper',
-      'eggs',
-      'flower',
-      'water',
-      'maybe quantities?'
-    ],
-    recipe: 'mix cake into a batch of dummy text that is used to test design',
-    bodyTag: 'weightloss',
-    imagePath: 'dummy image path',
-    imageUrl: 'assets/images/healthBowl.jpg',
-    // hasViewed: false,
-    isFavourite: ['zach', 'michelle', 'keagan'],
-    comments: [{'id':'zach', 'comment':'looks tasty!'},{'id':'Tom','comment':'Master Chef!'},{'id':'Nelius', 'comment':'Bravo chef'}],
-    collection: _collection1,
-    );
+  userDetails: _dummyUser,
+  calories: 434,
+  minutes: 27,
+  benefits: ['loose weight', 'get stronger', 'live happily'],
+  ingredients: [
+    'salt',
+    'pepper',
+    'eggs',
+    'flower',
+    'water',
+    'maybe quantities?'
+  ],
+  recipe: 'mix cake into a batch of dummy text that is used to test design',
+  bodyTag: 'weightloss',
+  imagePath: 'dummy image path',
+  imageUrl: 'assets/images/healthBowl.jpg',
+  // hasViewed: false,
+  isFavourite: ['zach', 'michelle', 'keagan'],
+  comments: [
+    {'id': 'zach', 'comment': 'looks tasty!'},
+    {'id': 'Tom', 'comment': 'Master Chef!'},
+    {'id': 'Nelius', 'comment': 'Bravo chef'}
+  ],
+  collection: _collection1,
+);
 
-
-    // Dummy Post 02
+// Dummy Post 02
 DietPost _dietPost2 = DietPost(
-    userDetails: _dummyUser,
-    calories: 130,
-    minutes: 12,
-    benefits: ['loose weight', 'get stronger', 'live happily'],
-    ingredients: [
-      'salt',
-      'pepper',
-      'eggs',
-      'flower',
-      'water',
-      'maybe quantities?'
-    ],
-    recipe: 'mix cake into a batch of dummy text that is used to test design',
-    bodyTag: 'weightloss',
-    imagePath: 'dummy image path',
-    imageUrl: 'assets/images/bowl1.jpg',
-    // hasViewed: false,
-    isFavourite: ['zach', 'michelle', 'keagan'],
-    comments: [{'id':'zach', 'comment':'looks tasty!'},{'id':'Tom','comment':'Master Chef!'},{'id':'Nelius', 'comment':'Bravo chef'}],
-    collection: _collection1,
-    );
+  userDetails: _dummyUser,
+  calories: 130,
+  minutes: 12,
+  benefits: ['loose weight', 'get stronger', 'live happily'],
+  ingredients: [
+    'salt',
+    'pepper',
+    'eggs',
+    'flower',
+    'water',
+    'maybe quantities?'
+  ],
+  recipe: 'mix cake into a batch of dummy text that is used to test design',
+  bodyTag: 'weightloss',
+  imagePath: 'dummy image path',
+  imageUrl: 'assets/images/bowl1.jpg',
+  // hasViewed: false,
+  isFavourite: ['zach', 'michelle', 'keagan'],
+  comments: [
+    {'id': 'zach', 'comment': 'looks tasty!'},
+    {'id': 'Tom', 'comment': 'Master Chef!'},
+    {'id': 'Nelius', 'comment': 'Bravo chef'}
+  ],
+  collection: _collection1,
+);
 
-
-
-    // Dummy Post 03
+// Dummy Post 03
 DietPost _dietPost3 = DietPost(
-    userDetails: _dummyUser,
-    calories: 189,
-    minutes: 15,
-    benefits: ['loose weight', 'get stronger', 'live happily'],
-    ingredients: [
-      'salt',
-      'pepper',
-      'eggs',
-      'flower',
-      'water',
-      'maybe quantities?'
-    ],
-    recipe: 'mix cake into a batch of dummy text that is used to test design',
-    bodyTag: 'weightloss',
-    imagePath: 'dummy image path',
-    imageUrl: 'assets/images/bowl2.jpg',
-    // hasViewed: false,
-    isFavourite: ['zach', 'michelle', 'keagan'],
-    comments: [{'id':'zach', 'comment':'looks tasty!'},{'id':'Tom','comment':'Master Chef!'},{'id':'Nelius', 'comment':'Bravo chef'}],
-    collection: _collection1,
-    );
+  userDetails: _dummyUser,
+  calories: 189,
+  minutes: 15,
+  benefits: ['loose weight', 'get stronger', 'live happily'],
+  ingredients: [
+    'salt',
+    'pepper',
+    'eggs',
+    'flower',
+    'water',
+    'maybe quantities?'
+  ],
+  recipe: 'mix cake into a batch of dummy text that is used to test design',
+  bodyTag: 'weightloss',
+  imagePath: 'dummy image path',
+  imageUrl: 'assets/images/bowl2.jpg',
+  // hasViewed: false,
+  isFavourite: ['zach', 'michelle', 'keagan'],
+  comments: [
+    {'id': 'zach', 'comment': 'looks tasty!'},
+    {'id': 'Tom', 'comment': 'Master Chef!'},
+    {'id': 'Nelius', 'comment': 'Bravo chef'}
+  ],
+  collection: _collection1,
+);
 
-
-
-    // Dummy Post 04
+// Dummy Post 04
 DietPost _dietPost4 = DietPost(
-    userDetails: _dummyUser,
-    calories: 560,
-    minutes: 24,
-    benefits: ['loose weight', 'get stronger', 'live happily'],
-    ingredients: [
-      'salt',
-      'pepper',
-      'eggs',
-      'flower',
-      'water',
-      'maybe quantities?'
-    ],
-    recipe: 'mix cake into a batch of dummy text that is used to test design',
-    bodyTag: 'weightloss',
-    imagePath: 'dummy image path',
-    imageUrl: 'assets/images/protein1.jpg',
-    // hasViewed: false,
-    isFavourite: ['zach', 'michelle', 'keagan'],
-    comments: [{'id':'zach', 'comment':'looks tasty!'},{'id':'Tom','comment':'Master Chef!'},{'id':'Nelius', 'comment':'Bravo chef'}],
-    collection: _collection2,
-    );
+  userDetails: _dummyUser,
+  calories: 560,
+  minutes: 24,
+  benefits: ['loose weight', 'get stronger', 'live happily'],
+  ingredients: [
+    'salt',
+    'pepper',
+    'eggs',
+    'flower',
+    'water',
+    'maybe quantities?'
+  ],
+  recipe: 'mix cake into a batch of dummy text that is used to test design',
+  bodyTag: 'weightloss',
+  imagePath: 'dummy image path',
+  imageUrl: 'assets/images/protein1.jpg',
+  // hasViewed: false,
+  isFavourite: ['zach', 'michelle', 'keagan'],
+  comments: [
+    {'id': 'zach', 'comment': 'looks tasty!'},
+    {'id': 'Tom', 'comment': 'Master Chef!'},
+    {'id': 'Nelius', 'comment': 'Bravo chef'}
+  ],
+  collection: _collection2,
+);
 
-
-
-    // Dummy Post 05
+// Dummy Post 05
 DietPost _dietPost5 = DietPost(
-    userDetails: _dummyUser,
-    calories: 310,
-    minutes: 40,
-    benefits: ['loose weight', 'get stronger', 'live happily'],
-    ingredients: [
-      'salt',
-      'pepper',
-      'eggs',
-      'flower',
-      'water',
-      'maybe quantities?'
-    ],
-    recipe: 'mix cake into a batch of dummy text that is used to test design',
-    bodyTag: 'weightloss',
-    imagePath: 'dummy image path',
-    imageUrl: 'assets/images/protein2.jpg',
-    // hasViewed: false,
-    isFavourite: ['zach', 'michelle', 'keagan'],
-    comments: [{'id':'zach', 'comment':'looks tasty!'},{'id':'Tom','comment':'Master Chef!'},{'id':'Nelius', 'comment':'Bravo chef'}],
-    collection: _collection2,
-    );
+  userDetails: _dummyUser,
+  calories: 310,
+  minutes: 40,
+  benefits: ['loose weight', 'get stronger', 'live happily'],
+  ingredients: [
+    'salt',
+    'pepper',
+    'eggs',
+    'flower',
+    'water',
+    'maybe quantities?'
+  ],
+  recipe: 'mix cake into a batch of dummy text that is used to test design',
+  bodyTag: 'weightloss',
+  imagePath: 'dummy image path',
+  imageUrl: 'assets/images/protein2.jpg',
+  // hasViewed: false,
+  isFavourite: ['zach', 'michelle', 'keagan'],
+  comments: [
+    {'id': 'zach', 'comment': 'looks tasty!'},
+    {'id': 'Tom', 'comment': 'Master Chef!'},
+    {'id': 'Nelius', 'comment': 'Bravo chef'}
+  ],
+  collection: _collection2,
+);
 
-
-
-    // Dummy Post 06
+// Dummy Post 06
 DietPost _dietPost6 = DietPost(
-    userDetails: _dummyUser,
-    calories: 290,
-    minutes: 25,
-    benefits: ['loose weight', 'get stronger', 'live happily'],
-    ingredients: [
-      'salt',
-      'pepper',
-      'eggs',
-      'flower',
-      'water',
-      'maybe quantities?'
-    ],
-    recipe: 'mix cake into a batch of dummy text that is used to test design',
-    bodyTag: 'weightloss',
-    imagePath: 'dummy image path',
-    imageUrl: 'assets/images/protein3.jpg',
-    // hasViewed: false,
-    isFavourite: ['zach', 'michelle', 'keagan'],
-    comments: [{'id':'zach', 'comment':'looks tasty!'},{'id':'Tom','comment':'Master Chef!'},{'id':'Nelius', 'comment':'Bravo chef'}],
-    collection: _collection2,
-    );
+  userDetails: _dummyUser,
+  calories: 290,
+  minutes: 25,
+  benefits: ['loose weight', 'get stronger', 'live happily'],
+  ingredients: [
+    'salt',
+    'pepper',
+    'eggs',
+    'flower',
+    'water',
+    'maybe quantities?'
+  ],
+  recipe: 'mix cake into a batch of dummy text that is used to test design',
+  bodyTag: 'weightloss',
+  imagePath: 'dummy image path',
+  imageUrl: 'assets/images/protein3.jpg',
+  // hasViewed: false,
+  isFavourite: ['zach', 'michelle', 'keagan'],
+  comments: [
+    {'id': 'zach', 'comment': 'looks tasty!'},
+    {'id': 'Tom', 'comment': 'Master Chef!'},
+    {'id': 'Nelius', 'comment': 'Bravo chef'}
+  ],
+  collection: _collection2,
+);
 
-
-
-    // Dummy Post 07
+// Dummy Post 07
 DietPost _dietPost7 = DietPost(
-    userDetails: _dummyUser,
-    calories: 798,
-    minutes: 34,
-    benefits: ['loose weight', 'get stronger', 'live happily'],
-    ingredients: [
-      'salt',
-      'pepper',
-      'eggs',
-      'flower',
-      'water',
-      'maybe quantities?'
-    ],
-    recipe: 'mix cake into a batch of dummy text that is used to test design',
-    bodyTag: 'weightloss',
-    imagePath: 'dummy image path',
-    imageUrl: 'assets/images/burger1.jpg',
-    // hasViewed: false,
-    isFavourite: ['zach', 'michelle', 'keagan'],
-    comments: [{'id':'zach', 'comment':'looks tasty!'},{'id':'Tom','comment':'Master Chef!'},{'id':'Nelius', 'comment':'Bravo chef'}],
-    collection: _collection3,
-    );
+  userDetails: _dummyUser,
+  calories: 798,
+  minutes: 34,
+  benefits: ['loose weight', 'get stronger', 'live happily'],
+  ingredients: [
+    'salt',
+    'pepper',
+    'eggs',
+    'flower',
+    'water',
+    'maybe quantities?'
+  ],
+  recipe: 'mix cake into a batch of dummy text that is used to test design',
+  bodyTag: 'weightloss',
+  imagePath: 'dummy image path',
+  imageUrl: 'assets/images/burger1.jpg',
+  // hasViewed: false,
+  isFavourite: ['zach', 'michelle', 'keagan'],
+  comments: [
+    {'id': 'zach', 'comment': 'looks tasty!'},
+    {'id': 'Tom', 'comment': 'Master Chef!'},
+    {'id': 'Nelius', 'comment': 'Bravo chef'}
+  ],
+  collection: _collection3,
+);
 
-
-
-    // Dummy Post 08
+// Dummy Post 08
 DietPost _dietPost8 = DietPost(
-    userDetails: _dummyUser,
-    calories: 609,
-    minutes: 15,
-    benefits: ['loose weight', 'get stronger', 'live happily'],
-    ingredients: [
-      'salt',
-      'pepper',
-      'eggs',
-      'flower',
-      'water',
-      'maybe quantities?'
-    ],
-    recipe: 'mix cake into a batch of dummy text that is used to test design',
-    bodyTag: 'weightloss',
-    imagePath: 'dummy image path',
-    imageUrl: 'assets/images/burger2.jpg',
-    // hasViewed: false,
-    isFavourite: ['zach', 'michelle', 'keagan'],
-    comments: [{'id':'zach', 'comment':'looks tasty!'},{'id':'Tom','comment':'Master Chef!'},{'id':'Nelius', 'comment':'Bravo chef'}],
-    collection: _collection3,
-    );
+  userDetails: _dummyUser,
+  calories: 609,
+  minutes: 15,
+  benefits: ['loose weight', 'get stronger', 'live happily'],
+  ingredients: [
+    'salt',
+    'pepper',
+    'eggs',
+    'flower',
+    'water',
+    'maybe quantities?'
+  ],
+  recipe: 'mix cake into a batch of dummy text that is used to test design',
+  bodyTag: 'weightloss',
+  imagePath: 'dummy image path',
+  imageUrl: 'assets/images/burger2.jpg',
+  // hasViewed: false,
+  isFavourite: ['zach', 'michelle', 'keagan'],
+  comments: [
+    {'id': 'zach', 'comment': 'looks tasty!'},
+    {'id': 'Tom', 'comment': 'Master Chef!'},
+    {'id': 'Nelius', 'comment': 'Bravo chef'}
+  ],
+  collection: _collection3,
+);
 
-
-    // Dummy Post 09
+// Dummy Post 09
 DietPost _dietPost9 = DietPost(
   // no collection
-    userDetails: _dummyUser,
-    calories: 609,
-    minutes: 15,
-    benefits: ['loose weight', 'get stronger', 'live happily'],
-    ingredients: [
-      'salt',
-      'pepper',
-      'eggs',
-      'flower',
-      'water',
-      'maybe quantities?'
-    ],
-    recipe: 'mix cake into a batch of dummy text that is used to test design',
-    bodyTag: 'weightloss',
-    imagePath: 'dummy image path',
-    imageUrl: 'assets/images/sushi.jpg',
-    // hasViewed: false,
-    isFavourite: ['zach', 'michelle', 'keagan'],
-    comments: [{'id':'zach', 'comment':'looks tasty!'},{'id':'Tom','comment':'Master Chef!'},{'id':'Nelius', 'comment':'Bravo chef'}],
-    // no collection
-    );
-
-
+  userDetails: _dummyUser,
+  calories: 609,
+  minutes: 15,
+  benefits: ['loose weight', 'get stronger', 'live happily'],
+  ingredients: [
+    'salt',
+    'pepper',
+    'eggs',
+    'flower',
+    'water',
+    'maybe quantities?'
+  ],
+  recipe: 'mix cake into a batch of dummy text that is used to test design',
+  bodyTag: 'weightloss',
+  imagePath: 'dummy image path',
+  imageUrl: 'assets/images/sushi.jpg',
+  // hasViewed: false,
+  isFavourite: ['zach', 'michelle', 'keagan'],
+  comments: [
+    {'id': 'zach', 'comment': 'looks tasty!'},
+    {'id': 'Tom', 'comment': 'Master Chef!'},
+    {'id': 'Nelius', 'comment': 'Bravo chef'}
+  ],
+  // no collection
+);
 
 // Dummy Post
 TextPost _textPost = TextPost(
@@ -289,32 +307,28 @@ UserDetails _dummyUser = UserDetails(
 
 // Dummy Collection 1
 Collection _collection1 = Collection(
-  colour: Colors.pink,
-  title: 'Diet Bowl',
-  tags: ['get lean','lose weight','healty option'],
-  description: 'this diet is designed to let you lose weight and enjoy doing it!',
-  category: 'Meals'
-);
+    colour: Colors.pink,
+    title: 'Diet Bowl',
+    tags: ['get lean', 'lose weight', 'healty option'],
+    description:
+        'this diet is designed to let you lose weight and enjoy doing it!',
+    category: 'Meals');
 
-
-// Dummy Collection 2 
+// Dummy Collection 2
 Collection _collection2 = Collection(
-  colour: Colors.indigo,
-  title: 'Lean Protein',
-  tags: ['get lean','build muscle'],
-  description: 'get your protein in, its delicious',
-  category: 'Meals'
-);
+    colour: Colors.indigo,
+    title: 'Lean Protein',
+    tags: ['get lean', 'build muscle'],
+    description: 'get your protein in, its delicious',
+    category: 'Meals');
 
-// Dummy Collection 3 
+// Dummy Collection 3
 Collection _collection3 = Collection(
-  colour: Colors.amber[800],
-  title: 'Burgers',
-  tags: ['cheat meal', 'enjoy life'],
-  description: 'sometimes you have to let go & enjoy a balance',
-  category: 'Meals'
-);
-
+    colour: Colors.amber[800],
+    title: 'Burgers',
+    tags: ['cheat meal', 'enjoy life'],
+    description: 'sometimes you have to let go & enjoy a balance',
+    category: 'Meals');
 
 // Dummy User FUll Bio
 FullBio _dummyUserFullBio = FullBio(title: 'full bio in hrerre');
@@ -322,14 +336,12 @@ FullBio _dummyUserFullBio = FullBio(title: 'full bio in hrerre');
 // Pass to Dummy Post Displays
 
 // List _posts = [_dietPost, _textPost, _dietPost2, _dietPost3, _dietPost4, _dietPost5, _dietPost6, _dietPost7, _dietPost8, _dietPost9];
-List _posts = [ _textPost,  _dietPost5];
+List _posts = [_textPost, _dietPost5];
 
 // ..................................... DELETE WHEN ADDING REAL DATA : DUMMY POSTS ....................................................
 // .....................................................................................................................................
 // .....................................................................................................................................
 // .....................................................................................................................................
-
-
 
 class _MyAppState extends State<MyApp> {
   int _currentIndex = 0;
@@ -344,8 +356,14 @@ class _MyAppState extends State<MyApp> {
   //     );
   //     print(_posts);
   //   });
-    
-    
+
+  void addPost(dynamic post) {
+    setState(() {
+      _posts.add(post);
+    });
+    print(post);
+  }
+
   // }
 
   // void _deletePost(int index) {
@@ -369,7 +387,7 @@ class _MyAppState extends State<MyApp> {
       return SearchPage();
     }
     if (_currentIndex == 2) {
-      return UploadPage();
+      return UploadPage(addPost);
     }
     if (_currentIndex == 3) {
       return NotificationPage();
@@ -407,29 +425,34 @@ class _MyAppState extends State<MyApp> {
             BottomNavigationBarItem(
                 title: Container(),
                 icon: Icon(Icons.perm_media,
-                    color:
-                        _currentIndex == 0 ? Colors.lightBlue[800] : Colors.grey)),
+                    color: _currentIndex == 0
+                        ? Colors.lightBlue[800]
+                        : Colors.grey)),
             BottomNavigationBarItem(
                 title: Container(),
                 icon: Icon(
                   Icons.search,
-                  color: _currentIndex == 1 ? Colors.lightBlue[800] : Colors.grey,
+                  color:
+                      _currentIndex == 1 ? Colors.lightBlue[800] : Colors.grey,
                 )),
             BottomNavigationBarItem(
                 title: Container(),
                 icon: Icon(Icons.camera_alt,
-                    color:
-                        _currentIndex == 2 ? Colors.lightBlue[800] : Colors.grey)),
+                    color: _currentIndex == 2
+                        ? Colors.lightBlue[800]
+                        : Colors.grey)),
             BottomNavigationBarItem(
                 title: Container(),
                 icon: Icon(Icons.favorite,
-                    color:
-                        _currentIndex == 3 ? Colors.lightBlue[800] : Colors.grey)),
+                    color: _currentIndex == 3
+                        ? Colors.lightBlue[800]
+                        : Colors.grey)),
             BottomNavigationBarItem(
                 title: Container(),
                 icon: Icon(Icons.person,
-                    color:
-                        _currentIndex == 4 ? Colors.lightBlue[800] : Colors.grey))
+                    color: _currentIndex == 4
+                        ? Colors.lightBlue[800]
+                        : Colors.grey))
           ],
           onTap: _onTapNavigationBar,
         ),
