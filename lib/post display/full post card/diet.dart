@@ -34,7 +34,7 @@ class DietPostFull extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 10.1),
+          SizedBox(height: 10.0),
           Row(
             children: <Widget>[
               Expanded(child: Container()),
