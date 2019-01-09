@@ -35,7 +35,7 @@ class DietPostHomePage extends StatelessWidget {
                   )),
             ),
             Positioned(
-              top: 5,
+              top: 2,
               left: 2,
               child: UsernameBadge(_post.userDetails.userName),
             ),
@@ -47,7 +47,7 @@ class DietPostHomePage extends StatelessWidget {
             ),
             Positioned(
               right: 2,
-              top: 5,
+              top: 2,
               child: CollectionTag(
                         _post.collection.title, _post.collection.colour,
                         small: true),

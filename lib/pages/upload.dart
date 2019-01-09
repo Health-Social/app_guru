@@ -3,10 +3,9 @@ import 'package:flutter/animation.dart';
 
 // Page Navigation
 import './upload pages/meal.dart';
+import './upload pages/text.dart';
 
 class UploadPage extends StatefulWidget {
-
-
   @override
   State<StatefulWidget> createState() {
     return _UploadPageState();
@@ -23,8 +22,7 @@ class _UploadPageState extends State<UploadPage> with TickerProviderStateMixin {
     super.initState();
   }
 
-  Widget _card(String text, IconData icon, int navigationIndex,
-      Color colour,
+  Widget _card(String text, IconData icon, int navigationIndex, Color colour,
       {Image image /*if implement background image*/} /*add navigator path*/) {
     // Widget that builds the cards displayed
     return ScaleTransition(
@@ -37,16 +35,19 @@ class _UploadPageState extends State<UploadPage> with TickerProviderStateMixin {
           if (navigationIndex == 1) {
             // navigate cardio
           } else if (navigationIndex == 2) {
-            // navigate text
+            // navigate to text page
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => TextUploadPage(colour)));
           } else if (navigationIndex == 3) {
             // navigate workout
           } else if (navigationIndex == 4) {
-            Navigator.push(context, 
-              MaterialPageRoute(
-                builder: (BuildContext context) 
-                 =>  MealUploadPage(colour)
-                
-              ));
+            // navigate to diet page
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => MealUploadPage(colour)));
           }
         },
         onDoubleTap: () {
@@ -136,11 +137,9 @@ class _UploadPageState extends State<UploadPage> with TickerProviderStateMixin {
             Row(
               children: <Widget>[
                 Expanded(child: Container()),
-                _card('workout', Icons.fitness_center, 3,
-                    Colors.amber[400]),
+                _card('workout', Icons.fitness_center, 3, Colors.amber[400]),
                 //SizedBox(width: 4),
-                _card('meal', Icons.local_dining, 4,
-                    Colors.cyanAccent[400]),
+                _card('meal', Icons.local_dining, 4, Colors.cyanAccent[400]),
                 Expanded(child: Container()),
               ],
             ),

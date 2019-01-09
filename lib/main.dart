@@ -273,7 +273,8 @@ TextPost _textPost = TextPost(
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     hasViewed: false,
-    isFavourite: false);
+    isFavourite: false,
+    collection: _collection1);
 
 // Dummy User
 UserDetails _dummyUser = UserDetails(
@@ -320,7 +321,9 @@ FullBio _dummyUserFullBio = FullBio(title: 'full bio in hrerre');
 
 // Pass to Dummy Post Displays
 
-List _posts = [_dietPost, _textPost, _dietPost2, _dietPost3, _dietPost4, _dietPost5, _dietPost6, _dietPost7, _dietPost8, _dietPost9];
+// List _posts = [_dietPost, _textPost, _dietPost2, _dietPost3, _dietPost4, _dietPost5, _dietPost6, _dietPost7, _dietPost8, _dietPost9];
+List _posts = [ _textPost,  _dietPost5];
+
 // ..................................... DELETE WHEN ADDING REAL DATA : DUMMY POSTS ....................................................
 // .....................................................................................................................................
 // .....................................................................................................................................
@@ -405,28 +408,28 @@ class _MyAppState extends State<MyApp> {
                 title: Container(),
                 icon: Icon(Icons.perm_media,
                     color:
-                        _currentIndex == 0 ? Colors.indigo[800] : Colors.grey)),
+                        _currentIndex == 0 ? Colors.lightBlue[800] : Colors.grey)),
             BottomNavigationBarItem(
                 title: Container(),
                 icon: Icon(
                   Icons.search,
-                  color: _currentIndex == 1 ? Colors.indigo[800] : Colors.grey,
+                  color: _currentIndex == 1 ? Colors.lightBlue[800] : Colors.grey,
                 )),
             BottomNavigationBarItem(
                 title: Container(),
                 icon: Icon(Icons.camera_alt,
                     color:
-                        _currentIndex == 2 ? Colors.indigo[800] : Colors.grey)),
+                        _currentIndex == 2 ? Colors.lightBlue[800] : Colors.grey)),
             BottomNavigationBarItem(
                 title: Container(),
                 icon: Icon(Icons.favorite,
                     color:
-                        _currentIndex == 3 ? Colors.indigo[800] : Colors.grey)),
+                        _currentIndex == 3 ? Colors.lightBlue[800] : Colors.grey)),
             BottomNavigationBarItem(
                 title: Container(),
                 icon: Icon(Icons.person,
                     color:
-                        _currentIndex == 4 ? Colors.indigo[800] : Colors.grey))
+                        _currentIndex == 4 ? Colors.lightBlue[800] : Colors.grey))
           ],
           onTap: _onTapNavigationBar,
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../users/user_details.dart';
+import './collection.dart';
 // Commented out sections to be added later 
 
 class TextPost {
@@ -14,6 +15,7 @@ class TextPost {
   // share each others posts???
   final bool isFavourite;
   final bool hasViewed;
+  final Collection collection;
 
   TextPost({
     @required this.userDetails,
@@ -22,7 +24,8 @@ class TextPost {
     @required this.subTitle,
     @required this.tag,
     this.isFavourite = false,
-    this.hasViewed = false
+    this.hasViewed = false,
+    this.collection,
   });
 }
 

@@ -9,6 +9,7 @@ class MealUploadPage extends StatefulWidget {
 
   MealUploadPage(this._colour);
 
+
   _MealUploadPageState createState() => _MealUploadPageState();
 }
 
@@ -19,23 +20,23 @@ class MealUploadPage extends StatefulWidget {
 
 
 
- ///
-  ///
-  ///// Dummy User
-UserDetails _dummyUser = UserDetails(
-  userId: '@ZachWolpe87',
-  userEmail: 'dummy@dummy.com',
-  userName: 'Zach Wolpe',
-  userProfilePicture: 'assets/images/profile_pic2.jpg',
-  userPassword: 'dummy password',
-  userBio: '22 year old South African, staying healthy',
-  userFullBio: _dummyUserFullBio,
-);
+//  ///
+//   ///
+// // Dummy User FUll Bio
+// FullBio _dummyUserFullBio = FullBio(title: 'full bio in hrerre');
+//   ///// Dummy User
+// UserDetails _dummyUser = UserDetails(
+//   userId: '@ZachWolpe87',
+//   userEmail: 'dummy@dummy.com',
+//   userName: 'Zach Wolpe',
+//   userProfilePicture: 'assets/images/profile_pic2.jpg',
+//   userPassword: 'dummy password',
+//   userBio: '22 year old South African, staying healthy',
+//   userFullBio: _dummyUserFullBio,
+// );
 
-// Dummy User FUll Bio
-FullBio _dummyUserFullBio = FullBio(title: 'full bio in hrerre');
-  ///
-  ///
+//   ///
+//   ///
 
 
 
@@ -50,6 +51,18 @@ FullBio _dummyUserFullBio = FullBio(title: 'full bio in hrerre');
 
 
 class _MealUploadPageState extends State<MealUploadPage> {
+
+   ///// Dummy User
+ UserDetails _dummyUser = UserDetails(
+  userId: '@ZachWolpe87',
+  userEmail: 'dummy@dummy.com',
+  userName: 'Zach Wolpe',
+  userProfilePicture: 'assets/images/profile_pic2.jpg',
+  userPassword: 'dummy password',
+  userBio: '22 year old South African, staying healthy',
+  userFullBio: FullBio(title: 'full bio in hrerre'),
+);
+
   // data to save for post
   String placeholderImage = 'assets/images/logo.png';
   double calories;
@@ -205,7 +218,7 @@ setState(() {
     );
   }
 
-  _newPost(){
+  _newPost() {
     // create the new post
     DietPost _newPost = DietPost(
       imagePath: placeholderImage,
@@ -229,6 +242,7 @@ setState(() {
     return RaisedButton(
               onPressed: () {
                 // add post function
+                _newPost();
               },
               color: Colors.pink,
               child: Text('post', style: TextStyle(color: Colors.white)),
