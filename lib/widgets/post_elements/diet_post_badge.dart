@@ -299,6 +299,7 @@ class CaloriesTimeBar extends StatefulWidget {
 
 class _CaloriesTimeBarState extends State<CaloriesTimeBar> {
   bool _showCals = true;
+  bool _showSpeed = true;
 
   double _numberSize() {
     if (widget.large == true) {
@@ -309,98 +310,112 @@ class _CaloriesTimeBarState extends State<CaloriesTimeBar> {
   }
 
   Widget _calories(String calories) {
+    // calories display
     double kilojs = widget.calories * 4.184;
 
-    Container _displayContainer = 
-      _showCals
-      ? Container(
-      child: Container(
-        padding: EdgeInsets.only(right: 35, top: 4),
-        child: Column(
-          children: <Widget>[
-            Text(
-              calories,
-              style: TextStyle(
-                  fontFamily: 'myriad-pro-light',
-                  color: Colors.lightBlue[800],
-                  fontSize: _numberSize(),
-                  fontWeight: FontWeight.w500),
+    Container _displayContainer = _showCals
+        ? Container(
+            child: Container(
+            padding: EdgeInsets.only(right: 35, top: 4),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  calories,
+                  style: TextStyle(
+                      fontFamily: 'myriad-pro-light',
+                      color: Colors.lightBlue[800],
+                      fontSize: _numberSize(),
+                      fontWeight: FontWeight.w500),
+                ),
+                Text(
+                  'calories',
+                  style: TextStyle(
+                      fontFamily: 'myriad-pro-light',
+                      color: Colors.lightBlue[800],
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
             ),
-            Text(
-              'calories',
-              style: TextStyle(
-                  fontFamily: 'myriad-pro-light',
-                  color: Colors.lightBlue[800],
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500),
+          ))
+        : Container(
+            child: Container(
+            padding: EdgeInsets.only(right: 35, top: 4),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  kilojs.round().toString(),
+                  style: TextStyle(
+                      fontFamily: 'myriad-pro-light',
+                      color: Colors.lightBlue[800],
+                      fontSize: _numberSize(),
+                      fontWeight: FontWeight.w500),
+                ),
+                Text(
+                  'kilojoules',
+                  style: TextStyle(
+                      fontFamily: 'myriad-pro-light',
+                      color: Colors.lightBlue[800],
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
             ),
-          ],
-        ),
-      ))
-      : Container(
-      child: Container(
-        padding: EdgeInsets.only(right: 35, top: 4),
-        child: Column(
-          children: <Widget>[
-            Text(
-              kilojs.round().toString(),
-              style: TextStyle(
-                  fontFamily: 'myriad-pro-light',
-                  color: Colors.lightBlue[800],
-                  fontSize: _numberSize(),
-                  fontWeight: FontWeight.w500),
+          ));
+
+    return GestureDetector(
+        onTap: () {
+          setState(() {
+            if (_showCals) {
+              _showCals = false;
+            } else {
+              _showCals = true;
+            }
+          });
+        },
+        child: _displayContainer);
+  }
+
+  Widget _minutes(String minutes) {
+    //  minutes display
+
+    Container _timeDisplay = _showSpeed
+        ? Container(
+            padding: EdgeInsets.only(left: 35, top: 4),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  minutes,
+                  style: TextStyle(
+                      fontFamily: 'myriad-pro-light',
+                      color: Colors.lightBlue[800],
+                      fontSize: _numberSize(),
+                      fontWeight: FontWeight.w500),
+                ),
+                Text(
+                  'minutes',
+                  style: TextStyle(
+                      fontFamily: 'myriad-pro-light',
+                      color: Colors.lightBlue[800],
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
             ),
-            Text(
-              'kilojoules',
-              style: TextStyle(
-                  fontFamily: 'myriad-pro-light',
-                  color: Colors.lightBlue[800],
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500),
-            ),
-          ],
-        ),
-      ))
-      ;
+          )
+        : Container(child:  Text('..change..'));
 
     return GestureDetector(
       onTap: () {
         setState(() {
-          if (_showCals) {
-            _showCals = false;
+          if (_showSpeed) {
+            _showSpeed = false;
           } else {
-            _showCals = true;
+            _showSpeed = true;
           }
         });
       },
-      child: _displayContainer
-    );
-  }
-
-  Widget _minutes(String minutes) {
-    // builds minutes display
-    return Container(
-      padding: EdgeInsets.only(left: 35, top: 4),
-      child: Column(
-        children: <Widget>[
-          Text(
-            minutes,
-            style: TextStyle(
-                fontFamily: 'myriad-pro-light',
-                color: Colors.lightBlue[800],
-                fontSize: _numberSize(),
-                fontWeight: FontWeight.w500),
-          ),
-          Text(
-            'minutes',
-            style: TextStyle(
-                fontFamily: 'myriad-pro-light',
-                color: Colors.lightBlue[800],
-                fontSize: 16,
-                fontWeight: FontWeight.w500),
-          ),
-        ],
-      ),
+      child: _timeDisplay,
     );
   }
 

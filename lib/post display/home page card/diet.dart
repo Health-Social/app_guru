@@ -8,6 +8,7 @@ import '../../widgets/post_elements/username_badge.dart';
 import '../../widgets/post_elements/diet_post_badge.dart';
 import '../../widgets/post_elements/image_fade.dart';
 import '../../widgets/post_elements/collection_tag.dart';
+import '../../widgets/post_elements/interact.dart';
 
 class DietPostHomePage extends StatelessWidget {
   //
@@ -59,27 +60,29 @@ class DietPostHomePage extends StatelessWidget {
             Expanded(child: Container()),
             CaloriesTimeBar(_post.calories, _post.minutes, false),
             Expanded(child: Container()),
-            // _post.isFavourite == true ?
-            //  ? Icon(Icons.favorite, color: Colors.black)
-            //  : Container(),
-            Column(
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    Icon(Icons.favorite_border,
-                        color: Colors.black87, size: 30.0),
-                    SizedBox(width: 3.0),
-                    Icon(Icons.insert_comment,
-                        color: Colors.black87, size: 25.0),
-                    SizedBox(width: 10.0),
-                  ],
-                ),
-                Text('${_post.isFavourite.length} likes'),
-                //   Text('${_post.comments.length} '),
-              ],
-            )
+            Interact(_post, 1)
           ],
         ),
+           Row(children: <Widget>[
+             // outsouce the star function
+            Expanded(child: Container(),),
+          Icon(Icons.star, color: Colors.black87, size: 30.0),
+          SizedBox(width: 5),
+          Icon(Icons.star, color: Colors.black87, size: 30.0),
+          SizedBox(width: 5),
+          Icon(Icons.star, color: Colors.black87, size: 30.0),
+          SizedBox(width: 5),
+          Icon(Icons.star_half, color: Colors.black87, size: 30.0),
+          SizedBox(width: 5),
+          Icon(Icons.star_border, color: Colors.black87, size: 30.0),
+           Expanded(child: Container(),),
+           Column(children: <Widget>[
+             Text('147 votes')
+           ],),
+           SizedBox(width: 20),
+        ],),
+      //  SizedBox(height: 10),
+     //   Interact(_post, 2)
       ],
     );
   }

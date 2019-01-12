@@ -133,7 +133,7 @@ class _UploadPageState extends State<UploadPage> with TickerProviderStateMixin {
                 Expanded(child: Container()),
                 _card('cardio', Icons.all_inclusive, 1, Colors.blue[600]),
                 //SizedBox(width: 4),
-                _card('text', Icons.text_fields, 2, Colors.orange[600]),
+                _card('text', Icons.text_fields, 2, Colors.pinkAccent[100]),
                 Expanded(child: Container()),
               ],
             ),
@@ -141,7 +141,7 @@ class _UploadPageState extends State<UploadPage> with TickerProviderStateMixin {
             Row(
               children: <Widget>[
                 Expanded(child: Container()),
-                _card('workout', Icons.fitness_center, 3, Colors.amber[400]),
+                _card('workout', Icons.fitness_center, 3, Colors.amber[500]),
                 //SizedBox(width: 4),
                 _card('meal', Icons.local_dining, 4, Colors.cyanAccent[400]),
                 Expanded(child: Container()),
