@@ -31,6 +31,7 @@ class MyApp extends StatefulWidget {
 
 // Dummy Post 01
 DietPost _dietPost = DietPost(
+  meal: true,
   userDetails: _dummyUser,
   calories: 434,
   minutes: 27,
@@ -59,6 +60,7 @@ DietPost _dietPost = DietPost(
 
 // Dummy Post 02
 DietPost _dietPost2 = DietPost(
+  meal: true,
   userDetails: _dummyUser,
   calories: 130,
   minutes: 12,
@@ -87,6 +89,7 @@ DietPost _dietPost2 = DietPost(
 
 // Dummy Post 03
 DietPost _dietPost3 = DietPost(
+  meal: true,
   userDetails: _dummyUser,
   calories: 189,
   minutes: 15,
@@ -115,6 +118,7 @@ DietPost _dietPost3 = DietPost(
 
 // Dummy Post 04
 DietPost _dietPost4 = DietPost(
+  meal: true,
   userDetails: _dummyUser,
   calories: 560,
   minutes: 24,
@@ -143,6 +147,7 @@ DietPost _dietPost4 = DietPost(
 
 // Dummy Post 05
 DietPost _dietPost5 = DietPost(
+  meal: true,
   userDetails: _dummyUser,
   calories: 310,
   minutes: 40,
@@ -171,6 +176,7 @@ DietPost _dietPost5 = DietPost(
 
 // Dummy Post 06
 DietPost _dietPost6 = DietPost(
+  meal: true,
   userDetails: _dummyUser,
   calories: 290,
   minutes: 25,
@@ -199,6 +205,7 @@ DietPost _dietPost6 = DietPost(
 
 // Dummy Post 07
 DietPost _dietPost7 = DietPost(
+  meal: true,
   userDetails: _dummyUser,
   calories: 798,
   minutes: 34,
@@ -227,6 +234,7 @@ DietPost _dietPost7 = DietPost(
 
 // Dummy Post 08
 DietPost _dietPost8 = DietPost(
+  meal: true,
   userDetails: _dummyUser,
   calories: 609,
   minutes: 15,
@@ -253,41 +261,12 @@ DietPost _dietPost8 = DietPost(
   collection: _collection3,
 );
 
-// Dummy Post 09
-DietPost _dietPost9 = DietPost(
-  // no collection
-  userDetails: _dummyUser,
-  calories: 609,
-  minutes: 15,
-  benefits: ['loose weight', 'get stronger', 'live happily'],
-  ingredients: [
-    'salt',
-    'pepper',
-    'eggs',
-    'flower',
-    'water',
-    'maybe quantities?'
-  ],
-  recipe: 'mix cake into a batch of dummy text that is used to test design',
-  bodyTag: 'weightloss',
-  imagePath: 'dummy image path',
-  imageUrl: 'assets/images/sushi.jpg',
-  // hasViewed: false,
-  ratings: [{'userid': 'zach', 'rating' : 3}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
-  comments: [
-    {'id': 'zach', 'comment': 'looks tasty!'},
-    {'id': 'Tom', 'comment': 'Master Chef!'},
-    {'id': 'Nelius', 'comment': 'Bravo chef'}
-  ],
-  // no collection
-);
 
 // Dummy Post
 TextPost _textPost = TextPost(
     userDetails: _dummyUser,
-    title: 'Trip to Massachusetts', // limit characters
+    title: 'Trip to Boston', // limit characters
     subTitle: 'How I became a post doc fellow at MIT', // limit characters
-    tag: 'VIEWS',
     description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     hasViewed: false,
@@ -336,7 +315,7 @@ FullBio _dummyUserFullBio = FullBio(title: 'full bio in hrerre');
 // Pass to Dummy Post Displays
 
 // List _posts = [_dietPost, _textPost, _dietPost2, _dietPost3, _dietPost4, _dietPost5, _dietPost6, _dietPost7, _dietPost8, _dietPost9];
-List _posts = [_textPost, _dietPost7];
+List _posts = [_textPost, _dietPost2];
 
 // ..................................... DELETE WHEN ADDING REAL DATA : DUMMY POSTS ....................................................
 // .....................................................................................................................................

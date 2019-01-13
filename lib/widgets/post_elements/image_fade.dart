@@ -4,11 +4,12 @@ class ImageFade extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 18,
+      height: 15,
       decoration: BoxDecoration(
           gradient: LinearGradient(
         colors: <Color>[
           Colors.transparent,
+          Colors.white10,
           Colors.white,
         ],
         begin: FractionalOffset(0.0, 0.0),

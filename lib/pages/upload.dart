@@ -133,7 +133,7 @@ class _UploadPageState extends State<UploadPage> with TickerProviderStateMixin {
                 Expanded(child: Container()),
                 _card('cardio', Icons.all_inclusive, 1, Colors.blue[600]),
                 //SizedBox(width: 4),
-                _card('text', Icons.text_fields, 2, Colors.pinkAccent[100]),
+                _card('text', Icons.text_fields, 2, Colors.orange[600]),
                 Expanded(child: Container()),
               ],
             ),

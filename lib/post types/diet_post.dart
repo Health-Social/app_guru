@@ -20,13 +20,12 @@ class DietPost {
   final String bodyTag;
   final double price;
   // location
-  // usercomments
-  // share each others posts???
   final List<Map> ratings;
   final List<Map<String, String>> comments;
   final List<String> hasViewed; // or just order chronologically
   // Collection
   final Collection collection;
+  final bool meal;
 
   DietPost(
       {@required this.userDetails,
@@ -36,11 +35,13 @@ class DietPost {
       @required this.imageUrl,
       @required this.imagePath,
       @required this.bodyTag,
+      @required this.meal,
       this.calories,
       this.minutes,
       this.price,
       this.ratings,
       this.comments,
       this.hasViewed,
-      this.collection});
+      this.collection,
+      });
 }

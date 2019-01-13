@@ -53,6 +53,7 @@ class _TextUploadPageState extends State<TextUploadPage> {
             _subTitle = text;
           }
         },
+        maxLength: 30,
         cursorColor: Colors.grey,
         cursorWidth: 1,
         decoration: InputDecoration(
@@ -98,7 +99,6 @@ class _TextUploadPageState extends State<TextUploadPage> {
               title: _title,
               subTitle: _subTitle,
               description: _description,
-              tag: _tag,
               userDetails: _userDetails);
           // add post to list
           widget.addPost(_newPost);

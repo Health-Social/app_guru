@@ -9,12 +9,11 @@ class TextPost {
   final String title;
   final String description;
   final String subTitle;
-  final String tag;
   // location
   // usercomments
   // share each others posts???
   final bool isFavourite;
-  final bool hasViewed;
+  final bool hasViewed; // NA
   final Collection collection;
 
   TextPost({
@@ -22,7 +21,6 @@ class TextPost {
     @required this.title,
     @required this.description,
     @required this.subTitle,
-    @required this.tag,
     this.isFavourite = false,
     this.hasViewed = false,
     this.collection,

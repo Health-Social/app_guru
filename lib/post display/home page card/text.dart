@@ -53,10 +53,12 @@ class TextPostHomePage extends StatelessWidget {
         Row(
           children: <Widget>[
             ProfilePicCircle(_post.userDetails.userProfilePicture),
+            Expanded(child: Container()),
             _titleAndCollection(),
+            SizedBox(width: 10),
           ],
         ),
-        _subTitle(_post.subTitle),
+        //  _subTitle(_post.subTitle),
         Container(
             // text description
             child: PostDescription(_post.description)),

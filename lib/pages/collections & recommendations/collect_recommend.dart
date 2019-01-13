@@ -34,15 +34,20 @@ class _CollectRecommendPageState extends State<CollectRecommendPage> {
             ],
           ),
         ),
-        body: Column(
-          children: <Widget>[
-            Expanded(
-              child: ListView.builder(
-                itemBuilder: (BuildContext context, int index) {},
+        body: TabBarView(children: <Widget>[
+          ListView.builder(
+                itemCount: 1,
+                itemBuilder: (BuildContext context, int index) {
+                  return Text('collect');
+                },
               ),
-            ),
-          ],
-        ),
+          ListView.builder(
+                itemCount: 1,
+                itemBuilder: (BuildContext context, int index) {
+                  return Text('recommend');
+                },
+              ),
+        ],),
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () {
             // collect / recommend

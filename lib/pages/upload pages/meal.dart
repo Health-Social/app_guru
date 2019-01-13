@@ -200,6 +200,7 @@ class _MealUploadPageState extends State<MealUploadPage> {
   _newPost() {
     // create the new post
     DietPost _newPost = DietPost(
+      meal: true,
       imagePath: placeholderImage,
       calories: calories,
       minutes: minutes,
