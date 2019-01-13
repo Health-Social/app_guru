@@ -15,4 +15,3 @@ class MyAppBar extends AppBar {
                   fontSize: 20.0)));
   }
 }
-

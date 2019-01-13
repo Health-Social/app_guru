@@ -64,6 +64,7 @@ class _ViewLikesCommentsState extends State<ViewLikesComments> {
     );
   }
 
+
   ListTile _listTile(int index) {
     // the listTile displayed per like or comment
     if (viewLikes) {

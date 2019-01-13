@@ -48,7 +48,7 @@ DietPost _dietPost = DietPost(
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/healthBowl.jpg',
   // hasViewed: false,
-  isFavourite: ['zach', 'michelle', 'keagan'],
+  ratings: [{'userid': 'zach', 'rating' : 3}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
   comments: [
     {'id': 'zach', 'comment': 'looks tasty!'},
     {'id': 'Tom', 'comment': 'Master Chef!'},
@@ -76,7 +76,7 @@ DietPost _dietPost2 = DietPost(
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/bowl1.jpg',
   // hasViewed: false,
-  isFavourite: ['zach', 'michelle', 'keagan'],
+  ratings: [{'userid': 'zach', 'rating' : 3}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
   comments: [
     {'id': 'zach', 'comment': 'looks tasty!'},
     {'id': 'Tom', 'comment': 'Master Chef!'},
@@ -104,7 +104,7 @@ DietPost _dietPost3 = DietPost(
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/bowl2.jpg',
   // hasViewed: false,
-  isFavourite: ['zach', 'michelle', 'keagan'],
+  ratings: [{'userid': 'zach', 'rating' : 3}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
   comments: [
     {'id': 'zach', 'comment': 'looks tasty!'},
     {'id': 'Tom', 'comment': 'Master Chef!'},
@@ -132,7 +132,7 @@ DietPost _dietPost4 = DietPost(
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/protein1.jpg',
   // hasViewed: false,
-  isFavourite: ['zach', 'michelle', 'keagan'],
+  ratings: [{'userid': 'zach', 'rating' : 3}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
   comments: [
     {'id': 'zach', 'comment': 'looks tasty!'},
     {'id': 'Tom', 'comment': 'Master Chef!'},
@@ -160,7 +160,7 @@ DietPost _dietPost5 = DietPost(
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/protein2.jpg',
   // hasViewed: false,
-  isFavourite: ['zach', 'michelle', 'keagan'],
+  ratings: [{'userid': 'zach', 'rating' : 3}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
   comments: [
     {'id': 'zach', 'comment': 'looks tasty!'},
     {'id': 'Tom', 'comment': 'Master Chef!'},
@@ -188,7 +188,7 @@ DietPost _dietPost6 = DietPost(
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/protein3.jpg',
   // hasViewed: false,
-  isFavourite: ['zach', 'michelle', 'keagan'],
+  ratings: [{'userid': 'zach', 'rating' : 3}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
   comments: [
     {'id': 'zach', 'comment': 'looks tasty!'},
     {'id': 'Tom', 'comment': 'Master Chef!'},
@@ -216,7 +216,7 @@ DietPost _dietPost7 = DietPost(
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/burger1.jpg',
   // hasViewed: false,
-  isFavourite: ['zach', 'michelle', 'keagan'],
+  ratings: [{'userid': 'zach', 'rating' : 3}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
   comments: [
     {'id': 'zach', 'comment': 'looks tasty!'},
     {'id': 'Tom', 'comment': 'Master Chef!'},
@@ -244,7 +244,7 @@ DietPost _dietPost8 = DietPost(
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/burger2.jpg',
   // hasViewed: false,
-  isFavourite: ['zach', 'michelle', 'keagan'],
+  ratings: [{'userid': 'zach', 'rating' : 3}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
   comments: [
     {'id': 'zach', 'comment': 'looks tasty!'},
     {'id': 'Tom', 'comment': 'Master Chef!'},
@@ -273,7 +273,7 @@ DietPost _dietPost9 = DietPost(
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/sushi.jpg',
   // hasViewed: false,
-  isFavourite: ['zach', 'michelle', 'keagan'],
+  ratings: [{'userid': 'zach', 'rating' : 3}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
   comments: [
     {'id': 'zach', 'comment': 'looks tasty!'},
     {'id': 'Tom', 'comment': 'Master Chef!'},
@@ -336,7 +336,7 @@ FullBio _dummyUserFullBio = FullBio(title: 'full bio in hrerre');
 // Pass to Dummy Post Displays
 
 // List _posts = [_dietPost, _textPost, _dietPost2, _dietPost3, _dietPost4, _dietPost5, _dietPost6, _dietPost7, _dietPost8, _dietPost9];
-List _posts = [_textPost, _dietPost5];
+List _posts = [_textPost, _dietPost7];
 
 // ..................................... DELETE WHEN ADDING REAL DATA : DUMMY POSTS ....................................................
 // .....................................................................................................................................

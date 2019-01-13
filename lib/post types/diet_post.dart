@@ -22,7 +22,7 @@ class DietPost {
   // location
   // usercomments
   // share each others posts???
-  final List<String> isFavourite;
+  final List<Map> ratings;
   final List<Map<String, String>> comments;
   final List<String> hasViewed; // or just order chronologically
   // Collection
@@ -39,7 +39,7 @@ class DietPost {
       this.calories,
       this.minutes,
       this.price,
-      this.isFavourite,
+      this.ratings,
       this.comments,
       this.hasViewed,
       this.collection});

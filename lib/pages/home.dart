@@ -65,33 +65,36 @@ class ScaleRoute extends PageRouteBuilder {
 }
 
 class _HomePageState extends State<HomePage> {
-  _navigateToFullPost(BuildContext context, int index) {
-    // navigate to full post page
+
+
+// Navigator
+  // _navigateToFullPost(BuildContext context, int index) {
+  //   // navigate to full post page
 
     
 
-    if (widget._posts[index] is TextPost) {
-      // navigation if post is a Text Post
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (BuildContext context) =>
-                  TextPostFull(widget._posts[index])));
-    }
+  //   if (widget._posts[index] is TextPost) {
+  //     // navigation if post is a Text Post
+  //     Navigator.push(
+  //         context,
+  //         MaterialPageRoute(
+  //             builder: (BuildContext context) =>
+  //                 TextPostFull(widget._posts[index])));
+  //   }
 
-    if (widget._posts[index] is DietPost) {
-      // navigation if post is a Diet Post
-      Navigator.push(
-          context,
-          // custom page change on scale
-          // ScaleRoute(widget: DietPostFull(widget._posts[index]))
-          MaterialPageRoute(
-              builder: (BuildContext context) =>
-                  DietPostFull(widget._posts[index])));
-    }
+  //   if (widget._posts[index] is DietPost) {
+  //     // navigation if post is a Diet Post
+  //     Navigator.push(
+  //         context,
+  //         // custom page change on scale
+  //         // ScaleRoute(widget: DietPostFull(widget._posts[index]))
+  //         MaterialPageRoute(
+  //             builder: (BuildContext context) =>
+  //                 DietPostFull(widget._posts[index])));
+  //   }
 
     
-  }
+  // }
 
   Widget _postCard(BuildContext context, int index) {
     // build the post card
@@ -117,18 +120,7 @@ class _HomePageState extends State<HomePage> {
 
   _postDisplay(BuildContext context, int index) {
     // sets up Gesture Detector
-    return GestureDetector(
-      onTap: () {
-        _navigateToFullPost(context, index);
-      },
-      onLongPress: () {
-        // focus in
-      },
-      onDoubleTap: () {
-        // implement like post
-      },
-      child: _postCard(context, index),
-    );
+    return _postCard(context, index);
   }
 
   @override

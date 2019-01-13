@@ -8,6 +8,7 @@ import '../../widgets/post_elements/username_badge.dart';
 import '../../widgets/post_elements/diet_post_badge.dart';
 import '../../widgets/post_elements/view_likes_comments.dart';
 import '../../widgets/post_elements/collection_tag.dart';
+import '../../widgets/post_elements/interact.dart';
 
 class DietPostFull extends StatelessWidget {
   final DietPost _post;
@@ -17,13 +18,6 @@ class DietPostFull extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //     backgroundColor: Colors.white70,
-      //     title: Text(_post.title,
-      //         style: TextStyle(
-      //             color: Colors.black,
-      //             fontFamily: 'Comfortaa',
-      //             fontSize: 20.0))),
       body: ListView(
         children: <Widget>[
           Stack(
@@ -45,17 +39,24 @@ class DietPostFull extends StatelessWidget {
               ),
               Expanded(child: Container()),
               _post.collection != null 
-                ? CollectionTag(_post.collection.title, _post.collection.colour)
-                : Container(),
+                ? Row(children: <Widget>[
+                  Interact(_post, 1),
+                  CollectionTag(_post.collection.title, _post.collection.colour),
+                ],)
+                : Row(children: <Widget>[
+                  Interact(_post, 1),
+                 SizedBox(width: 15),
+                ],),
               SizedBox(width: 10),
             ],
           ),
           SizedBox(height: 10.0),
+          Interact(_post, 3),
           Divider(color: Colors.grey),
           RecipeSubBar(_post),
           Divider(color: Colors.grey),
-          ViewLikesComments(_post),
-          
+          SizedBox(height: 10.0),
+          Interact(_post, 2)
         ],
       ),
     );
