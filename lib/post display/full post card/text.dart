@@ -5,29 +5,14 @@ import '../../post types/text_post.dart';
 // widgets
 import '../../widgets/post_elements/post_title.dart';
 import '../../widgets/post_elements/profile_pic_circle.dart';
+import '../../widgets/post_elements/collection_tag.dart';
+import '../../widgets/post_elements/interact.dart';
 
 class TextPostFull extends StatelessWidget {
   final TextPost _post;
 
   TextPostFull(this._post);
 
-  Widget _subTitle(String subtitle) {
-    return Container(
-      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-      decoration: BoxDecoration(
-          color: Colors.indigo[50],
-          border: Border.all(color: Colors.indigo[900], width: 0.4),
-          borderRadius: BorderRadius.circular(7.0)),
-      child: Text(
-        subtitle,
-        style: TextStyle(
-            fontFamily: 'Comfortaa',
-            fontSize: 12.0,
-            color: Colors.indigo[900],
-            fontWeight: FontWeight.bold),
-      ),
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,30 +35,27 @@ class TextPostFull extends StatelessWidget {
                   child: PostTitle(_post.title)),
             ],
           ),
-          SizedBox(height: 5),
-           _subTitle(_post.subTitle),
           ],),
-          
           Container(
               // text description
-              margin: EdgeInsets.all(15.0),
+              margin: EdgeInsets.symmetric(horizontal: 15.0),
               child: Text(_post.description)),
           SizedBox(height: 10),
+          Divider(color: Colors.blueGrey),
           Row(
             children: <Widget>[
+              SizedBox(width: 25.0),
+              Text(_post.userDetails.userName),
               Expanded(child: Container()),
-              // _imagePost.isFavourite == true ?
-              //  ? Icon(Icons.favorite, color: Colors.black)
-              //  : Container(),
-              Icon(Icons.favorite, color: Colors.black, size: 35.0),
-              SizedBox(width: 3.0),
-              Icon(Icons.comment, color: Colors.black, size: 25.0),
-              SizedBox(width: 3.0),
-              Icon(Icons.room, color: Colors.black, size: 25.0),
-              SizedBox(width: 10.0)
+              Interact(_post, 1),
+              SizedBox(width: 15.0),
+               CollectionTag(_post.collection.title, _post.collection.colour),
+             SizedBox(width: 25.0),
             ],
           ),
-          Divider(),
+          Divider(color: Colors.blueGrey),
+          Interact(_post, 3),
+          Interact(_post, 2),
           SizedBox(height: 30),
         ],
       ),

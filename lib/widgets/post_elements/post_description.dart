@@ -37,7 +37,7 @@ class PostDescriptionState extends State<PostDescription> with TickerProviderSta
         });
       },
       child: Container(
-        padding: EdgeInsets.all(15.0),
+        padding: EdgeInsets.symmetric(horizontal: 15.0),
         child: Text(_longDescription()),
      ), );
   }

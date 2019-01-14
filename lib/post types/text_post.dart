@@ -8,11 +8,10 @@ class TextPost {
   final UserDetails userDetails;
   final String title;
   final String description;
-  final String subTitle;
+  final List<Map<String, String>> comments;
   // location
-  // usercomments
   // share each others posts???
-  final bool isFavourite;
+  final List<Map> ratings;
   final bool hasViewed; // NA
   final Collection collection;
 
@@ -20,9 +19,9 @@ class TextPost {
     @required this.userDetails,
     @required this.title,
     @required this.description,
-    @required this.subTitle,
-    this.isFavourite = false,
     this.hasViewed = false,
+    this.ratings,
+    this.comments,
     this.collection,
   });
 }

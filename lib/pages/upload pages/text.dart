@@ -41,21 +41,26 @@ class _TextUploadPageState extends State<TextUploadPage> {
       description: 'sometimes you have to let go & enjoy a balance',
       category: 'Meals');
 
-  _textField(String _text, double _textSize) {
+  _titleFormField(String _text, double _textSize) {
     // Text field (function and design)
     return Container(
       padding: EdgeInsets.all(10),
-      child: TextField(
-        onChanged: (text) {
+      child: TextFormField(
+        onFieldSubmitted: (text) {
           if (_text == 'Title') {
             _title = text;
           } else if (_text == 'subtitle') {
             _subTitle = text;
           }
         },
+        validator: (value) {
+          if (value.isEmpty) {
+            return 'please enter a title';
+          }
+        },
         maxLength: 30,
-        cursorColor: Colors.grey,
-        cursorWidth: 1,
+       // cursorColor: Colors.grey,
+      //  cursorWidth: 1,
         decoration: InputDecoration(
             labelText: _text,
             labelStyle: TextStyle(
@@ -97,7 +102,6 @@ class _TextUploadPageState extends State<TextUploadPage> {
           // create the new post
           final TextPost _newPost = TextPost(
               title: _title,
-              subTitle: _subTitle,
               description: _description,
               userDetails: _userDetails);
           // add post to list
@@ -132,15 +136,17 @@ class _TextUploadPageState extends State<TextUploadPage> {
               border: Border.all(color: Colors.white),
               borderRadius: BorderRadius.circular(20),
             ),
-            child: // Add Form Field
-                ListView(children: [
-              _textField('Title', 20),
-              _textField('subtitle', 15),
+            child:
+              Form(
+                child: ListView(children: [
+              
+                
+                 _titleFormField('Title', 20),
               SizedBox(height: 40),
               descriptionTextField(),
               SizedBox(height: 10),
               _postButton(),
-            ]),
+            ]), ),
           ),
         ),
       ),
