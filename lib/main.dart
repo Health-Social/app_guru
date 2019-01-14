@@ -223,7 +223,7 @@ DietPost _dietPost7 = DietPost(
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/burger1.jpg',
   // hasViewed: false,
-  ratings: [{'userid': 'zach', 'rating' : 3}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
+  ratings: [{'userid': 'zach', 'rating' : 6}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
   comments: [
     {'id': 'zach', 'comment': 'looks tasty!'},
     {'id': 'Tom', 'comment': 'Master Chef!'},
@@ -267,8 +267,22 @@ TextPost _textPost = TextPost(
     userDetails: _dummyUser,
     title: 'Trip to Boston', // limit characters
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    hasViewed: false,
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  ratings: [{'userid': 'zach', 'rating' : 3}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
+  comments: [
+    {'id': 'zach', 'comment': 'looks tasty!'},
+    {'id': 'Tom', 'comment': 'Master Chef!'},
+    {'id': 'Nelius', 'comment': 'Bravo chef'}
+  ],
+    collection: _collection1);
+
+    // Dummy Post
+TextPost _textPost2 = TextPost(
+  anonymous: true,
+    userDetails: _dummyUser,
+    title: 'Mental Health', // limit characters
+    description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   ratings: [{'userid': 'zach', 'rating' : 3}, {'userid': 'michelle', 'rating' : 4}, {'userid': 'keagan', 'rating' : 3.5}],
   comments: [
     {'id': 'zach', 'comment': 'looks tasty!'},
@@ -319,7 +333,7 @@ FullBio _dummyUserFullBio = FullBio(title: 'full bio in hrerre');
 // Pass to Dummy Post Displays
 
 // List _posts = [_dietPost, _textPost, _dietPost2, _dietPost3, _dietPost4, _dietPost5, _dietPost6, _dietPost7, _dietPost8, _dietPost9];
-List _posts = [_textPost, _dietPost2];
+List _posts = [_textPost, _dietPost2, _textPost2];
 
 // ..................................... DELETE WHEN ADDING REAL DATA : DUMMY POSTS ....................................................
 // .....................................................................................................................................

@@ -10,6 +10,9 @@ import '../../post types/collection.dart';
 import '../../users/full_bio.dart';
 import '../../post types/text_post.dart';
 
+// widgets
+import '../../widgets/post_elements/anonymous.dart';
+
 class TextUploadPage extends StatefulWidget {
   final Color _colour;
   final Function addPost;
@@ -21,9 +24,10 @@ class TextUploadPage extends StatefulWidget {
 
 class _TextUploadPageState extends State<TextUploadPage> {
   String _title;
-  String _subTitle;
   String _description;
+  bool _anon = false;
   String _tag = 'Tag could be for data collection/structure, UI';
+
   UserDetails _userDetails = UserDetails(
     userId: '@ZachWolpe87',
     userEmail: 'dummy@dummy.com',
@@ -33,6 +37,7 @@ class _TextUploadPageState extends State<TextUploadPage> {
     userBio: '22 year old South African, staying healthy',
     userFullBio: FullBio(title: 'full bio in hrerre'),
   );
+
   // how to get existing collections?
   Collection _collection = Collection(
       colour: Colors.amber[800],
@@ -45,22 +50,20 @@ class _TextUploadPageState extends State<TextUploadPage> {
     // Text field (function and design)
     return Container(
       padding: EdgeInsets.all(10),
-      child: TextFormField(
-        onFieldSubmitted: (text) {
-          if (_text == 'Title') {
+      child: TextField(
+        onChanged: (text) {
+          setState(() {
             _title = text;
-          } else if (_text == 'subtitle') {
-            _subTitle = text;
-          }
+          });
         },
-        validator: (value) {
-          if (value.isEmpty) {
-            return 'please enter a title';
-          }
-        },
-        maxLength: 30,
-       // cursorColor: Colors.grey,
-      //  cursorWidth: 1,
+        // validator: (value) {
+        //   if (value.isEmpty) {
+        //     return 'please enter a title';
+        //   }
+        // },
+        maxLength: 20,
+        // cursorColor: Colors.grey,
+        //  cursorWidth: 1,
         decoration: InputDecoration(
             labelText: _text,
             labelStyle: TextStyle(
@@ -78,7 +81,9 @@ class _TextUploadPageState extends State<TextUploadPage> {
       child: TextField(
         maxLines: 10,
         onChanged: (text) {
-          _description = text;
+          setState(() {
+            _description = text;
+          });
         },
         cursorColor: Colors.grey,
         cursorWidth: 1,
@@ -100,22 +105,51 @@ class _TextUploadPageState extends State<TextUploadPage> {
       child: RaisedButton(
         onPressed: () {
           // create the new post
-          final TextPost _newPost = TextPost(
+          TextPost _newPost = TextPost(
               title: _title,
               description: _description,
-              userDetails: _userDetails);
+              userDetails: _userDetails,
+              anonymous: _anon);
+          print(_newPost);
           // add post to list
           widget.addPost(_newPost);
-          // Navigator.push(context,
-          // MaterialPageRoute(
-          //   builder: (BuildContext context) =>
-          //   MyApp()
-          //  )
-          //  );
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (BuildContext context) => MyApp()));
         },
         color: widget._colour,
         child: Text('post', style: TextStyle(color: Colors.white)),
       ),
+    );
+  }
+
+  Widget _anonSwitch() {
+    // switch to make anonymous
+    return Column(
+      children: <Widget>[
+        Row(
+          children: <Widget>[
+            AnonymousTag(),
+            Switch(
+              onChanged: (anon) {
+                setState(() {
+                  _anon = anon;
+                });
+              },
+              value: _anon,
+              activeColor: widget._colour,
+            ),
+            Expanded(child: Container()),
+          ],
+        ),
+        Row(
+          children: <Widget>[
+            SizedBox(width: 15),
+            Text('make this post anonymous',
+                style: TextStyle(color: Colors.grey[600])),
+            Expanded(child: Container()),
+          ],
+        )
+      ],
     );
   }
 
@@ -136,17 +170,17 @@ class _TextUploadPageState extends State<TextUploadPage> {
               border: Border.all(color: Colors.white),
               borderRadius: BorderRadius.circular(20),
             ),
-            child:
-              Form(
-                child: ListView(children: [
-              
-                
-                 _titleFormField('Title', 20),
-              SizedBox(height: 40),
-              descriptionTextField(),
-              SizedBox(height: 10),
-              _postButton(),
-            ]), ),
+            child: Form(
+              child: ListView(children: [
+                _titleFormField('Title', 20),
+                SizedBox(height: 10),
+                _anonSwitch(),
+                SizedBox(height: 30),
+                descriptionTextField(),
+                SizedBox(height: 10),
+                _postButton(),
+              ]),
+            ),
           ),
         ),
       ),

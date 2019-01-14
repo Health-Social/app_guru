@@ -8,6 +8,7 @@ import '../../widgets/post_elements/post_description.dart';
 import '../../widgets/post_elements/profile_pic_circle.dart';
 import '../../widgets/post_elements/collection_tag.dart';
 import '../../widgets/post_elements/interact.dart';
+import '../../widgets/post_elements/anonymous.dart';
 
 class TextPostHomePage extends StatelessWidget {
   final TextPost _post;
@@ -21,16 +22,19 @@ class TextPostHomePage extends StatelessWidget {
       children: <Widget>[
         Row(
           children: <Widget>[
-            ProfilePicCircle(_post.userDetails.userProfilePicture),
+            _post.anonymous == false
+              ? ProfilePicCircle(_post.userDetails.userProfilePicture)
+              : SizedBox(height: 45), // AnonymousTag(),
             Expanded(child: Container()),
             PostTitle(_post.title),
-            Expanded(child: Container()),
-            SizedBox(width: 10),
+             SizedBox(width: 5),
+            _post.collection != null
+              ? CollectionTag(_post.collection.title, _post.collection.colour, small: true)
+              : Container(),
+            SizedBox(width: 5),
           ],
         ),
-        Container(
-            // text description
-            child: PostDescription(_post.description)),
+        PostDescription(_post.description),
         SizedBox(height: 5),
         Interact(_post, 3),
       ],

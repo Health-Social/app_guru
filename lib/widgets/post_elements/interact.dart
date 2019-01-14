@@ -19,9 +19,14 @@ class Interact extends StatefulWidget {
 class _InteractState extends State<Interact> {
   bool _dropDown = false;
   double _currentIndex;
-  double _averageRating = 3.5;
+  double _averageRating;
   double _myRating = 0;
   // add function to replace post when LIKED, UNLIKED
+
+  Widget _addRatingToList() {
+    // delete post and create new post
+    // create once live data
+  }
 
   Widget _dropDownExpand() {
     // drop down button
@@ -73,24 +78,33 @@ class _InteractState extends State<Interact> {
     Widget _listTile(int index) {
       // view ratings
       if (_currentIndex == 0) {
-        return ListTile(
-        title: Text(widget._post.ratings[index]['userid']),
-        trailing: Container(
-          width: 155,
-          child: StarRating(
-            size: 25,
-            starCount: 6,
-            color: Colors.black54,
-            rating:
-                double.parse(widget._post.ratings[index]['rating'].toString()),
-          ),
-        ),
-      );
-      } if (_currentIndex == 1) {
-        return ListTile(
-        subtitle: Text(widget._post.comments[index]['id']),
-        title: Text(widget._post.comments[index]['comment']),
-      );
+        if (widget._post.rating != null) {
+          return ListTile(
+            title: Text(widget._post.ratings[index]['userid']),
+            trailing: Container(
+              width: 155,
+              child: StarRating(
+                size: 25,
+                starCount: 6,
+                color: Colors.black54,
+                rating: double.parse(
+                    widget._post.ratings[index]['rating'].toString()),
+              ),
+            ),
+          );
+        } else {
+          return Center(child: Text('no ratings yet'));
+        }
+      }
+      if (_currentIndex == 1) {
+        if (widget._post.comments != null) {
+          return ListTile(
+            subtitle: Text(widget._post.comments[index]['id']),
+            title: Text(widget._post.comments[index]['comment']),
+          );
+        } else {
+          return Center(child: Text('no comments yet!'));
+        }
       } else {
         return Container();
       }
@@ -102,9 +116,11 @@ class _InteractState extends State<Interact> {
         return Container(
           height: 500,
           child: ListView.builder(
-            itemCount: _currentIndex == 0 
-              ? widget._post.ratings.length
-              : widget._post.comments.length,
+            itemCount: _currentIndex == 0
+                ? widget._post.ratings != null ? widget._post.ratings.length : 1
+                : widget._post.comments.length != null
+                    ? widget._post.comments.length
+                    : 1,
             itemBuilder: (BuildContext context, int index) {
               return Column(
                 children: <Widget>[
@@ -187,7 +203,19 @@ class _InteractState extends State<Interact> {
   }
 
   Widget _starRating() {
-    // the star rating function
+    double _calculateAverage() {
+      // calculate average, may have latency issues once we scale
+      // try cloud functions
+      if (widget._post.ratings != null) {
+        double _calc = 0;
+        for (int i = 0; i < widget._post.ratings.length; i++) {
+          _calc = _calc + widget._post.ratings[i]['rating'];
+        }
+        return _averageRating = _calc / widget._post.ratings.length;
+      } else {
+        return 0;
+      }
+    }
 
     return Row(
       children: <Widget>[
@@ -199,7 +227,7 @@ class _InteractState extends State<Interact> {
               borderColor: Colors.black54,
               size: 35,
               starCount: 6,
-              rating: _averageRating,
+              rating: _calculateAverage(),
               onRatingChanged: (rating) {
                 setState(() {
                   // recalculate average rating
@@ -224,7 +252,9 @@ class _InteractState extends State<Interact> {
         Column(
           children: <Widget>[
             SizedBox(height: 15),
-            Text('${widget._post.ratings.length} ratings'),
+            widget._post.ratings != null
+                ? Text('${widget._post.ratings.length} ratings')
+                : Text('0 ratings'),
           ],
         ),
         SizedBox(width: 15),
