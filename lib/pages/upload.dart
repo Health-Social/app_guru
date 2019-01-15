@@ -51,7 +51,7 @@ class _UploadPageState extends State<UploadPage> with TickerProviderStateMixin {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) => MealUploadPage(colour)));
+                    builder: (BuildContext context) => MealUploadPage(colour, widget.addPost)));
           }
         },
         onDoubleTap: () {

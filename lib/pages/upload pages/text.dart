@@ -26,6 +26,9 @@ class _TextUploadPageState extends State<TextUploadPage> {
   String _title;
   String _description;
   bool _anon = false;
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+
   String _tag = 'Tag could be for data collection/structure, UI';
 
   UserDetails _userDetails = UserDetails(
@@ -50,20 +53,18 @@ class _TextUploadPageState extends State<TextUploadPage> {
     // Text field (function and design)
     return Container(
       padding: EdgeInsets.all(10),
-      child: TextField(
-        onChanged: (text) {
+      child: TextFormField(
+        onSaved: (text) {
           setState(() {
             _title = text;
           });
         },
-        // validator: (value) {
-        //   if (value.isEmpty) {
-        //     return 'please enter a title';
-        //   }
-        // },
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'title is required';
+          }
+        },
         maxLength: 20,
-        // cursorColor: Colors.grey,
-        //  cursorWidth: 1,
         decoration: InputDecoration(
             labelText: _text,
             labelStyle: TextStyle(
@@ -78,15 +79,18 @@ class _TextUploadPageState extends State<TextUploadPage> {
     // Text field (function and design)
     return Container(
       padding: EdgeInsets.all(10),
-      child: TextField(
+      child: TextFormField(
         maxLines: 10,
-        onChanged: (text) {
+        onSaved: (text) {
           setState(() {
             _description = text;
           });
         },
-        cursorColor: Colors.grey,
-        cursorWidth: 1,
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'description is required';
+          }
+        },
         decoration: InputDecoration(
             border: OutlineInputBorder(
                 borderSide: BorderSide(color: widget._colour)),
@@ -105,6 +109,10 @@ class _TextUploadPageState extends State<TextUploadPage> {
       child: RaisedButton(
         onPressed: () {
           // create the new post
+          if (!_formKey.currentState.validate()) {
+            return;
+          }
+          _formKey.currentState.save();
           TextPost _newPost = TextPost(
               title: _title,
               description: _description,
@@ -171,6 +179,7 @@ class _TextUploadPageState extends State<TextUploadPage> {
               borderRadius: BorderRadius.circular(20),
             ),
             child: Form(
+              key: _formKey,
               child: ListView(children: [
                 _titleFormField('Title', 20),
                 SizedBox(height: 10),

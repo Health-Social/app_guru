@@ -14,7 +14,6 @@ import '../../widgets/post_elements/collection_tag.dart';
 import '../../widgets/post_elements/interact.dart';
 
 class DietPostHomePage extends StatelessWidget {
-  
   final DietPost _post;
 
   DietPostHomePage(this._post);
@@ -57,13 +56,15 @@ class DietPostHomePage extends StatelessWidget {
                 bottom: 0,
                 child: ImageFade(),
               ),
-              Positioned(
-                right: 2,
-                top: 2,
-                child: CollectionTag(
-                    _post.collection.title, _post.collection.colour,
-                    small: true),
-              ),
+              _post.collection != null
+                  ? Positioned(
+                      right: 2,
+                      top: 2,
+                      child: CollectionTag(
+                          _post.collection.title, _post.collection.colour,
+                          small: true),
+                    )
+                  : Container()
             ],
           ),
         ),

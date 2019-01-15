@@ -17,7 +17,6 @@ class DietPost {
   // final String title;
   // final String description;
   // final String tag;
-  final String bodyTag;
   final double price;
   // location
   final List<Map> ratings;
@@ -34,7 +33,6 @@ class DietPost {
       @required this.recipe,
       @required this.imageUrl,
       @required this.imagePath,
-      @required this.bodyTag,
       @required this.meal,
       this.calories,
       this.minutes,

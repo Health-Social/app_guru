@@ -78,7 +78,7 @@ class _InteractState extends State<Interact> {
     Widget _listTile(int index) {
       // view ratings
       if (_currentIndex == 0) {
-        if (widget._post.rating != null) {
+        if (widget._post.ratings != null) {
           return ListTile(
             title: Text(widget._post.ratings[index]['userid']),
             trailing: Container(

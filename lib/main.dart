@@ -45,7 +45,6 @@ DietPost _dietPost = DietPost(
     'maybe quantities?'
   ],
   recipe: 'mix cake into a batch of dummy text that is used to test design',
-  bodyTag: 'weightloss',
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/healthBowl.jpg',
   // hasViewed: false,
@@ -74,7 +73,6 @@ DietPost _dietPost2 = DietPost(
     'maybe quantities?'
   ],
   recipe: 'mix cake into a batch of dummy text that is used to test design',
-  bodyTag: 'weightloss',
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/bowl1.jpg',
   // hasViewed: false,
@@ -103,7 +101,6 @@ DietPost _dietPost3 = DietPost(
     'maybe quantities?'
   ],
   recipe: 'mix cake into a batch of dummy text that is used to test design',
-  bodyTag: 'weightloss',
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/bowl2.jpg',
   // hasViewed: false,
@@ -132,7 +129,6 @@ DietPost _dietPost4 = DietPost(
     'maybe quantities?'
   ],
   recipe: 'mix cake into a batch of dummy text that is used to test design',
-  bodyTag: 'weightloss',
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/protein1.jpg',
   // hasViewed: false,
@@ -161,7 +157,6 @@ DietPost _dietPost5 = DietPost(
     'maybe quantities?'
   ],
   recipe: 'mix cake into a batch of dummy text that is used to test design',
-  bodyTag: 'weightloss',
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/protein2.jpg',
   // hasViewed: false,
@@ -190,7 +185,6 @@ DietPost _dietPost6 = DietPost(
     'maybe quantities?'
   ],
   recipe: 'mix cake into a batch of dummy text that is used to test design',
-  bodyTag: 'weightloss',
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/protein3.jpg',
   // hasViewed: false,
@@ -219,7 +213,6 @@ DietPost _dietPost7 = DietPost(
     'maybe quantities?'
   ],
   recipe: 'mix cake into a batch of dummy text that is used to test design',
-  bodyTag: 'weightloss',
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/burger1.jpg',
   // hasViewed: false,
@@ -248,7 +241,6 @@ DietPost _dietPost8 = DietPost(
     'maybe quantities?'
   ],
   recipe: 'mix cake into a batch of dummy text that is used to test design',
-  bodyTag: 'weightloss',
   imagePath: 'dummy image path',
   imageUrl: 'assets/images/burger2.jpg',
   // hasViewed: false,
@@ -333,7 +325,7 @@ FullBio _dummyUserFullBio = FullBio(title: 'full bio in hrerre');
 // Pass to Dummy Post Displays
 
 // List _posts = [_dietPost, _textPost, _dietPost2, _dietPost3, _dietPost4, _dietPost5, _dietPost6, _dietPost7, _dietPost8, _dietPost9];
-List _posts = [_textPost, _dietPost2, _textPost2];
+List _posts = [_textPost, _dietPost8, _textPost2];
 
 // ..................................... DELETE WHEN ADDING REAL DATA : DUMMY POSTS ....................................................
 // .....................................................................................................................................

@@ -4,33 +4,21 @@ import '../../users/user_details.dart';
 import '../../post types/diet_post.dart';
 import '../../users/full_bio.dart';
 
+// pages
+import '../../main.dart';
+
 class MealUploadPage extends StatefulWidget {
   final Color _colour;
+  final Function addPost;
 
-  MealUploadPage(this._colour);
+  MealUploadPage(this._colour, this.addPost);
 
   _MealUploadPageState createState() => _MealUploadPageState();
 }
 
-//  ///
-//   ///
-// // Dummy User FUll Bio
-// FullBio _dummyUserFullBio = FullBio(title: 'full bio in hrerre');
-//   ///// Dummy User
-// UserDetails _dummyUser = UserDetails(
-//   userId: '@ZachWolpe87',
-//   userEmail: 'dummy@dummy.com',
-//   userName: 'Zach Wolpe',
-//   userProfilePicture: 'assets/images/profile_pic2.jpg',
-//   userPassword: 'dummy password',
-//   userBio: '22 year old South African, staying healthy',
-//   userFullBio: _dummyUserFullBio,
-// );
-
-//   ///
-//   ///
-
 class _MealUploadPageState extends State<MealUploadPage> {
+  GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
+
   ///// Dummy User
   UserDetails _dummyUser = UserDetails(
     userId: '@ZachWolpe87',
@@ -43,12 +31,12 @@ class _MealUploadPageState extends State<MealUploadPage> {
   );
 
   // data to save for post
-  String placeholderImage = 'assets/images/logo.png';
-  double calories;
-  double minutes;
-  String benefits;
-  List<String> ingredients;
-  String recipe;
+  String _placeholderImage = 'assets/images/logoBlue.png';
+  double _calories;
+  double _minutes;
+  List<String> _benefits;
+  List<String> _ingredients;
+  String _recipe;
 
   InputDecoration _textFieldStyle(String _label) {
     // consistent text style
@@ -85,6 +73,30 @@ class _MealUploadPageState extends State<MealUploadPage> {
     );
   }
 
+  Widget _titleFormField() {
+    // Text field (function and design)
+    return Container(
+      padding: EdgeInsets.all(10),
+      child: TextFormField(
+        onSaved: (text) {
+          setState(() {});
+        },
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'title is required';
+          }
+        },
+        maxLength: 20,
+        decoration: InputDecoration(
+            labelText: 'Title',
+            labelStyle: TextStyle(
+              fontSize: 20,
+              color: Colors.grey,
+            )),
+      ),
+    );
+  }
+
   Widget _caloriesAndTime() {
     // calories and time imput feilds
     return Row(children: <Widget>[
@@ -93,14 +105,20 @@ class _MealUploadPageState extends State<MealUploadPage> {
         // calories input
         height: 40,
         width: MediaQuery.of(context).size.width * 0.4,
-        child: TextField(
-          onSubmitted: (_calories) {
+        child: TextFormField(
+          //   key: _globalKey,
+          onSaved: (calories) {
             setState(() {
-              calories = double.parse(_calories);
+              _calories = double.parse(calories);
             });
           },
+          validator: (value) {
+            if (value.isEmpty) {
+              return 'please enter calories';
+            }
+          },
           keyboardType: TextInputType.number,
-          decoration: _textFieldStyle('  calories'),
+          decoration: _textFieldStyle('calories'),
         ),
       ),
       Expanded(child: Container()),
@@ -108,14 +126,19 @@ class _MealUploadPageState extends State<MealUploadPage> {
         // Time input
         height: 40,
         width: MediaQuery.of(context).size.width * 0.4,
-        child: TextField(
-          onChanged: (text) {
+        child: TextFormField(
+          onSaved: (value) {
             setState(() {
-              minutes = double.parse(text);
+              _minutes = double.parse(value);
             });
           },
-          keyboardType: TextInputType.datetime,
-          decoration: _textFieldStyle('  minutes'),
+          validator: (value) {
+            if (value.isEmpty) {
+              return 'how long does it take to prepare?';
+            }
+          },
+          keyboardType: TextInputType.number,
+          decoration: _textFieldStyle('minutes'),
         ),
       ),
       Container(width: MediaQuery.of(context).size.width * 0.05),
@@ -143,13 +166,19 @@ class _MealUploadPageState extends State<MealUploadPage> {
         Center(
           // benefits input
           child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 15),
             height: 60,
             width: MediaQuery.of(context).size.width * 0.95,
-            child: TextField(
-              onChanged: (text) {
+            child: TextFormField(
+              onSaved: (text) {
                 setState(() {
-                  benefits = text;
+                  _benefits = [text];
                 });
+              },
+              validator: (text) {
+                if (text.isEmpty) {
+                  return 'required';
+                }
               },
               maxLines: 2,
               keyboardType: TextInputType.text,
@@ -161,13 +190,19 @@ class _MealUploadPageState extends State<MealUploadPage> {
         Center(
           // ingredients input
           child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 15),
             height: 60,
             width: MediaQuery.of(context).size.width * 0.95,
-            child: TextField(
-              onChanged: (text) {
+            child: TextFormField(
+              onSaved: (text) {
                 setState(() {
-                  // text --> list
+                  _ingredients = [text];
                 });
+              },
+              validator: (text) {
+                if (text.isEmpty) {
+                  return 'required';
+                }
               },
               maxLines: 2,
               keyboardType: TextInputType.text,
@@ -179,13 +214,19 @@ class _MealUploadPageState extends State<MealUploadPage> {
         Center(
           // recipe input
           child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 15),
             height: 60,
             width: MediaQuery.of(context).size.width * 0.95,
-            child: TextField(
-              onChanged: (text) {
+            child: TextFormField(
+              onSaved: (text) {
                 setState(() {
-                  recipe = text;
+                  _recipe = text;
                 });
+              },
+              validator: (text) {
+                if (text.isEmpty) {
+                  return 'required';
+                }
               },
               maxLines: 2,
               keyboardType: TextInputType.text,
@@ -197,18 +238,17 @@ class _MealUploadPageState extends State<MealUploadPage> {
     );
   }
 
-  _newPost() {
+  DietPost _newPost() {
     // create the new post
-    DietPost _newPost = DietPost(
+    return DietPost(
       meal: true,
-      imagePath: placeholderImage,
-      calories: calories,
-      minutes: minutes,
-      ingredients: [],
-      recipe: recipe,
-      benefits: [],
-      bodyTag: '',
-      imageUrl: placeholderImage,
+      imagePath: _placeholderImage,
+      calories: _calories,
+      minutes: _minutes,
+      ingredients: _ingredients,
+      recipe: _recipe,
+      benefits: _benefits,
+      imageUrl: _placeholderImage,
       userDetails: _dummyUser,
     );
   }
@@ -216,15 +256,32 @@ class _MealUploadPageState extends State<MealUploadPage> {
   Widget _postButton() {
     // create the new post
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-      child: RaisedButton(
-      onPressed: () {
-        // add post function
-        _newPost();
-      },
-      color: widget._colour,
-      child: Text('post', style: TextStyle(color: Colors.white)),
-    ));
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+        child: RaisedButton(
+          onPressed: () {
+            // add post function
+            if (!_globalKey.currentState.validate()) {
+              return;
+            }
+            _globalKey.currentState.save();
+            DietPost _newPost = DietPost(
+              meal: true,
+              imagePath: _placeholderImage,
+              calories: _calories,
+              minutes: _minutes,
+              ingredients: _ingredients,
+              recipe: _recipe,
+              benefits: _benefits,
+              imageUrl: _placeholderImage,
+              userDetails: _dummyUser,
+            );
+            widget.addPost(_newPost);
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (BuildContext context) => MyApp()));
+          },
+          color: widget._colour,
+          child: Text('post', style: TextStyle(color: Colors.white)),
+        ));
   }
 
   @override
@@ -244,15 +301,19 @@ class _MealUploadPageState extends State<MealUploadPage> {
             border: Border.all(color: Colors.white),
             borderRadius: BorderRadius.circular(20),
           ),
-          child: ListView(
-            children: <Widget>[
-              _uploadImage(),
-              _caloriesAndTime(),
-              SizedBox(height: 14),
-              _benefitsIngredientsRecipe(),
-              SizedBox(height: 14),
-              _postButton(),
-            ],
+          child: Form(
+            key: _globalKey,
+            child: ListView(
+              children: <Widget>[
+                _uploadImage(),
+                SizedBox(height: 25),
+                _caloriesAndTime(),
+                SizedBox(height: 25),
+                _benefitsIngredientsRecipe(),
+                SizedBox(height: 60),
+                _postButton(),
+              ],
+            ),
           ),
         ),
       ),
