@@ -63,7 +63,7 @@ flutter:
     - assets/images/placeholderImage.jpg
     - assets/images/default.png
     - assets/images/logoBlue.png
-    - assets/images/logoInverse.png
+    - assets/images/logoInverse.PNG
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

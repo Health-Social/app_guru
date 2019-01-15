@@ -32,7 +32,7 @@ class DietPostHomePage extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Container(
-                child: Image(
+                child:  Image(
                     image: AssetImage(
                       _post.imageUrl,
                     ),

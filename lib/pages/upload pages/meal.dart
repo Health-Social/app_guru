@@ -114,7 +114,7 @@ class _MealUploadPageState extends State<MealUploadPage> {
           },
           validator: (value) {
             if (value.isEmpty) {
-              return 'please enter calories';
+              return '';
             }
           },
           keyboardType: TextInputType.number,
@@ -134,7 +134,7 @@ class _MealUploadPageState extends State<MealUploadPage> {
           },
           validator: (value) {
             if (value.isEmpty) {
-              return 'how long does it take to prepare?';
+              return '';
             }
           },
           keyboardType: TextInputType.number,
