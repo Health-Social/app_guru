@@ -404,6 +404,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Cheese Cake',
+      // routes: {
+      //   '/home' : (BuildContext context) => HomePage(_posts),
+      // },
       home: Scaffold(
         backgroundColor: Color(0xFFECEFF1),
         appBar: _appBarOptional(),
