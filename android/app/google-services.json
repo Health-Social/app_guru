@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "14745994315",
+    "firebase_url": "https://health-social.firebaseio.com",
+    "project_id": "health-social",
+    "storage_bucket": "health-social.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14745994315:android:127e194d3457393c",
+        "android_client_info": {
+          "package_name": "com.cheesecakeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14745994315-8domc92ihvs90s1e8hs4lt78dteg21dl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cheesecakeapp",
+            "certificate_hash": "57f8b80c43f2b8e589f1a8473577da3165ed982b"
+          }
+        },
+        {
+          "client_id": "14745994315-0uvpqkp6nf8ofkkire07espe8dknirqv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDvC5YoovIU5dLW3IZdr7JcnhtlWs-2hE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "14745994315-0uvpqkp6nf8ofkkire07espe8dknirqv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "14745994315-g95ni2pgkkh5uiob7fc3bbndg3934qgt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cheesecakeapp"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

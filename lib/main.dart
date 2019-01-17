@@ -6,6 +6,7 @@ import './pages/search.dart';
 import './pages/upload.dart';
 import './pages/notification.dart';
 import './pages/profile pages/profile.dart';
+import './pages/auth.dart';
 
 // Import Post Types
 import './post types/text_post.dart';
@@ -335,16 +336,6 @@ List _posts = [_textPost, _dietPost8, _textPost2];
 class _MyAppState extends State<MyApp> {
   int _currentIndex = 0;
 
-  // void _addPost(DietPost product) {
-  //   // add diet Post
-  //   setState(() {
-  //     _posts.add(product);
-  //     MaterialPageRoute(
-  //     builder: (BuildContext context) =>
-  //       HomePage(_posts)
-  //     );
-  //     print(_posts);
-  //   });
 
   void addPost(dynamic post) {
     setState(() {
@@ -407,7 +398,7 @@ class _MyAppState extends State<MyApp> {
       // routes: {
       //   '/home' : (BuildContext context) => HomePage(_posts),
       // },
-      home: Scaffold(
+      home: Scaffold( // run check, if not logged in go to sign in page, if logged in go to home page
         backgroundColor: Color(0xFFECEFF1),
         appBar: _appBarOptional(),
         body: _pageShown(),
