@@ -18,6 +18,8 @@ class MealUploadPage extends StatefulWidget {
 
 class _MealUploadPageState extends State<MealUploadPage> {
   GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
+  double _ingredientsRows = 2;
+  double _recipeRows = 2;
 
   ///// Dummy User
   UserDetails _dummyUser = UserDetails(
@@ -159,6 +161,62 @@ class _MealUploadPageState extends State<MealUploadPage> {
     );
   }
 
+  Widget _addRowButton(int key) {
+    // add row, key to know where to add line
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          if (key == 1) {
+            _ingredientsRows = _ingredientsRows + 1;
+          } else if (key == 2) {
+            _recipeRows = _recipeRows + 1;
+          }
+        });
+      },
+      child: Icon(
+        Icons.add_circle_outline,
+        size: 28,
+        color: Colors.grey[500],
+      ),
+    );
+  }
+
+  Widget _deleteRowButton(int key) {
+    // delete row, key to know where to add line
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          if (key == 1) {
+            if (_ingredientsRows > 2) {
+              _ingredientsRows = _ingredientsRows - 1;
+            }
+          } else if (key == 2) {
+            if (_recipeRows > 2) {
+              _recipeRows = _recipeRows - 1;
+            }
+          }
+        });
+      },
+      child: Icon(
+        Icons.remove_circle_outline,
+        size: 28,
+        color: Colors.grey[500],
+      ),
+    );
+  }
+
+  Widget _renderListOfIngredients() {
+    return Row(
+      children: <Widget>[
+        Container(width: 80, child: TextFormField()),
+        SizedBox(width: 10),
+        Expanded(
+          child: TextFormField(),
+        )
+      ],
+    );
+  }
+
   Widget _benefitsIngredientsRecipe() {
     // benefits, ingredients, recipe
     return Column(
@@ -167,7 +225,6 @@ class _MealUploadPageState extends State<MealUploadPage> {
           // benefits input
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 15),
-            height: 60,
             width: MediaQuery.of(context).size.width * 0.95,
             child: TextFormField(
               onSaved: (text) {
@@ -180,7 +237,7 @@ class _MealUploadPageState extends State<MealUploadPage> {
                   return 'required';
                 }
               },
-              maxLines: 2,
+              maxLines: 3,
               keyboardType: TextInputType.text,
               decoration: _textFieldStyle('  benefits'),
             ),
@@ -188,52 +245,64 @@ class _MealUploadPageState extends State<MealUploadPage> {
         ),
         SizedBox(height: 10),
         Center(
-          // ingredients input
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            height: 60,
-            width: MediaQuery.of(context).size.width * 0.95,
-            child: TextFormField(
-              onSaved: (text) {
-                setState(() {
-                  _ingredients = [text];
-                });
-              },
-              validator: (text) {
-                if (text.isEmpty) {
-                  return 'required';
-                }
-              },
-              maxLines: 2,
-              keyboardType: TextInputType.text,
-              decoration: _textFieldStyle('  ingredients'),
-            ),
+            // ingredients input
+            child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 15),
+          child: Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Text(
+                    'INGREDIENTS',
+                    style:
+                        TextStyle(fontFamily: 'myriad_pro_light', fontSize: 18),
+                  )
+                ],
+              ),
+              SizedBox(height: 5),
+              Row(
+                children: <Widget>[
+                  SizedBox(width: 5),
+                  Text('quantity',
+                      style: TextStyle(
+                          fontFamily: 'myraid_pro_light',
+                          fontSize: 13,
+                          color: Colors.grey)),
+                  SizedBox(width: 50),
+                  Text('ingredient',
+                      style: TextStyle(
+                          fontFamily: 'myraid_pro_light',
+                          fontSize: 13,
+                          color: Colors.grey)),
+                ],
+              ),
+              //  make one for every click
+              _renderListOfIngredients(), // add one of these on click
+              _renderListOfIngredients(),
+              ///
+              ///
+              ///
+              ///
+              ///
+              ///
+              ///
+              ///
+              ///
+              ///
+              ///
+              ///
+              SizedBox(height: 5),
+              Row(
+                children: <Widget>[
+                  Expanded(child: Container()),
+                  _deleteRowButton(1),
+                  SizedBox(width: 5),
+                  _addRowButton(1)
+                ],
+              )
+            ],
           ),
-        ),
-        SizedBox(height: 10),
-        Center(
-          // recipe input
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            height: 60,
-            width: MediaQuery.of(context).size.width * 0.95,
-            child: TextFormField(
-              onSaved: (text) {
-                setState(() {
-                  _recipe = text;
-                });
-              },
-              validator: (text) {
-                if (text.isEmpty) {
-                  return 'required';
-                }
-              },
-              maxLines: 2,
-              keyboardType: TextInputType.text,
-              decoration: _textFieldStyle('  recipe'),
-            ),
-          ),
-        ),
+        ))
       ],
     );
   }
@@ -245,9 +314,9 @@ class _MealUploadPageState extends State<MealUploadPage> {
       imagePath: _placeholderImage,
       calories: _calories,
       minutes: _minutes,
-    //  ingredients: _ingredients,
-    //  recipe: _recipe,
-     // benefits: _benefits,
+      //  ingredients: _ingredients,
+      //  recipe: _recipe,
+      // benefits: _benefits,
       imageUrl: _placeholderImage,
       userDetails: _dummyUser,
     );
@@ -269,8 +338,12 @@ class _MealUploadPageState extends State<MealUploadPage> {
               imagePath: _placeholderImage,
               calories: _calories,
               minutes: _minutes,
-              ingredients: [{'quantity':'dummy','ingredient':'dummy'}], // dummy text
-              recipe: [{'quantity':'dummy','ingredient':'dummy'}], // dummy text,
+              ingredients: [
+                {'quantity': 'dummy', 'ingredient': 'dummy'}
+              ], // dummy text
+              recipe: [
+                {'quantity': 'dummy', 'ingredient': 'dummy'}
+              ], // dummy text,
               benefits: _benefits,
               imageUrl: _placeholderImage,
               userDetails: _dummyUser,

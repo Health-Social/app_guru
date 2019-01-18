@@ -332,7 +332,7 @@ class CaloriesTimeBar extends StatefulWidget {
 
 class _CaloriesTimeBarState extends State<CaloriesTimeBar> {
   bool _showCals = true;
-  bool _showSpeed = true;
+  bool _showClock = true;
 
   double _numberSize() {
     if (widget.large == true) {
@@ -410,9 +410,10 @@ class _CaloriesTimeBarState extends State<CaloriesTimeBar> {
   }
 
   Widget _minutes(String minutes) {
+    double _seconds = widget.minutes * 60;
     //  minutes display
 
-    Container _timeDisplay = _showSpeed
+     Container _timeDisplay = _showClock
         ? Container(
             padding: EdgeInsets.only(left: 35, top: 4),
             child: Column(
@@ -436,15 +437,38 @@ class _CaloriesTimeBarState extends State<CaloriesTimeBar> {
               ],
             ),
           )
-        : Container(child:  Text('..change..'));
+        : Container(
+            padding: EdgeInsets.only(left: 35, top: 4),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  _seconds.round().toString(),
+                  style: TextStyle(
+                      fontFamily: 'myriad-pro-light',
+                      color: Colors.lightBlue[800],
+                      fontSize: _numberSize(),
+                      fontWeight: FontWeight.w500),
+                ),
+                Text(
+                  'seconds',
+                  style: TextStyle(
+                      fontFamily: 'myriad-pro-light',
+                      color: Colors.lightBlue[800],
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
+            ),
+          );
+        
 
     return GestureDetector(
       onTap: () {
         setState(() {
-          if (_showSpeed) {
-            _showSpeed = false;
+          if (_showClock) {
+            _showClock = false;
           } else {
-            _showSpeed = true;
+            _showClock = true;
           }
         });
       },
