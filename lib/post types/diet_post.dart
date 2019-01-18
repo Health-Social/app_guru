@@ -7,9 +7,9 @@ import './collection.dart';
 
 class DietPost {
   final UserDetails userDetails;
-  final List<String> benefits;
-  final List<String> ingredients;
-  final String recipe;
+  final String benefits;
+  final List<Map<String, String>> ingredients;
+  final List<Map<String, String>> recipe;
   final double calories;
   final double minutes;
   final String imageUrl;

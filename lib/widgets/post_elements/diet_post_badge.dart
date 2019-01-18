@@ -235,25 +235,58 @@ class _RecipeSubBarState extends State<RecipeSubBar> {
     }
 
     if (index == 1) {
-      List<Widget> widgetBuild =
-          widget._post.benefits.map((name) => Text(name)).toList();
       Container showMore = Container(
-          padding: EdgeInsets.all(12), child: Column(children: widgetBuild));
+          padding: EdgeInsets.all(12), 
+          child: Text(widget._post.benefits));
       return _cancleState(showMore);
+      // convert list to display
+      // List<Widget> widgetBuild =
+      //     widget._post.benefits.map((name) => Text(name)).toList();
+      // Container showMore = Container(
+      //     padding: EdgeInsets.all(12), child: Column(children: widgetBuild));
+      // return _cancleState(showMore);
     }
-    if (index == 2) {
-      List<Widget> widgetBuild =
-          widget._post.ingredients.map((name) => Text(name)).toList();
-      Container showMore = Container(
-          padding: EdgeInsets.all(12), child: Column(children: widgetBuild));
-      return _cancleState(showMore);
+    if (index == 2) { 
+      return Container(
+        margin: EdgeInsets.symmetric(horizontal: 12, vertical: 1),
+        height: double.parse(widget._post.ingredients.length.toString()) * 35,
+        child: ListView.builder(
+        itemCount: widget._post.ingredients.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Column(children: <Widget>[
+            Row(children: <Widget>[
+            SizedBox(width: 15),
+            Container(
+              width: 105,
+              child: Text(widget._post.ingredients[index]['quantity'],style: TextStyle(fontSize: 12))),
+              Expanded(child: 
+            Container(
+              child: Text(widget._post.ingredients[index]['ingredient'], style: TextStyle(fontSize: 15))),),
+          ],),
+          Divider(indent: 15),
+          ],);
+        },),);
     }
     if (index == 3) {
-      Container showMore = Container(
-        padding: EdgeInsets.all(12),
-        child: Text(widget._post.recipe),
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 1),
+        height: 300,
+        child: ListView.builder(
+          itemCount: widget._post.recipe.length,
+          itemBuilder: (BuildContext context, int index) {
+            return Column(children: <Widget>[
+              SizedBox(height: 7),
+              Row(children: <Widget>[
+                Text(widget._post.recipe[index]['title'],style: TextStyle(fontSize: 16, fontWeight: FontWeight.w100 )), 
+              ],),
+              SizedBox(height: 7),
+              Text(widget._post.recipe[index]['description'],style: TextStyle(fontSize: 14)),
+              Divider(indent: 6),
+            ],);
+          },
+        )
+        
       );
-      return _cancleState(showMore);
     }
     return Container();
   }

@@ -34,7 +34,7 @@ class _MealUploadPageState extends State<MealUploadPage> {
   String _placeholderImage = 'assets/images/logoBlue.png';
   double _calories;
   double _minutes;
-  List<String> _benefits;
+  String _benefits;
   List<String> _ingredients;
   String _recipe;
 
@@ -172,7 +172,7 @@ class _MealUploadPageState extends State<MealUploadPage> {
             child: TextFormField(
               onSaved: (text) {
                 setState(() {
-                  _benefits = [text];
+                  _benefits = text;
                 });
               },
               validator: (text) {
@@ -245,9 +245,9 @@ class _MealUploadPageState extends State<MealUploadPage> {
       imagePath: _placeholderImage,
       calories: _calories,
       minutes: _minutes,
-      ingredients: _ingredients,
-      recipe: _recipe,
-      benefits: _benefits,
+    //  ingredients: _ingredients,
+    //  recipe: _recipe,
+     // benefits: _benefits,
       imageUrl: _placeholderImage,
       userDetails: _dummyUser,
     );
@@ -269,8 +269,8 @@ class _MealUploadPageState extends State<MealUploadPage> {
               imagePath: _placeholderImage,
               calories: _calories,
               minutes: _minutes,
-              ingredients: _ingredients,
-              recipe: _recipe,
+              ingredients: [{'quantity':'dummy','ingredient':'dummy'}], // dummy text
+              recipe: [{'quantity':'dummy','ingredient':'dummy'}], // dummy text,
               benefits: _benefits,
               imageUrl: _placeholderImage,
               userDetails: _dummyUser,
