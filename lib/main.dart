@@ -6,7 +6,12 @@ import './pages/search.dart';
 import './pages/upload.dart';
 import './pages/notification.dart';
 import './pages/profile pages/profile.dart';
-import './pages/auth.dart';
+
+// Import authentication pages
+import './pages/authentication/login_page.dart';
+import './pages/authentication/auth.dart';
+
+
 
 // Import Post Types
 import './post types/text_post.dart';
@@ -431,48 +436,52 @@ class _MyAppState extends State<MyApp> {
       // routes: {
       //   '/home' : (BuildContext context) => HomePage(_posts),
       // },
-      home: Scaffold( // run check, if not logged in go to sign in page, if logged in go to home page
-        backgroundColor: Color(0xFFECEFF1),
-        appBar: _appBarOptional(),
-        body: _pageShown(),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-                title: Container(),
-                icon: Icon(Icons.perm_media,
-                    color: _currentIndex == 0
-                        ? Colors.lightBlue[800]
-                        : Colors.grey)),
-            BottomNavigationBarItem(
-                title: Container(),
-                icon: Icon(
-                  Icons.search,
-                  color:
-                      _currentIndex == 1 ? Colors.lightBlue[800] : Colors.grey,
-                )),
-            BottomNavigationBarItem(
-                title: Container(),
-                icon: Icon(Icons.camera_alt,
-                    color: _currentIndex == 2
-                        ? Colors.lightBlue[800]
-                        : Colors.grey)),
-            BottomNavigationBarItem(
-                title: Container(),
-                icon: Icon(Icons.favorite,
-                    color: _currentIndex == 3
-                        ? Colors.lightBlue[800]
-                        : Colors.grey)),
-            BottomNavigationBarItem(
-                title: Container(),
-                icon: Icon(Icons.person,
-                    color: _currentIndex == 4
-                        ? Colors.lightBlue[800]
-                        : Colors.grey))
-          ],
-          onTap: _onTapNavigationBar,
-        ),
-      ),
+      home: LoginPage(auth: Auth())
+      
+      
+      
+      // --> once logged in display Scaffold( // run check, if not logged in go to sign in page, if logged in go to home page
+      //   backgroundColor: Color(0xFFECEFF1),
+      //   appBar: _appBarOptional(),
+      //   body: _pageShown(),
+      //   bottomNavigationBar: BottomNavigationBar(
+      //     currentIndex: _currentIndex,
+      //     items: <BottomNavigationBarItem>[
+      //       BottomNavigationBarItem(
+      //           title: Container(),
+      //           icon: Icon(Icons.perm_media,
+      //               color: _currentIndex == 0
+      //                   ? Colors.lightBlue[800]
+      //                   : Colors.grey)),
+      //       BottomNavigationBarItem(
+      //           title: Container(),
+      //           icon: Icon(
+      //             Icons.search,
+      //             color:
+      //                 _currentIndex == 1 ? Colors.lightBlue[800] : Colors.grey,
+      //           )),
+      //       BottomNavigationBarItem(
+      //           title: Container(),
+      //           icon: Icon(Icons.camera_alt,
+      //               color: _currentIndex == 2
+      //                   ? Colors.lightBlue[800]
+      //                   : Colors.grey)),
+      //       BottomNavigationBarItem(
+      //           title: Container(),
+      //           icon: Icon(Icons.favorite,
+      //               color: _currentIndex == 3
+      //                   ? Colors.lightBlue[800]
+      //                   : Colors.grey)),
+      //       BottomNavigationBarItem(
+      //           title: Container(),
+      //           icon: Icon(Icons.person,
+      //               color: _currentIndex == 4
+      //                   ? Colors.lightBlue[800]
+      //                   : Colors.grey))
+      //     ],
+      //     onTap: _onTapNavigationBar,
+      //   ),
+      // ),
     );
   }
 }

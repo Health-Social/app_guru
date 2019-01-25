@@ -21,7 +21,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   scoped_model: ^1.0.1
   flutter_rating: ^0.0.2
-  firebase_auth:
+  firebase_auth: ^0.8.0+1
   google_sign_in:
 
 dev_dependencies:
@@ -66,6 +66,9 @@ flutter:
     - assets/images/default.png
     - assets/images/logoBlue.png
     - assets/images/logoInverse.PNG
+    - assets/images/10.PNG
+    - assets/images/11.PNG
+    - assets/images/12.PNG
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
