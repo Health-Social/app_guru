@@ -649,12 +649,12 @@ class _CorePageState extends State<CorePage> {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(100),
-                color: Colors.blueGrey,
+                border: Border.all(color: Colors.black),
               ),
               child: 
             FlatButton(
               onPressed: _signOut,
-              child: Text('Logout', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w800, color: Colors.white,),),
+              child: Text('Logout', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w100, color: Colors.black,),),
             ),)
           ],);
     }

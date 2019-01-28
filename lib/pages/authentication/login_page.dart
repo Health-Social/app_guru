@@ -150,6 +150,10 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget _forgotPasswordButton() {
+    // show if password is incorrect
+  }
+
   Widget _showBody() {
     return Container(
         decoration: BoxDecoration(
