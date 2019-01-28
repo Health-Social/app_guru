@@ -6,8 +6,6 @@ class LoginPage extends StatefulWidget {
   final BaseAuth auth;
   final VoidCallback onSignedIn;
 
-  
-
   @override
   State<StatefulWidget> createState() {
     return _LoginPageState();
@@ -45,8 +43,8 @@ class _LoginPageState extends State<LoginPage> {
               await widget.auth.signInWithEmailAndPassword(_email, _password);
           print('signed in: $userId');
         } else {
-          String userId =
-              await widget.auth.createUserWithEmailAndPassword(_email, _password);
+          String userId = await widget.auth
+              .createUserWithEmailAndPassword(_email, _password);
           print('new user: $userId');
         }
         widget.onSignedIn();
@@ -167,7 +165,7 @@ class _LoginPageState extends State<LoginPage> {
           child: ListView(
             children: <Widget>[
               SizedBox(height: 80),
-              Image.asset('assets/images/logoInverse.PNG'),
+              Image.asset('assets/images/logo_inverse_2.PNG'),
               SizedBox(height: 30),
               _emailTextFormField(),
               _passwordTextFormField(),
@@ -195,198 +193,3 @@ class _LoginPageState extends State<LoginPage> {
     ));
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/// BEFORE MAJOR (STATEFUL) CHANGES ///
-///
-/// BEFORE MAJOR (STATEFUL) CHANGES ///
-///
-/// BEFORE MAJOR (STATEFUL) CHANGES ///
-///
-/// BEFORE MAJOR (STATEFUL) CHANGES ///
-///
-/// BEFORE MAJOR (STATEFUL) CHANGES ///
-///
-/// BEFORE MAJOR (STATEFUL) CHANGES ///
-///
-/// BEFORE MAJOR (STATEFUL) CHANGES ///
-///
-///
-
-// class AuthPage extends StatelessWidget {
-//   final FirebaseAuth _auth = FirebaseAuth.instance;
-//   final GoogleSignIn googleSignIn = GoogleSignIn();
-
-//   Future<FirebaseUser> _signIn() async {
-//     GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
-//     GoogleSignInAuthentication gSA = await googleSignInAccount.authentication;
-
-//     FirebaseUser user = await _auth.signInWithGoogle(
-//       idToken: gSA.idToken,
-//       accessToken: gSA.accessToken,
-//     );
-//     print('user name: ${user.displayName}');
-
-//     return user;
-//   }
-
-//   void _signOut() {
-//     googleSignIn.signOut();
-//     print('user signed out');
-//   }
-
-//   // child: _formMode == FormMode.LOGIN
-//   //     ? new Text('Login',
-//   //         style: new TextStyle(fontSize: 20.0, color: Colors.white))
-//   //     : new Text('Create account',
-//   //         style: new TextStyle(fontSize: 20.0, color: Colors.white)),
-//   // onPressed: _validateAndSubmit,
-
-//   Widget _showPrimaryButton() {
-//     // login or signup button
-//     return Container(
-//       margin: EdgeInsets.symmetric(horizontal: 100),
-//       height: 30,
-//       child: InkWell(
-//         onTap: () {},
-//         child: Container(
-//           child: Center(
-//             child: Text('Login',
-//                 style: TextStyle(
-//                     fontSize: 18,
-//                     fontFamily: 'myriad-pro-light',
-//                     fontWeight: FontWeight.w900,
-//                     color: Colors.white)),
-//           ),
-//           decoration: BoxDecoration(
-//               gradient: RadialGradient(
-//                   radius: 3.5, colors: <Color>[Colors.pink, Colors.pink[100]]),
-//               borderRadius: BorderRadius.circular(15.0)),
-//         ),
-//       ),
-//     );
-//   }
-
-//   Widget _showSecondaryButton(){
-//     return FlatButton(
-//       onPressed: () {
-
-//       },
-//       child: Text('Create an account',
-//                 style: TextStyle(
-//                     fontSize: 17,
-//                     fontFamily: 'myriad-pro-light',
-//                     fontWeight: FontWeight.w900,
-//                     color: Colors.grey)),
-//     );
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Container(
-//           decoration: BoxDecoration(
-//               gradient: LinearGradient(
-//                   begin: FractionalOffset.topCenter,
-//                   end: FractionalOffset.bottomCenter,
-//                   colors: <Color>[
-//                 Colors.white,
-//                 Colors.white,
-//               ])),
-//           child: ListView(
-//             children: <Widget>[
-//               SizedBox(height: 80),
-//               Image.asset('assets/images/logoInverse.PNG'),
-//               SizedBox(height: 30),
-//               Container(
-//                   margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-//                   child: TextFormField(
-//                     decoration: InputDecoration(
-//                         icon: Icon(Icons.email),
-//                         labelText: 'Email',
-//                         labelStyle: TextStyle(color: Colors.grey)),
-//                   )),
-//               Container(
-//                   margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-//                   child: TextFormField(
-//                     obscureText: true,
-//                     decoration: InputDecoration(
-//                         icon: Icon(Icons.lock),
-//                         labelText: 'password',
-//                         labelStyle: TextStyle(color: Colors.grey[600])),
-//                   )),
-//               SizedBox(height: 20),
-//               _showPrimaryButton(),
-//               _showSecondaryButton(),
-//               // Center(
-//               //   child: RaisedButton(
-//               //       child: Text('auth page'),
-//               //       onPressed: () => _signIn()
-//               //           .then((FirebaseUser user) => print(user))
-//               //           .catchError((error) => print(error))
-//               //       // Navigator.pushReplacement(context,
-//               //       //   MaterialPageRoute(
-//               //       //     builder: (BuildContext context) =>
-//               //       //       MyApp()
-//               //       //   ));
-//               //       //      },
-//               //       ),
-//               // ),
-//               SizedBox(height: 40),
-//             ],
-//           )),
-//     );
-//   }
-// }
