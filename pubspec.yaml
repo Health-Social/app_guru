@@ -21,8 +21,9 @@ dependencies:
   cupertino_icons: ^0.1.2
   scoped_model: ^1.0.1
   flutter_rating: ^0.0.2
-  firebase_auth: ^0.8.0+1
+  firebase_auth: ^0.8.0+1 
   google_sign_in:
+  cloud_firestore: ^0.9.0
 
 dev_dependencies:
   flutter_test:
@@ -45,7 +46,7 @@ flutter:
     - assets/images/background.jpg
     - assets/images/background2.jpg
     - assets/images/runner1.jpg
-    - assets/images/runner2.jpg
+    - assets/images/runner2.jpg 
     - assets/images/cake.jpg
     - assets/images/profile.png
     - assets/images/profileDiCaprio.jpg

@@ -29,7 +29,7 @@ class Auth implements BaseAuth {
   // check if signed in
   Future<String> currentUser() async {
     FirebaseUser user = await _firebaseAuth.currentUser();
-    return user.uid;
+    return user != null ? user.uid : null;
   }
 
   // sign out method

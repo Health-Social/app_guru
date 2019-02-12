@@ -27,4 +27,3 @@ class TextPost {
     this.anonymous = false,
   });
 }
-
